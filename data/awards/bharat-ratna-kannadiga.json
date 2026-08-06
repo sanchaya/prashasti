@@ -7,7 +7,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/M._Visvesvaraya",
     "wikidata_qid": "Q741700",
     "has_wikidata_statement": true,
-    "source": "en Wikipedia, cross-checked across sources"
+    "source": "en Wikipedia, cross-checked across sources",
+    "source_id": "wiki_bharat_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Bharat_Ratna"
   },
   {
     "year": 2008,
@@ -17,7 +19,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Bhimsen_Joshi",
     "wikidata_qid": "Q121077",
     "has_wikidata_statement": true,
-    "source": "en Wikipedia, cross-checked across sources"
+    "source": "en Wikipedia, cross-checked across sources",
+    "source_id": "wiki_bharat_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Bharat_Ratna"
   },
   {
     "year": 2014,
@@ -27,6 +31,8 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/C._N._R._Rao",
     "wikidata_qid": "Q1248892",
     "has_wikidata_statement": true,
-    "source": "en Wikipedia, cross-checked across sources"
+    "source": "en Wikipedia, cross-checked across sources",
+    "source_id": "wiki_bharat_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Bharat_Ratna"
   }
 ]

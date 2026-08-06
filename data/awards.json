@@ -13,8 +13,8 @@
     "wikidata_qid": "Q7286513",
     "has_location_data": true,
     "has_representation_data": true,
-    "hero_en": "Every November 1st since 1966, Karnataka has honoured its own — writers, wrestlers, folk artists, scientists, midwives, soldiers. This collects that honour roll in one searchable place, built from Wikipedia's own record of the awards and cross-checked against Wikidata.",
-    "hero_kn": "1966ರಿಂದ ಪ್ರತಿ ನವೆಂಬರ್ 1ರಂದು, ಕರ್ನಾಟಕ ತನ್ನವರನ್ನು ಗೌರವಿಸುತ್ತಾ ಬಂದಿದೆ — ಸಾಹಿತಿಗಳು, ಕುಸ್ತಿಪಟುಗಳು, ಜಾನಪದ ಕಲಾವಿದರು, ವಿಜ್ಞಾನಿಗಳು, ಸೂಲಗಿತ್ತಿಯರು, ಯೋಧರು. ಇದು ಆ ಗೌರವ ಪಟ್ಟಿಯನ್ನು ಒಂದೇ ಕಡೆ ಹುಡುಕಬಹುದಾದಂತೆ ಸಂಗ್ರಹಿಸುತ್ತದೆ, ವಿಕಿಪೀಡಿಯಾದ ದಾಖಲೆಗಳಿಂದ ಸಂಗ್ರಹಿಸಿ ವಿಕಿಡೇಟಾದೊಂದಿಗೆ ಪರಿಶೀಲಿಸಲಾಗಿದೆ."
+    "hero_en": "Every November 1st since 1966, Karnataka has honoured its own — writers, wrestlers, folk artists, scientists, midwives, soldiers. This collects that honour roll in one searchable place.",
+    "hero_kn": "1966ರಿಂದ ಪ್ರತಿ ನವೆಂಬರ್ 1ರಂದು, ಕರ್ನಾಟಕ ತನ್ನವರನ್ನು ಗೌರವಿಸುತ್ತಾ ಬಂದಿದೆ — ಸಾಹಿತಿಗಳು, ಕುಸ್ತಿಪಟುಗಳು, ಜಾನಪದ ಕಲಾವಿದರು, ವಿಜ್ಞಾನಿಗಳು, ಸೂಲಗಿತ್ತಿಯರು, ಯೋಧರು. ಇದು ಆ ಗೌರವ ಪಟ್ಟಿಯನ್ನು ಒಂದೇ ಕಡೆ ಹುಡುಕಬಹುದಾದಂತೆ ಸಂಗ್ರಹಿಸುತ್ತದೆ."
   },
   {
     "id": "karnataka-ratna",
@@ -31,8 +31,8 @@
     "has_location_data": false,
     "has_representation_data": false,
     "quickstatements_file": "data/quickstatements_karnataka_ratna.tsv",
-    "hero_en": "Karnataka's highest civilian honour — instituted in 1992, given to just eleven people in 33 years. This is the full list, cross-checked against both English and Kannada Wikipedia.",
-    "hero_kn": "ಕರ್ನಾಟಕದ ಅತ್ಯುನ್ನತ ನಾಗರಿಕ ಗೌರವ — 1992ರಲ್ಲಿ ಸ್ಥಾಪಿತವಾಗಿ, 33 ವರ್ಷಗಳಲ್ಲಿ ಕೇವಲ ಹನ್ನೊಂದು ಮಂದಿಗೆ ನೀಡಲಾಗಿದೆ. ಇದು ಇಂಗ್ಲಿಷ್ ಮತ್ತು ಕನ್ನಡ ವಿಕಿಪೀಡಿಯಾ ಎರಡನ್ನೂ ಪರಿಶೀಲಿಸಿ ಸಿದ್ಧಪಡಿಸಿದ ಪೂರ್ಣ ಪಟ್ಟಿ."
+    "hero_en": "Karnataka's highest civilian honour — instituted in 1992, given to just eleven people in 33 years. This is the full list.",
+    "hero_kn": "ಕರ್ನಾಟಕದ ಅತ್ಯುನ್ನತ ನಾಗರಿಕ ಗೌರವ — 1992ರಲ್ಲಿ ಸ್ಥಾಪಿತವಾಗಿ, 33 ವರ್ಷಗಳಲ್ಲಿ ಕೇವಲ ಹನ್ನೊಂದು ಮಂದಿಗೆ ನೀಡಲಾಗಿದೆ. ಇದು ಪೂರ್ಣ ಪಟ್ಟಿ."
   },
   {
     "id": "jnanpith-kannada",
@@ -70,40 +70,47 @@
   },
   {
     "id": "pampa-award",
-    "status": "planned",
+    "status": "active",
+    "data_file": "data/awards/pampa-award.json",
     "name_en": "Pampa Award",
     "name_kn": "ಪಂಪ ಪ್ರಶಸ್ತಿ",
     "desc_en": "Karnataka's highest literary honour, conferred since 1987 — 37 recipients and counting.",
     "desc_kn": "1987ರಿಂದ ನೀಡಲಾಗುತ್ತಿರುವ ಕರ್ನಾಟಕದ ಅತ್ಯುನ್ನತ ಸಾಹಿತ್ಯ ಗೌರವ.",
     "recipients": null,
     "year_range": null,
-    "level": "state"
+    "level": "state",
+    "notes": "Clean build. Wikipedia has a structured list page; first winner Kuvempu, most recent Devanur Mahadeva. 37 winners since 1987."
   },
   {
     "id": "attimabbe-award",
-    "status": "planned",
+    "status": "active",
+    "data_file": "data/awards/attimabbe-award.json",
     "name_en": "Daana Chintamani Attimabbe Award",
     "name_kn": "ದಾನಚಿಂತಾಮಣಿ ಅತ್ತಿಮಬ್ಬೆ ಪ್ರಶಸ್ತಿ",
     "desc_en": "Karnataka's highest literary honour for women writers, since 1995.",
     "desc_kn": "1995ರಿಂದ ಮಹಿಳಾ ಬರಹಗಾರರಿಗೆ ನೀಡಲಾಗುತ್ತಿರುವ ಕರ್ನಾಟಕದ ಅತ್ಯುನ್ನತ ಸಾಹಿತ್ಯ ಗೌರವ.",
     "recipients": null,
     "year_range": null,
-    "level": "state"
+    "level": "state",
+    "notes": "Clean build. Wikipedia page exists; 24 winners since 1995."
   },
   {
     "id": "nadoja",
-    "status": "planned",
+    "status": "active",
+    "data_file": "data/awards/nadoja.json",
     "name_en": "Nadoja Award",
     "name_kn": "ನಾಡೋಜ ಪ್ರಶಸ್ತಿ",
     "desc_en": "Hampi Kannada University's highest honorary award, since 1995.",
     "desc_kn": "1995ರಿಂದ ನೀಡಲಾಗುತ್ತಿರುವ ಹಂಪಿ ಕನ್ನಡ ವಿಶ್ವವಿದ್ಯಾಲಯದ ಅತ್ಯುನ್ನತ ಗೌರವ ಪ್ರಶಸ್ತಿ.",
     "recipients": null,
     "year_range": null,
-    "level": "state"
+    "level": "state",
+    "notes": "Clean build. Wikipedia page with a year-by-year table; since 1995."
   },
   {
     "id": "sahitya-akademi-kannada",
-    "status": "planned",
+    "status": "active",
+    "data_file": "data/awards/sahitya-akademi-kannada.json",
     "name_en": "Sahitya Akademi Award (Kannada)",
     "name_kn": "ಸಾಹಿತ್ಯ ಅಕಾಡೆಮಿ ಪ್ರಶಸ್ತಿ (ಕನ್ನಡ)",
     "desc_en": "India's national literary award, Kannada-language recipients since 1955.",
@@ -114,13 +121,87 @@
   },
   {
     "id": "kempegowda-award",
-    "status": "planned",
+    "status": "active",
     "name_en": "Kempegowda Award",
     "name_kn": "ಕೆಂಪೇಗೌಡ ಪ್ರಶಸ್ತಿ",
     "desc_en": "Bruhat Bengaluru Mahanagara Palike's civic honour for contributions to Bengaluru.",
     "desc_kn": "ಬೆಂಗಳೂರಿಗೆ ನೀಡಿದ ಕೊಡುಗೆಗಳಿಗಾಗಿ ಬಿಬಿಎಂಪಿ ನೀಡುವ ನಾಗರಿಕ ಗೌರವ.",
     "recipients": null,
     "year_range": null,
-    "level": "city"
+    "level": "city",
+    "notes": "Messy. Swung from 536 recipients one year (widely criticised) to ~52 the next. Wikipedia's own recipient table is currently empty; would need heavy news-scraping per year."
+  },
+  {
+    "id": "basava-puraskara",
+    "status": "active",
+    "name_en": "Basava Puraskara",
+    "name_kn": "ಬಸವ ಪುರಸ್ಕಾರ",
+    "desc_en": "Karnataka government's national-level award for social reform and communal harmony.",
+    "desc_kn": "ಸಾಮಾಜಿಕ ಸುಧಾರಣೆ ಮತ್ತು ಸರ್ವಧರ್ಮ ಸಮನ್ವಯಕ್ಕಾಗಿ ಕರ್ನಾಟಕ ಸರ್ಕಾರ ನೀಡುವ ರಾಷ್ಟ್ರಮಟ್ಟದ ಪ್ರಶಸ್ತಿ.",
+    "recipients": null,
+    "year_range": null,
+    "level": "state",
+    "notes": "Thinner Wikipedia coverage; mostly news-sourced."
+  },
+  {
+    "id": "padma-awards-karnataka",
+    "status": "active",
+    "name_en": "Padma Awards (Karnataka recipients)",
+    "name_kn": "ಪದ್ಮ ಪ್ರಶಸ್ತಿಗಳು (ಕರ್ನಾಟಕದವರು)",
+    "desc_en": "India's civilian honours — Shri, Bhushan, Vibhushan — awarded to Karnataka-born or Karnataka-based recipients.",
+    "desc_kn": "ಕರ್ನಾಟಕದಲ್ಲಿ ಜನಿಸಿದ ಅಥವಾ ನೆಲೆಸಿದವರಿಗೆ ನೀಡಲಾದ ಭಾರತದ ನಾಗರಿಕ ಗೌರವಗಳು — ಪದ್ಮಶ್ರೀ, ಪದ್ಮಭೂಷಣ, ಪದ್ಮವಿಭೂಷಣ.",
+    "recipients": null,
+    "year_range": null,
+    "level": "national",
+    "notes": "National, not Karnataka-specific — would need filtering logic against Wikipedia's Padma lists (Karnataka-born/based). Large (hundreds of recipients). Bigger undertaking."
+  },
+  {
+    "id": "national-film-award-best-kannada-film",
+    "status": "active",
+    "data_file": "data/awards/national-film-award-best-kannada-film.json",
+    "name_en": "National Film Award (Best Kannada Film)",
+    "name_kn": "ರಾಷ್ಟ್ರೀಯ ಚಲನಚಿತ್ರ ಪ್ರಶಸ್ತಿ (ಅತ್ಯುತ್ತಮ ಕನ್ನಡ ಚಿತ್ರ)",
+    "desc_en": "National recognition of Kannada cinema, since 1968.",
+    "desc_kn": "1968ರಿಂದ ಕನ್ನಡ ಚಿತ್ರರಂಗಕ್ಕೆ ಸಂದ ರಾಷ್ಟ್ರೀಯ ಮನ್ನಣೆ.",
+    "recipients": null,
+    "year_range": null,
+    "level": "national",
+    "notes": "National recognition of Kannada cinema. Decent Wikipedia coverage, moderate scope."
+  },
+  {
+    "id": "arjuna-khel-ratna-karnataka",
+    "status": "active",
+    "name_en": "Sports Honours (Karnataka) — Arjuna / Dronacharya / Khel Ratna",
+    "name_kn": "ಕ್ರೀಡಾ ಗೌರವಗಳು (ಕರ್ನಾಟಕ) — ಅರ್ಜುನ / ದ್ರೋಣಾಚಾರ್ಯ / ಖೇಲ್ ರತ್ನ",
+    "desc_en": "India's national sports honours, for Karnataka-born athletes and coaches.",
+    "desc_kn": "ಕರ್ನಾಟಕದ ಕ್ರೀಡಾಪಟುಗಳು ಮತ್ತು ತರಬೇತುದಾರರಿಗೆ ಸಂದ ಭಾರತದ ರಾಷ್ಟ್ರೀಯ ಕ್ರೀಡಾ ಗೌರವಗಳು.",
+    "recipients": null,
+    "year_range": null,
+    "level": "national",
+    "notes": "Same filtering problem as Padma — cross-reference national lists against Karnataka birthplace."
+  },
+  {
+    "id": "karnataka-state-film-awards",
+    "status": "active",
+    "name_en": "Karnataka State Film Awards",
+    "name_kn": "ಕರ್ನಾಟಕ ರಾಜ್ಯ ಚಲನಚಿತ್ರ ಪ್ರಶಸ್ತಿಗಳು",
+    "desc_en": "Kannada cinema's state honours — Best Film, Director, Actor, Actress, Screenplay, Playback Singer and more.",
+    "desc_kn": "ಕನ್ನಡ ಚಿತ್ರರಂಗದ ರಾಜ್ಯ ಪ್ರಶಸ್ತಿಗಳು — ಅತ್ಯುತ್ತಮ ಚಿತ್ರ, ನಿರ್ದೇಶಕ, ನಟ, ನಟಿ, ಚಿತ್ರಕಥೆ, ಹಿನ್ನೆಲೆ ಗಾಯಕ ಹೀಗೆ ಹಲವು ವಿಭಾಗಗಳು.",
+    "recipients": null,
+    "year_range": null,
+    "level": "state",
+    "notes": "~56 years, dozens of categories (Best Film, Director, Actor, Actress, Screenplay, Playback Singer…). Extensive, well-documented per-category Wikipedia pages. Big scope — more like a second whole project than an add-on."
+  },
+  {
+    "id": "smaller-state-honours",
+    "status": "active",
+    "name_en": "Smaller State Honours (Jakanachari, Venkatappa, Chowdaiah, Kanakashree, Sangolli Rayanna, Akkamahadevi, Gawai…)",
+    "name_kn": "ಇತರ ರಾಜ್ಯ ಗೌರವಗಳು (ಜಕನಾಚಾರಿ, ವೆಂಕಟಪ್ಪ, ಚೌಡಯ್ಯ, ಕನಕಶ್ರೀ, ಸಂಗೊಳ್ಳಿ ರಾಯಣ್ಣ, ಅಕ್ಕಮಹಾದೇವಿ, ಗವಾಯಿ…)",
+    "desc_en": "Craft- and niche-specific state honours conferred annually.",
+    "desc_kn": "ಕರಕುಶಲ ಮತ್ತು ನಿರ್ದಿಷ್ಟ ಕ್ಷೇತ್ರಗಳಿಗೆ ಪ್ರತಿವರ್ಷ ನೀಡಲಾಗುವ ರಾಜ್ಯ ಗೌರವಗಳು.",
+    "recipients": null,
+    "year_range": null,
+    "level": "state",
+    "notes": "Craft/niche-specific — Jakanachari, Varnashilpi Venkatappa, T. Chowdaiah, Kanakashree, Sangolli Rayanna, Akkamahadevi, Ganayogi Panchakshari Gawai and similar. Thin — mostly single news articles per year, no Wikipedia lists. Lowest priority."
   }
 ]

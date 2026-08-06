@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ಪ್ರಶಸ್ತಿ ಸಂಚಯ — Prashasti Sanchaya</title>
-<meta name="description" content="A Sanchaya project: Karnataka state award recipients, searchable and mapped, cross-referenced with Wikidata.">
+<meta name="description" content="A Sanchaya project: Karnataka state award recipients, searchable and mapped.">
+<link rel="icon" type="image/png" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Kannada:wght@400;500;700&display=swap" rel="stylesheet">
@@ -16,243 +18,247 @@
 <nav class="topnav">
   <div class="topnav-inner">
     <a class="brand" href="#">
-      <span class="brand-mark" aria-hidden="true">ಪ್ರ</span>
+      <img class="brand-logo" src="img/logo.png" alt="Sanchaya">
       <span class="brand-text">
         <span class="brand-kn">ಪ್ರಶಸ್ತಿ ಸಂಚಯ</span>
         <span class="brand-en">Prashasti Sanchaya</span>
       </span>
     </a>
 
-    <div class="topnav-center">
-      <div class="award-switcher" id="award-switcher">
-        <button class="award-switcher-btn" id="award-switcher-btn" aria-haspopup="listbox" aria-expanded="false">
-          <span id="award-switcher-label">Rajyotsava Prashasti</span>
-          <span class="chev">▾</span>
-        </button>
-        <ul class="award-switcher-menu" id="award-switcher-menu" role="listbox"></ul>
-      </div>
-    </div>
-
     <div class="topnav-right">
-      <div class="topnav-links">
-        <a href="#browse-section" data-i18n="nav_browse">Browse</a>
-        <a href="#map-section" data-i18n="nav_map">Map</a>
-        <a href="#wikidata-section" data-i18n="nav_wikidata">Wikidata</a>
-        <a href="#representation-section" data-i18n="nav_representation">Representation</a>
-        <a href="#provenance-section" data-i18n="nav_about">About the data</a>
-      </div>
+      <a class="topnav-sources" href="sources.html" data-i18n="nav_sources">Sources &amp; citations</a>
       <div class="lang-switch">
-        <button class="lang-btn" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="kn">ಕನ್ನಡ</button>
+        <button class="lang-btn" data-lang="en">EN</button>
       </div>
     </div>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="hero-inner">
-    <p class="eyebrow" data-i18n="eyebrow">A Sanchaya project · Government of Karnataka's second-highest civilian honour</p>
-    <h1 data-i18n="hero_h1">Every Rajyotsava Prashasti recipient on record</h1>
-    <p class="hero-desc" data-i18n="hero_desc">Every November 1st since 1966, Karnataka has honoured its own.</p>
+<div class="chips-wrap">
+  <div class="award-chips" id="award-chips" role="tablist" aria-label="Awards"></div>
+</div>
 
-    <div class="hero-search">
-      <input type="search" id="hero-search-input" data-i18n-placeholder="search_placeholder" placeholder="Search a name, field, or district…">
-      <button id="hero-search-btn" class="btn-primary" data-i18n="search_btn">Search</button>
-    </div>
-
-    <div class="stat-row" id="stat-row">
-      <div class="stat"><span class="stat-num" id="stat-total">—</span><span class="stat-label" data-i18n="stat_total">Recipients on record</span></div>
-      <div class="stat"><span class="stat-num" id="stat-years">—</span><span class="stat-label" data-i18n="stat_years">Ceremonies, 1966–2025</span></div>
-      <div class="stat"><span class="stat-num" id="stat-fields">—</span><span class="stat-label" data-i18n="stat_fields">Fields of achievement</span></div>
-      <div class="stat"><span class="stat-num" id="stat-wiki">—</span><span class="stat-label" data-i18n="stat_wiki">Have a Wikipedia article</span></div>
-    </div>
+<div class="award-head">
+  <div class="award-head-main">
+    <p class="eyebrow" data-i18n="eyebrow">ಒಂದು ಸಂಚಯ ಯೋಜನೆ · ಕರ್ನಾಟಕದ ಗೌರವಗಳು</p>
+    <h1 id="hero-h1" data-i18n="hero_h1">ದಾಖಲಾಗಿರುವ ಪ್ರತಿಯೊಬ್ಬ ಪುರಸ್ಕೃತ</h1>
+    <p class="hero-desc" id="hero-desc" data-i18n="hero_desc">1966ರಿಂದ ಪ್ರತಿ ನವೆಂಬರ್ 1ರಂದು, ಕರ್ನಾಟಕ ತನ್ನವರನ್ನು ಗೌರವಿಸುತ್ತಾ ಬಂದಿದೆ — ಸಾಹಿತಿಗಳು, ಕುಸ್ತಿಪಟುಗಳು, ಜಾನಪದ ಕಲಾವಿದರು, ವಿಜ್ಞಾನಿಗಳು. ಈ ಯೋಜನೆಯು ಆ ಗೌರವ ಪಟ್ಟಿಯನ್ನು ಒಂದೇ ಕಡೆ ಹುಡುಕಬಹುದಾದಂತೆ ಸಂಗ್ರಹಿಸುತ್ತದೆ.</p>
   </div>
-</header>
+
+  <div class="stat-row" id="stat-row">
+    <div class="stat"><span class="stat-num" id="stat-total">—</span><span class="stat-label" data-i18n="stat_total">ದಾಖಲಾದ ಪುರಸ್ಕೃತರು</span></div>
+    <div class="stat"><span class="stat-num" id="stat-years">—</span><span class="stat-label" data-i18n="stat_years">ಸಮಾರಂಭಗಳು</span></div>
+    <div class="stat"><span class="stat-num" id="stat-fields">—</span><span class="stat-label" data-i18n="stat_fields">ಸಾಧನಾ ಕ್ಷೇತ್ರಗಳು</span></div>
+    <div class="stat"><span class="stat-num" id="stat-districts">—</span><span class="stat-label" data-i18n="stat_districts">ಜಿಲ್ಲೆಗಳು</span></div>
+  </div>
+</div>
 
 <main>
 
-  <section class="section" id="timeline-section">
-    <div class="section-head">
-      <span class="section-icon" aria-hidden="true">◐</span>
-      <div>
-        <h2 data-i18n="tl_title">Recipients by year</h2>
-        <p data-i18n="tl_desc">Each bar is one ceremony.</p>
-      </div>
-    </div>
-    <div class="card timeline-card">
-      <div class="timeline-wrap">
-        <div class="timeline" id="timeline" role="list" aria-label="Awards by year"></div>
-      </div>
-      <div class="timeline-legend">
-        <span><i class="dot dot-full"></i><span data-i18n="tl_legend_full">documented year</span></span>
-        <span><i class="dot dot-gap"></i><span data-i18n="tl_legend_gap">not awarded that year</span></span>
-        <span><i class="dot dot-thin"></i><span data-i18n="tl_legend_thin">record incomplete</span></span>
-      </div>
-    </div>
-  </section>
+  <div id="public-view" class="home-grid">
 
-  <section class="section" id="map-section">
-    <div class="section-head">
-      <span class="section-icon" aria-hidden="true">◎</span>
-      <div>
-        <h2 data-i18n="map_title">Where they're from</h2>
-        <p><span data-i18n="map_desc_pre">This map reflects</span> <strong id="map-coverage-count">—</strong> <span data-i18n="map_desc_post">recipients with a known district.</span></p>
-      </div>
-    </div>
-    <div class="card map-card">
-      <div id="karnataka-map"></div>
-    </div>
-    <p class="map-footnote" id="map-footnote"></p>
-  </section>
-
-  <section class="section" id="browse-section">
-    <div class="section-head">
-      <span class="section-icon" aria-hidden="true">☰</span>
-      <div>
-        <h2 data-i18n="browse_title">Browse the roll</h2>
-        <p data-i18n="browse_desc">Search by name, field, or district.</p>
-      </div>
-    </div>
-
-    <div class="controls">
-      <input type="search" id="search-input" data-i18n-placeholder="search_placeholder" placeholder="Search a name, field, or district…">
-      <select id="field-select" aria-label="Filter by field">
-        <option value="" data-i18n="filter_all_fields">All fields</option>
-      </select>
-      <select id="year-select" aria-label="Filter by year">
-        <option value="" data-i18n="filter_all_years">All years</option>
-      </select>
-      <button id="clear-filters" class="btn-ghost" data-i18n="filter_clear">Clear</button>
-    </div>
-
-    <p class="result-count" id="result-count"></p>
-
-    <div class="card list-card">
-      <div class="recipient-list" id="recipient-list"></div>
-    </div>
-    <button id="load-more" class="btn-ghost load-more" data-i18n="load_more">Show more</button>
-  </section>
-
-  <section class="section wikidata-section" id="wikidata-section">
-    <div class="section-head">
-      <span class="section-icon" aria-hidden="true">⬡</span>
-      <div>
-        <h2 data-i18n="wd_title">Fill the gaps on Wikidata</h2>
-        <p id="wd-desc"></p>
-      </div>
-    </div>
-
-    <div class="wikidata-panel">
-      <div class="card wikidata-panel-col">
-        <h3 data-i18n="wd_col1_h">What this project can do</h3>
-        <ul class="check-list">
-          <li id="wd-col1-li1" data-i18n="wd_col1_li1">Compiled a ready-to-run QuickStatements batch.</li>
-          <li data-i18n="wd_col1_li2">Left every statement unreviewed and unsent.</li>
-        </ul>
-        <a id="wd-download-btn" class="btn-primary" href="data/quickstatements_batch.tsv" download data-i18n="wd_download">Download the QuickStatements batch (.tsv)</a>
-      </div>
-      <div class="card wikidata-panel-col">
-        <h3 data-i18n="wd_col2_h">What this site can't do</h3>
-        <p data-i18n="wd_col2_desc">This project doesn't handle Wikidata credentials.</p>
-        <ol class="step-list">
-          <li data-i18n="wd_step1">Log in to your own account at wikidata.org.</li>
-          <li data-i18n="wd_step2">Open quickstatements.toolforge.org and authorise via OAuth.</li>
-          <li data-i18n="wd_step3">Paste the batch, review, and run it.</li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <section class="section wikipedia-draft-section" id="wikipedia-draft-section">
-    <div class="section-head">
-      <span class="section-icon" aria-hidden="true">✎</span>
-      <div>
-        <h2 data-i18n="wp_title">Draft a Wikipedia article</h2>
-        <p data-i18n="wp_desc">Pick a recipient without a Wikipedia article and generate a starting draft.</p>
-      </div>
-    </div>
-
-    <div class="card wp-card">
-      <div class="wp-notability">
-        <strong data-i18n="wp_notability_h">Before you draft</strong>
-        <p data-i18n="wp_notability">Notability guidance.</p>
-      </div>
-
-      <div class="wp-picker">
-        <input type="text" id="wp-search" data-i18n-placeholder="wp_picker_placeholder" placeholder="Type a name without a Wikipedia article…" autocomplete="off">
-        <ul id="wp-suggestions" class="wp-suggestions"></ul>
-      </div>
-
-      <div id="wp-preview-wrap" class="wp-preview-wrap" style="display:none;">
-        <div class="wp-preview-head">
-          <span id="wp-selected-name" class="wp-selected-name"></span>
-          <div class="wp-preview-actions">
-            <button id="wp-generate-btn" class="btn-ghost" data-i18n="wp_generate">Generate draft</button>
-            <button id="wp-copy-btn" class="btn-ghost" data-i18n="wp_copy">Copy wikitext</button>
-            <button id="wp-download-btn" class="btn-ghost" data-i18n="wp_download">Download as .txt</button>
+    <div class="map-col">
+      <section class="card map-card" id="map-section">
+        <div class="section-head map-head">
+          <span class="section-icon" aria-hidden="true">◎</span>
+          <div>
+            <h2 data-i18n="map_title">ಅವರು ಯಾವ ಊರಿನವರು</h2>
+            <p class="map-award-note" id="map-award-note"></p>
           </div>
         </div>
-        <textarea id="wp-preview" class="wp-preview" spellcheck="false"></textarea>
+        <div class="map-frame">
+          <div id="karnataka-map"></div>
+          <div class="map-legend" id="map-legend"></div>
+        </div>
+        <p class="map-footnote" id="map-footnote"></p>
+      </section>
 
-        <div class="wp-steps">
-          <strong data-i18n="wp_steps_h">Submitting it</strong>
+      <section class="card timeline-card" id="timeline-section">
+        <div class="section-head">
+          <span class="section-icon" aria-hidden="true">◐</span>
+          <div>
+            <h2 data-i18n="tl_title">ವರ್ಷವಾರು ಪುರಸ್ಕೃತರು</h2>
+            <p data-i18n="tl_desc">ಪ್ರತಿ ಪಟ್ಟಿಯೂ ಒಂದು ಸಮಾರಂಭ. ವರ್ಷವನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ — ಪಟ್ಟಿಯು ಫಿಲ್ಟರ್ ಆಗುತ್ತದೆ.</p>
+          </div>
+        </div>
+        <div class="timeline-wrap">
+          <div class="timeline" id="timeline" role="list" aria-label="Awards by year"></div>
+        </div>
+        <div class="timeline-legend">
+          <span><i class="dot dot-full"></i><span data-i18n="tl_legend_full">ದಾಖಲಾದ ವರ್ಷ</span></span>
+          <span><i class="dot dot-gap"></i><span data-i18n="tl_legend_gap">ಆ ವರ್ಷ ಪ್ರಶಸ್ತಿ ನೀಡಿಲ್ಲ</span></span>
+          <span><i class="dot dot-thin"></i><span data-i18n="tl_legend_thin">ದಾಖಲೆ ಅಪೂರ್ಣ</span></span>
+        </div>
+      </section>
+    </div>
+
+    <div class="list-col">
+      <section class="card browse-card" id="browse-section">
+        <div class="browse-head">
+          <h2 data-i18n="browse_title">ಪುರಸ್ಕೃತರ ಪಟ್ಟಿ</h2>
+        </div>
+        <div class="controls">
+          <input type="search" id="search-input" data-i18n-placeholder="search_placeholder" placeholder="ಹೆಸರು, ಕ್ಷೇತ್ರ, ಅಥವಾ ಜಿಲ್ಲೆ ಹುಡುಕಿ…">
+          <select id="field-select" aria-label="Filter by field">
+            <option value="" data-i18n="filter_all_fields">ಎಲ್ಲಾ ಕ್ಷೇತ್ರಗಳು</option>
+          </select>
+          <select id="year-select" aria-label="Filter by year">
+            <option value="" data-i18n="filter_all_years">ಎಲ್ಲಾ ವರ್ಷಗಳು</option>
+          </select>
+          <button id="clear-filters" class="btn-ghost" data-i18n="filter_clear">ಅಳಿಸಿ</button>
+        </div>
+
+        <p class="result-count" id="result-count"></p>
+
+        <div class="recipient-list" id="recipient-list"></div>
+        <button id="load-more" class="btn-ghost load-more" data-i18n="load_more">ಇನ್ನಷ್ಟು ತೋರಿಸಿ</button>
+      </section>
+    </div>
+
+  </div>
+
+  <div id="admin-view">
+
+    <header class="admin-head">
+      <div>
+        <p class="eyebrow" data-i18n="admin_eyebrow">Admin · Data management</p>
+        <h1 data-i18n="admin_title">Prashasti Sanchaya — data admin</h1>
+        <p data-i18n="admin_sub">Tools for managing the award roll: data coverage, links, and documentation.</p>
+      </div>
+      <a href="#" class="btn-ghost admin-back" data-i18n="admin_back">← Back to site</a>
+    </header>
+
+    <nav class="admin-nav">
+      <a href="#admin/wikidata" data-i18n="admin_nav_wikidata">Wikidata gaps</a>
+      <a href="#admin/draft" data-i18n="admin_nav_draft">Draft generator</a>
+      <a href="#admin/provenance" data-i18n="admin_nav_provenance">Provenance</a>
+      <a href="#admin/representation" id="admin-nav-representation" data-i18n="admin_nav_representation">Representation</a>
+    </nav>
+
+    <section class="section wikidata-section" id="wikidata-section">
+      <div class="section-head">
+        <span class="section-icon" aria-hidden="true">⬡</span>
+        <div>
+          <h2 data-i18n="wd_title">Fill the gaps on Wikidata</h2>
+          <p id="wd-desc"></p>
+        </div>
+      </div>
+
+      <div class="wikidata-panel">
+        <div class="card wikidata-panel-col">
+          <h3 data-i18n="wd_col1_h">What this project can do</h3>
+          <ul class="check-list">
+            <li id="wd-col1-li1">Compiled a ready-to-run QuickStatements batch.</li>
+            <li><strong id="missing-count">—</strong> <span data-i18n="wd_missing_label">people missing that one statement</span></li>
+            <li data-i18n="wd_col1_li2">Left every statement unreviewed and unsent.</li>
+          </ul>
+          <a id="wd-download-btn" class="btn-primary" href="data/quickstatements_batch.tsv" download data-i18n="wd_download">Download the QuickStatements batch (.tsv)</a>
+        </div>
+        <div class="card wikidata-panel-col">
+          <h3 data-i18n="wd_col2_h">What this site can't do</h3>
+          <p data-i18n="wd_col2_desc">This project doesn't handle Wikidata credentials.</p>
           <ol class="step-list">
-            <li data-i18n="wp_step1">Log in to your own account at en.wikipedia.org.</li>
-            <li data-i18n="wp_step2">Open the Article Wizard and paste the draft in.</li>
-            <li data-i18n="wp_step3">Replace every [citation needed] with a real source.</li>
-            <li data-i18n="wp_step4">Submit via Articles for Creation.</li>
+            <li data-i18n="wd_step1">Log in to your own account at wikidata.org.</li>
+            <li data-i18n="wd_step2">Open quickstatements.toolforge.org and authorise via OAuth.</li>
+            <li data-i18n="wd_step3">Paste the batch, review, and run it.</li>
           </ol>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section provenance-section" id="provenance-section">
-    <div class="section-head">
-      <span class="section-icon" aria-hidden="true">◍</span>
-      <div>
-        <h2 data-i18n="prov_title">Where this data comes from</h2>
-        <p data-i18n="prov_sub">Gaps are labelled, not hidden.</p>
+    <section class="section wikipedia-draft-section" id="wikipedia-draft-section">
+      <div class="section-head">
+        <span class="section-icon" aria-hidden="true">✎</span>
+        <div>
+          <h2 data-i18n="wp_title">Draft a Wikipedia article</h2>
+          <p data-i18n="wp_desc">Pick a recipient without a Wikipedia article and generate a starting draft.</p>
+        </div>
       </div>
-    </div>
-    <div class="provenance-grid" id="provenance-grid"></div>
-  </section>
 
-  <section class="section" id="representation-section">
-    <div class="section-head">
-      <span class="section-icon" aria-hidden="true">◒</span>
-      <div>
-        <h2 data-i18n="rep_title">Representation &amp; data completeness</h2>
-        <p data-i18n="rep_sub">Who's missing from this list is as important as who's on it — and honestly, the biggest gap is in our data, not necessarily in who got the award.</p>
+      <div class="card wp-card">
+        <div class="wp-notability">
+          <strong data-i18n="wp_notability_h">Before you draft</strong>
+          <p data-i18n="wp_notability">Notability guidance.</p>
+        </div>
+
+        <div class="wp-picker">
+          <input type="text" id="wp-search" data-i18n-placeholder="wp_picker_placeholder" placeholder="Type a name without a Wikipedia article…" autocomplete="off">
+          <ul id="wp-suggestions" class="wp-suggestions"></ul>
+        </div>
+
+        <div id="wp-preview-wrap" class="wp-preview-wrap" style="display:none;">
+          <div class="wp-preview-head">
+            <span id="wp-selected-name" class="wp-selected-name"></span>
+            <div class="wp-preview-actions">
+              <button id="wp-generate-btn" class="btn-ghost" data-i18n="wp_generate">Generate draft</button>
+              <button id="wp-copy-btn" class="btn-ghost" data-i18n="wp_copy">Copy wikitext</button>
+              <button id="wp-download-btn" class="btn-ghost" data-i18n="wp_download">Download as .txt</button>
+            </div>
+          </div>
+          <textarea id="wp-preview" class="wp-preview" spellcheck="false"></textarea>
+
+          <div class="wp-steps">
+            <strong data-i18n="wp_steps_h">Submitting it</strong>
+            <ol class="step-list">
+              <li data-i18n="wp_step1">Log in to your own account at en.wikipedia.org.</li>
+              <li data-i18n="wp_step2">Open the Article Wizard and paste the draft in.</li>
+              <li data-i18n="wp_step3">Replace every [citation needed] with a real source.</li>
+              <li data-i18n="wp_step4">Submit via Articles for Creation.</li>
+            </ol>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card rep-card">
-      <h3 data-i18n="rep_completeness_h">How much of the roll is actually linked up</h3>
-      <div id="rep-completeness-bars" class="rep-bars"></div>
-      <p class="rep-note" data-i18n="rep_completeness_note">Every other stat on this page only describes the sliver of records with that data — treat percentages below as a lower bound on the real picture, not the full picture.</p>
-    </div>
+    <section class="section provenance-section" id="provenance-section">
+      <div class="section-head">
+        <span class="section-icon" aria-hidden="true">◍</span>
+        <div>
+          <h2 data-i18n="prov_title">Where this data comes from</h2>
+          <p data-i18n="prov_sub">Gaps are labelled, not hidden.</p>
+        </div>
+      </div>
+      <div class="provenance-grid" id="provenance-grid"></div>
+    </section>
 
-    <div class="card rep-card">
-      <h3 data-i18n="rep_gender_h">Gender, from Wikidata records</h3>
-      <p class="rep-note" id="rep-gender-summary"></p>
-      <div id="rep-gender-chart" class="rep-gender-chart"></div>
-      <p class="rep-note" data-i18n="rep_gender_caveat">Pulled from Wikidata's own sex-or-gender property for the recipients who have an item there — not inferred from names. Since Wikidata coverage itself likely skews toward better-documented recipients, this is probably a ceiling on the true share, not the true number.</p>
-    </div>
+    <section class="section" id="representation-section">
+      <div class="section-head">
+        <span class="section-icon" aria-hidden="true">◒</span>
+        <div>
+          <h2 data-i18n="rep_title">Representation &amp; data completeness</h2>
+          <p data-i18n="rep_sub">Who's missing from this list is as important as who's on it — and honestly, the biggest gap is in our data, not necessarily in who got the award.</p>
+        </div>
+      </div>
 
-    <div class="card rep-card">
-      <h3 data-i18n="rep_district_h">Districts</h3>
-      <p class="rep-note" id="rep-district-summary"></p>
-      <div id="rep-district-lowest" class="rep-lowest-list"></div>
-      <p class="rep-note" data-i18n="rep_district_caveat">All 31 districts appear somewhere in the sample, so nothing is at a confirmed zero — but with fewer than a quarter of records carrying a district at all, that's a statement about what we can see, not about what's true.</p>
-    </div>
+      <div class="card rep-card">
+        <h3 data-i18n="rep_completeness_h">How much of the roll is actually linked up</h3>
+        <div id="rep-completeness-bars" class="rep-bars"></div>
+        <p class="rep-note" data-i18n="rep_completeness_note">Every other stat on this page only describes the sliver of records with that data — treat percentages below as a lower bound on the real picture, not the full picture.</p>
+      </div>
 
-    <div class="card rep-card">
-      <h3 data-i18n="rep_enrich_h">What's sitting in Wikidata, ready to pull in</h3>
-      <div id="rep-enrich-bars" class="rep-bars"></div>
-      <p class="rep-note" data-i18n="rep_enrich_note">Percentages are of the recipients who have a Wikidata item, not the full roll. Caste, community, and religion aren't included here by design — Wikipedia/Wikidata rarely record them, and guessing from names is unreliable and not something this project will do. That data would need to come from the Karnataka government's own award records, if they record it.</p>
-    </div>
-  </section>
+      <div class="card rep-card">
+        <h3 data-i18n="rep_gender_h">Gender, from Wikidata records</h3>
+        <p class="rep-note" id="rep-gender-summary"></p>
+        <div id="rep-gender-chart" class="rep-gender-chart"></div>
+        <p class="rep-note" data-i18n="rep_gender_caveat">Pulled from Wikidata's own sex-or-gender property for the recipients who have an item there — not inferred from names. Since Wikidata coverage itself likely skews toward better-documented recipients, this is probably a ceiling on the true share, not the true number.</p>
+      </div>
+
+      <div class="card rep-card">
+        <h3 data-i18n="rep_district_h">Districts</h3>
+        <p class="rep-note" id="rep-district-summary"></p>
+        <div id="rep-district-lowest" class="rep-lowest-list"></div>
+        <p class="rep-note" data-i18n="rep_district_caveat">All 31 districts appear somewhere in the sample, so nothing is at a confirmed zero — but with fewer than a quarter of records carrying a district at all, that's a statement about what we can see, not about what's true.</p>
+      </div>
+
+      <div class="card rep-card">
+        <h3 data-i18n="rep_enrich_h">What's sitting in Wikidata, ready to pull in</h3>
+        <div id="rep-enrich-bars" class="rep-bars"></div>
+        <p class="rep-note" data-i18n="rep_enrich_note">Percentages are of the recipients who have a Wikidata item, not the full roll. Caste, community, and religion aren't included here by design — Wikipedia/Wikidata rarely record them, and guessing from names is unreliable and not something this project will do. That data would need to come from the Karnataka government's own award records, if they record it.</p>
+      </div>
+    </section>
+
+  </div>
 
 </main>
 

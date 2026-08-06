@@ -25,6 +25,10 @@
     const year = r.year;
     const field = r.field && r.field !== 'Unspecified' ? r.field : null;
     const district = districtPhrase(r.location);
+    const sourceUrl = r.source_url;
+    const citeRef = sourceUrl
+      ? `<ref>{{cite web |url=${sourceUrl} |title=Rajyotsava Award (${year}) |publisher=[[Wikipedia]] |access-date={{subst:CURRENTYEAR}}-{{subst:CURRENTMONTH}}-{{subst:CURRENTDAY2}}}}</ref>`
+      : '{{citation needed}}';
 
     const infoboxLines = [
       '{{Infobox person',
@@ -39,7 +43,7 @@
     const introBits = [];
     introBits.push(`'''${name}'''`);
     introBits.push(`is a recipient of the '''[[Rajyotsava Prashasti]]'''${district ? `, from ${district}, Karnataka` : ', from Karnataka'},`);
-    introBits.push(`honoured in ${year}${field ? ` for contributions to ${field.toLowerCase()}` : ''}.{{citation needed}}`);
+    introBits.push(`honoured in ${year}${field ? ` for contributions to ${field.toLowerCase()}` : ''}.${citeRef}`);
 
     const wikitext = [
       infoboxLines.join('\n'),
@@ -50,7 +54,7 @@
       '{{citation needed}}',
       '',
       '== Awards ==',
-      `* [[Rajyotsava Prashasti]] (${year})${field ? ` — for contributions to ${field.toLowerCase()}.` : '.'}{{citation needed}}`,
+      `* [[Rajyotsava Prashasti]] (${year})${field ? ` — for contributions to ${field.toLowerCase()}.` : '.'}`,
       '',
       '== References ==',
       '{{reflist}}',

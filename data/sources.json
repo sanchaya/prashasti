@@ -1,0 +1,382 @@
+{
+  "version": 1,
+  "sources": {
+    "wiki_raj_1966_1970": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_1966_1970",
+      "title": "List of Rajyotsava Award recipients (1966–1970)",
+      "url": "https://en.wikipedia.org/wiki/List_of_Rajyotsava_Award_recipients_%281966%E2%80%931970%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_1971_1976": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_1971_1976",
+      "title": "List of Rajyotsava Award recipients (1971–1976)",
+      "url": "https://en.wikipedia.org/wiki/List_of_Rajyotsava_Award_recipients_%281971%E2%80%931976%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_1981_1990": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_1981_1990",
+      "title": "List of Rajyotsava Award recipients (1981–1990)",
+      "url": "https://en.wikipedia.org/wiki/List_of_Rajyotsava_Award_recipients_%281981%E2%80%931990%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_1991_2000": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_1991_2000",
+      "title": "List of Rajyotsava Award recipients (1991–2000)",
+      "url": "https://en.wikipedia.org/wiki/List_of_Rajyotsava_Award_recipients_%281991%E2%80%932000%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2003": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2003",
+      "title": "Rajyotsava Awards (2003)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282003%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2004": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2004",
+      "title": "Rajyotsava Awards (2004)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282004%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2005": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2005",
+      "title": "Rajyotsava Awards (2005)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282005%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2006": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2006",
+      "title": "Rajyotsava Awards (2006)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282006%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2007": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2007",
+      "title": "Rajyotsava Awards (2007)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282007%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2008": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2008",
+      "title": "Rajyotsava Awards (2008)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282008%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2010": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2010",
+      "title": "Rajyotsava Awards (2010)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282010%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2011": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2011",
+      "title": "Rajyotsava Awards (2011)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282011%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2012": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2012",
+      "title": "Rajyotsava Awards (2012)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282012%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2013": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2013",
+      "title": "Rajyotsava Awards (2013)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282013%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2014": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2014",
+      "title": "Rajyotsava Awards (2014)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282014%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2015": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2015",
+      "title": "Rajyotsava Awards (2015)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282015%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2016": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2016",
+      "title": "Rajyotsava Awards (2016)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282016%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2019": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2019",
+      "title": "Rajyotsava Awards (2019)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282019%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2020": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2020",
+      "title": "Rajyotsava Awards (2020)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282020%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2021": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2021",
+      "title": "Rajyotsava Awards (2021)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282021%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_raj_2022": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_raj_2022",
+      "title": "Rajyotsava Awards (2022)",
+      "url": "https://en.wikipedia.org/wiki/Rajyotsava_Awards_%282022%29",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "news_hindu_2023": {
+      "publisher": "The Hindu",
+      "language": "en",
+      "kind": "news",
+      "license": null,
+      "id": "news_hindu_2023",
+      "title": "ISRO Chairman Somanath, golfer Aditi Ashok among 68 people, 10 organisations chosen for Rajyotsava Award",
+      "url": "https://www.thehindu.com/news/national/karnataka/s-somanath-aditi-ashok-huchchamma-chowdri-among-68-persons-10-organisations-to-get-rajyotsava-award/article67480584.ece",
+      "date": "2023-10-31",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "news_indianexpress_2025": {
+      "publisher": "The Indian Express",
+      "language": "en",
+      "kind": "news",
+      "license": null,
+      "id": "news_indianexpress_2025",
+      "title": "Karnataka Rajyotsava Award 2025: Actor Prakash Raj, former hockey captain Ashish Ballal, IAF officer Philip Rajkumar among 70 winners",
+      "url": "https://indianexpress.com/article/cities/bangalore/karnataka-rajyotsava-award-2025-prakash-raj-hockey-ashish-ballal-iaf-officer-philip-rajkumar-70-winners-10337583/",
+      "date": "2025-10-31",
+      "awards": [
+        "rajyotsava-prashasti"
+      ]
+    },
+    "wiki_karnataka_ratna": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_karnataka_ratna",
+      "title": "Karnataka Ratna",
+      "url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
+      "kn": "https://kn.wikipedia.org/wiki/%E0%B2%95%E0%B2%B0%E0%B3%8D%E0%B2%A8%E0%B2%BE%E0%B2%9F%E0%B2%95%20%E0%B2%B0%E0%B2%A4%E0%B3%8D%E0%B2%A8",
+      "awards": [
+        "karnataka-ratna"
+      ]
+    },
+    "wiki_jnanpith": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_jnanpith",
+      "title": "Jnanpith Award",
+      "url": "https://en.wikipedia.org/wiki/Jnanpith_Award",
+      "kn": "https://kn.wikipedia.org/wiki/%E0%B2%9C%E0%B3%8D%E0%B2%9E%E0%B2%BE%E0%B2%A8%E0%B2%AA%E0%B3%80%E0%B2%A0%20%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%B6%E0%B2%B8%E0%B3%8D%E0%B2%A4%E0%B2%BF",
+      "awards": [
+        "jnanpith-kannada"
+      ]
+    },
+    "wiki_bharat_ratna": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_bharat_ratna",
+      "title": "Bharat Ratna",
+      "url": "https://en.wikipedia.org/wiki/Bharat_Ratna",
+      "kn": "https://kn.wikipedia.org/wiki/%E0%B2%AD%E0%B2%BE%E0%B2%B0%E0%B2%A4%20%E0%B2%B0%E0%B2%A4%E0%B3%8D%E0%B2%A8",
+      "awards": [
+        "bharat-ratna-kannadiga"
+      ]
+    },
+    "wiki_pampa": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_pampa",
+      "title": "Pampa Award",
+      "url": "https://en.wikipedia.org/wiki/Pampa_Award",
+      "awards": [
+        "pampa-award"
+      ]
+    },
+    "wiki_attimabbe": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_attimabbe",
+      "title": "Daana Chintamani Attimabbe Award",
+      "url": "https://en.wikipedia.org/wiki/Daana_Chintamani_Attimabbe_Award",
+      "awards": [
+        "attimabbe-award"
+      ]
+    },
+    "wiki_nadoja": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_nadoja",
+      "title": "Nadoja Award",
+      "url": "https://en.wikipedia.org/wiki/Nadoja_Award",
+      "awards": [
+        "nadoja"
+      ]
+    },
+    "wiki_sahitya_akademi_kn": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_sahitya_akademi_kn",
+      "title": "List of Sahitya Akademi Award winners for Kannada",
+      "url": "https://en.wikipedia.org/wiki/List_of_Sahitya_Akademi_Award_winners_for_Kannada",
+      "awards": [
+        "sahitya-akademi-kannada"
+      ]
+    },
+    "wiki_nfa_best_kn": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_nfa_best_kn",
+      "title": "National Film Award for Best Kannada Feature Film",
+      "url": "https://en.wikipedia.org/wiki/National_Film_Award_for_Best_Kannada_Feature_Film#Winners",
+      "awards": [
+        "national-film-award-best-kannada-film"
+      ]
+    }
+  }
+}

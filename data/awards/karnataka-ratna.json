@@ -7,7 +7,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Kuvempu",
     "wikidata_qid": "Q3351108",
     "has_wikidata_statement": false,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 1992,
@@ -17,7 +19,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Dr._Rajkumar",
     "wikidata_qid": "Q984634",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 1999,
@@ -27,7 +31,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/S._Nijalingappa",
     "wikidata_qid": "Q554171",
     "has_wikidata_statement": false,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 2000,
@@ -37,7 +43,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/C._N._R._Rao",
     "wikidata_qid": "Q1248892",
     "has_wikidata_statement": false,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 2001,
@@ -47,7 +55,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Devi_Shetty",
     "wikidata_qid": "Q5266968",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 2005,
@@ -57,7 +67,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Bhimsen_Joshi",
     "wikidata_qid": "Q121077",
     "has_wikidata_statement": false,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 2007,
@@ -67,7 +79,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Shivakumara_Swami",
     "wikidata_qid": "Q3694565",
     "has_wikidata_statement": false,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 2008,
@@ -77,7 +91,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Javaregowda",
     "wikidata_qid": "Q13639132",
     "has_wikidata_statement": false,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 2009,
@@ -87,7 +103,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Veerendra_Heggade",
     "wikidata_qid": "Q4776900",
     "has_wikidata_statement": false,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 2022,
@@ -97,7 +115,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Puneeth_Rajkumar",
     "wikidata_qid": "Q3351697",
     "has_wikidata_statement": false,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   },
   {
     "year": 2025,
@@ -107,6 +127,8 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/B._Saroja_Devi",
     "wikidata_qid": "Q3521068",
     "has_wikidata_statement": false,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_karnataka_ratna",
+    "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna"
   }
 ]

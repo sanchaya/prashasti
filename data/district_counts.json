@@ -188,5 +188,49 @@
     }
   ],
   "outside_karnataka": 10,
-  "unmapped": 8
+  "unmapped": 8,
+  "other_locations": [
+    {
+      "location": "Mumbai",
+      "count": 5,
+      "lat": 19.076,
+      "lon": 72.878,
+      "type": "outside"
+    },
+    {
+      "location": "Chennai",
+      "count": 1,
+      "lat": 13.083,
+      "lon": 80.27,
+      "type": "outside"
+    },
+    {
+      "location": "Telangana",
+      "count": 1,
+      "lat": 17.385,
+      "lon": 78.487,
+      "type": "outside"
+    },
+    {
+      "location": "Dubai",
+      "count": 1,
+      "lat": 25.204,
+      "lon": 55.271,
+      "type": "outside"
+    },
+    {
+      "location": "Gulf Nation",
+      "count": 1,
+      "lat": 24.7,
+      "lon": 54.5,
+      "type": "outside"
+    },
+    {
+      "location": "Saudi Arabia",
+      "count": 1,
+      "lat": 24.713,
+      "lon": 46.675,
+      "type": "outside"
+    }
+  ]
 }

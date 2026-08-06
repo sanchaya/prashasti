@@ -7,7 +7,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Kuvempu",
     "wikidata_qid": "Q3351108",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_jnanpith",
+    "source_url": "https://en.wikipedia.org/wiki/Jnanpith_Award"
   },
   {
     "year": 1973,
@@ -17,7 +19,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/D._R._Bendre",
     "wikidata_qid": "Q3344900",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_jnanpith",
+    "source_url": "https://en.wikipedia.org/wiki/Jnanpith_Award"
   },
   {
     "year": 1977,
@@ -27,7 +31,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Shivaram_Karanth",
     "wikidata_qid": "Q3536450",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_jnanpith",
+    "source_url": "https://en.wikipedia.org/wiki/Jnanpith_Award"
   },
   {
     "year": 1983,
@@ -37,7 +43,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Masti_Venkatesha_Iyengar",
     "wikidata_qid": "Q3595269",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_jnanpith",
+    "source_url": "https://en.wikipedia.org/wiki/Jnanpith_Award"
   },
   {
     "year": 1990,
@@ -47,7 +55,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Vinayaka_Krishna_Gokak",
     "wikidata_qid": "Q3595870",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_jnanpith",
+    "source_url": "https://en.wikipedia.org/wiki/Jnanpith_Award"
   },
   {
     "year": 1994,
@@ -57,7 +67,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/U._R._Ananthamurthy",
     "wikidata_qid": "Q724089",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_jnanpith",
+    "source_url": "https://en.wikipedia.org/wiki/Jnanpith_Award"
   },
   {
     "year": 1998,
@@ -67,7 +79,9 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Girish_Karnad",
     "wikidata_qid": "Q3518444",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_jnanpith",
+    "source_url": "https://en.wikipedia.org/wiki/Jnanpith_Award"
   },
   {
     "year": 2010,
@@ -77,6 +91,8 @@
     "wikipedia_url": "https://en.wikipedia.org/wiki/Chandrashekhara_Kambara",
     "wikidata_qid": "Q3595865",
     "has_wikidata_statement": true,
-    "source": "en+kn Wikipedia, cross-checked"
+    "source": "en+kn Wikipedia, cross-checked",
+    "source_id": "wiki_jnanpith",
+    "source_url": "https://en.wikipedia.org/wiki/Jnanpith_Award"
   }
 ]
