@@ -4,7 +4,7 @@
 
 const DICT = {
   en: {
-    nav_browse: "Browse", nav_map: "Map", nav_wikidata: "Wikidata", nav_about: "About the data",
+    nav_browse: "Browse", nav_map: "Map", nav_wikidata: "Wikidata", nav_representation: "Representation", nav_about: "About the data",
     award_label: "Award", coming_soon: "Coming soon",
     eyebrow: "A Sanchaya project · Government of Karnataka's second-highest civilian honour",
     hero_h1: "Every Rajyotsava Prashasti recipient on record",
@@ -58,11 +58,26 @@ const DICT = {
     prov_title: "Where this data comes from — and where it thins out",
     prov_sub: "In the spirit of every Sanchaya project: gaps are labelled, not hidden.",
 
+    rep_title: "Representation & data completeness",
+    rep_sub: "Who's missing from this list is as important as who's on it — and honestly, the biggest gap is in our data, not necessarily in who got the award.",
+    rep_completeness_h: "How much of the roll is actually linked up",
+    rep_completeness_note: "Every other stat on this page only describes the sliver of records with that data — treat percentages below as a lower bound on the real picture, not the full picture.",
+    rep_field_bar: "Have a field/category", rep_location_bar: "Have a district", rep_wikipedia_bar: "Have a Wikipedia article", rep_wikidata_bar: "Have a Wikidata item",
+    rep_gender_h: "Gender, from Wikidata records",
+    rep_gender_summary: (female_pct, n, total_pct) => `Among the ${n} recipients with a Wikidata item (${total_pct}% of the full roll), women make up ${female_pct}%.`,
+    rep_gender_caveat: "Pulled from Wikidata's own sex-or-gender property for the recipients who have an item there — not inferred from names. Since Wikidata coverage itself likely skews toward better-documented recipients, this is probably a ceiling on the true share, not the true number.",
+    rep_district_h: "Districts",
+    rep_district_summary: (n, pct, represented, totalD) => `${n} recipients (${pct}% of the full roll) have a district on record, spread across all ${represented} of Karnataka's ${totalD} districts. Lowest counts in the sample:`,
+    rep_district_caveat: "All 31 districts appear somewhere in the sample, so nothing is at a confirmed zero — but with fewer than a quarter of records carrying a district at all, that's a statement about what we can see, not about what's true.",
+    rep_enrich_h: "What's sitting in Wikidata, ready to pull in",
+    rep_enrich_note: "Percentages are of the recipients who have a Wikidata item, not the full roll. Caste, community, and religion aren't included here by design — Wikipedia/Wikidata rarely record them, and guessing from names is unreliable and not something this project will do. That data would need to come from the Karnataka government's own award records, if they record it.",
+    rep_photo_bar: "Have a photo", rep_occupation_bar: "Have occupation detail", rep_birthplace_bar: "Have a birthplace", rep_deceased_bar: "Recorded as deceased",
+
     footer_tagline: "A Sanchaya project",
     footer_desc: "Built as a static, client-side site — no server, no tracking. Data licensed the same as its sources (Wikipedia text is CC BY-SA; treat this dataset the same way). Source: Wikipedia's Rajyotsava award-list pages and contemporaneous news coverage, cross-referenced with Wikidata.",
   },
   kn: {
-    nav_browse: "ಪಟ್ಟಿ", nav_map: "ನಕ್ಷೆ", nav_wikidata: "ವಿಕಿಡೇಟಾ", nav_about: "ದತ್ತಾಂಶದ ಬಗ್ಗೆ",
+    nav_browse: "ಪಟ್ಟಿ", nav_map: "ನಕ್ಷೆ", nav_wikidata: "ವಿಕಿಡೇಟಾ", nav_representation: "ಪ್ರಾತಿನಿಧ್ಯ", nav_about: "ದತ್ತಾಂಶದ ಬಗ್ಗೆ",
     award_label: "ಪ್ರಶಸ್ತಿ", coming_soon: "ಶೀಘ್ರದಲ್ಲಿ ಬರಲಿದೆ",
     eyebrow: "ಒಂದು ಸಂಚಯ ಯೋಜನೆ · ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಎರಡನೇ ಅತ್ಯುನ್ನತ ನಾಗರಿಕ ಗೌರವ",
     hero_h1: "ದಾಖಲಾಗಿರುವ ಪ್ರತಿಯೊಬ್ಬ ರಾಜ್ಯೋತ್ಸವ ಪ್ರಶಸ್ತಿ ಪುರಸ್ಕೃತ",
@@ -115,6 +130,21 @@ const DICT = {
 
     prov_title: "ಈ ದತ್ತಾಂಶ ಎಲ್ಲಿಂದ ಬಂತು — ಮತ್ತು ಎಲ್ಲಿ ಕಡಿಮೆಯಾಗುತ್ತದೆ",
     prov_sub: "ಪ್ರತಿ ಸಂಚಯ ಯೋಜನೆಯ ಆಶಯದಂತೆ: ಕೊರತೆಗಳನ್ನು ಗುರುತಿಸಲಾಗಿದೆ, ಮರೆಮಾಡಿಲ್ಲ.",
+
+    rep_title: "ಪ್ರಾತಿನಿಧ್ಯ ಮತ್ತು ದತ್ತಾಂಶ ಪೂರ್ಣತೆ",
+    rep_sub: "ಈ ಪಟ್ಟಿಯಲ್ಲಿ ಯಾರು ಇಲ್ಲ ಎಂಬುದು ಯಾರು ಇದ್ದಾರೆ ಎಂಬುದಷ್ಟೇ ಮುಖ್ಯ — ಮತ್ತು ನಿಜ ಹೇಳಬೇಕೆಂದರೆ, ದೊಡ್ಡ ಕೊರತೆ ನಮ್ಮ ದತ್ತಾಂಶದಲ್ಲಿದೆ, ಯಾರಿಗೆ ಪ್ರಶಸ್ತಿ ಸಿಕ್ಕಿದೆ ಎಂಬುದರಲ್ಲಲ್ಲ.",
+    rep_completeness_h: "ಪಟ್ಟಿಯ ಎಷ್ಟು ಭಾಗ ನಿಜವಾಗಿ ಜೋಡಿಸಲ್ಪಟ್ಟಿದೆ",
+    rep_completeness_note: "ಈ ಪುಟದ ಪ್ರತಿ ಇತರ ಅಂಕಿಅಂಶವೂ ಆ ದತ್ತಾಂಶ ಇರುವ ಸಣ್ಣ ಭಾಗವನ್ನು ಮಾತ್ರ ವಿವರಿಸುತ್ತದೆ — ಕೆಳಗಿನ ಶೇಕಡಾವಾರುಗಳನ್ನು ನಿಜವಾದ ಚಿತ್ರಣದ ಕನಿಷ್ಠ ಮಿತಿಯಾಗಿ ಪರಿಗಣಿಸಿ, ಪೂರ್ಣ ಚಿತ್ರಣವಾಗಿ ಅಲ್ಲ.",
+    rep_field_bar: "ಕ್ಷೇತ್ರ/ವರ್ಗ ಇರುವವರು", rep_location_bar: "ಜಿಲ್ಲೆ ಇರುವವರು", rep_wikipedia_bar: "ವಿಕಿಪೀಡಿಯಾ ಲೇಖನ ಇರುವವರು", rep_wikidata_bar: "ವಿಕಿಡೇಟಾ ಐಟಂ ಇರುವವರು",
+    rep_gender_h: "ಲಿಂಗ, ವಿಕಿಡೇಟಾ ದಾಖಲೆಗಳಿಂದ",
+    rep_gender_summary: (female_pct, n, total_pct) => `ವಿಕಿಡೇಟಾ ಐಟಂ ಇರುವ ${n} ಪುರಸ್ಕೃತರಲ್ಲಿ (ಪೂರ್ಣ ಪಟ್ಟಿಯ ${total_pct}%), ಮಹಿಳೆಯರು ${female_pct}% ಇದ್ದಾರೆ.`,
+    rep_gender_caveat: "ವಿಕಿಡೇಟಾ ಐಟಂ ಇರುವ ಪುರಸ್ಕೃತರಿಗೆ ವಿಕಿಡೇಟಾದ ಸ್ವಂತ ಲಿಂಗ ಗುಣಲಕ್ಷಣದಿಂದ ಪಡೆಯಲಾಗಿದೆ — ಹೆಸರುಗಳಿಂದ ಊಹಿಸಿಲ್ಲ. ವಿಕಿಡೇಟಾ ವ್ಯಾಪ್ತಿ ಸ್ವತಃ ಚೆನ್ನಾಗಿ ದಾಖಲಾದ ಪುರಸ್ಕೃತರತ್ತ ವಾಲಿರುವ ಕಾರಣ, ಇದು ಬಹುಶಃ ನಿಜವಾದ ಪಾಲಿನ ಗರಿಷ್ಠ ಮಿತಿ, ನಿಜವಾದ ಸಂಖ್ಯೆ ಅಲ್ಲ.",
+    rep_district_h: "ಜಿಲ್ಲೆಗಳು",
+    rep_district_summary: (n, pct, represented, totalD) => `${n} ಪುರಸ್ಕೃತರಿಗೆ (ಪೂರ್ಣ ಪಟ್ಟಿಯ ${pct}%) ಜಿಲ್ಲೆ ದಾಖಲಾಗಿದೆ, ಕರ್ನಾಟಕದ ${totalD} ಜಿಲ್ಲೆಗಳಲ್ಲಿ ಎಲ್ಲಾ ${represented} ಜಿಲ್ಲೆಗಳಲ್ಲಿ ಹರಡಿದೆ. ಮಾದರಿಯಲ್ಲಿ ಕಡಿಮೆ ಸಂಖ್ಯೆಗಳು:`,
+    rep_district_caveat: "ಎಲ್ಲಾ 31 ಜಿಲ್ಲೆಗಳು ಮಾದರಿಯಲ್ಲಿ ಎಲ್ಲೋ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತವೆ, ಆದ್ದರಿಂದ ಯಾವುದೂ ಖಚಿತ ಶೂನ್ಯದಲ್ಲಿಲ್ಲ — ಆದರೆ ಕಾಲುಭಾಗಕ್ಕಿಂತ ಕಡಿಮೆ ದಾಖಲೆಗಳಿಗೆ ಜಿಲ್ಲೆ ಇರುವುದರಿಂದ, ಇದು ನಮಗೆ ಏನು ಕಾಣುತ್ತದೆ ಎಂಬುದರ ಹೇಳಿಕೆ, ಏನು ನಿಜ ಎಂಬುದರದ್ದಲ್ಲ.",
+    rep_enrich_h: "ವಿಕಿಡೇಟಾದಲ್ಲಿ ಏನಿದೆ, ಸೇರಿಸಲು ಸಿದ್ಧ",
+    rep_enrich_note: "ಶೇಕಡಾವಾರುಗಳು ವಿಕಿಡೇಟಾ ಐಟಂ ಇರುವ ಪುರಸ್ಕೃತರದ್ದು, ಪೂರ್ಣ ಪಟ್ಟಿಯದ್ದಲ್ಲ. ಜಾತಿ, ಸಮುದಾಯ, ಮತ್ತು ಧರ್ಮವನ್ನು ಉದ್ದೇಶಪೂರ್ವಕವಾಗಿ ಇಲ್ಲಿ ಸೇರಿಸಿಲ್ಲ — ವಿಕಿಪೀಡಿಯಾ/ವಿಕಿಡೇಟಾ ಅಪರೂಪವಾಗಿ ಅವುಗಳನ್ನು ದಾಖಲಿಸುತ್ತವೆ, ಮತ್ತು ಹೆಸರುಗಳಿಂದ ಊಹಿಸುವುದು ವಿಶ್ವಾಸಾರ್ಹವಲ್ಲ ಮತ್ತು ಈ ಯೋಜನೆ ಅದನ್ನು ಮಾಡುವುದಿಲ್ಲ. ಆ ದತ್ತಾಂಶ ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಸ್ವಂತ ಪ್ರಶಸ್ತಿ ದಾಖಲೆಗಳಿಂದ ಬರಬೇಕು, ಅವು ದಾಖಲಿಸಿದ್ದರೆ.",
+    rep_photo_bar: "ಫೋಟೋ ಇರುವವರು", rep_occupation_bar: "ಉದ್ಯೋಗ ವಿವರ ಇರುವವರು", rep_birthplace_bar: "ಜನ್ಮಸ್ಥಳ ಇರುವವರು", rep_deceased_bar: "ನಿಧನರಾದವರು ಎಂದು ದಾಖಲಾಗಿರುವವರು",
 
     footer_tagline: "ಒಂದು ಸಂಚಯ ಯೋಜನೆ",
     footer_desc: "ಸ್ಥಿರ, ಕ್ಲೈಂಟ್-ಸೈಡ್ ಸೈಟ್ ಆಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ — ಯಾವುದೇ ಸರ್ವರ್ ಇಲ್ಲ, ಟ್ರ್ಯಾಕಿಂಗ್ ಇಲ್ಲ. ಡೇಟಾ ಅದರ ಮೂಲಗಳಂತೆಯೇ ಲೈಸೆನ್ಸ್ ಆಗಿದೆ (ವಿಕಿಪೀಡಿಯಾ ಪಠ್ಯ CC BY-SA; ಈ ಡೇಟಾಸೆಟ್ ಅನ್ನೂ ಹಾಗೆಯೇ ಪರಿಗಣಿಸಿ). ಮೂಲ: ವಿಕಿಪೀಡಿಯಾದ ರಾಜ್ಯೋತ್ಸವ ಪ್ರಶಸ್ತಿ ಪಟ್ಟಿ ಪುಟಗಳು ಮತ್ತು ಸಮಕಾಲೀನ ಸುದ್ದಿ ವರದಿ, ವಿಕಿಡೇಟಾದೊಂದಿಗೆ ಪರಿಶೀಲಿಸಲಾಗಿದೆ.",

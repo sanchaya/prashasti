@@ -38,6 +38,7 @@
         <a href="#browse-section" data-i18n="nav_browse">Browse</a>
         <a href="#map-section" data-i18n="nav_map">Map</a>
         <a href="#wikidata-section" data-i18n="nav_wikidata">Wikidata</a>
+        <a href="#representation-section" data-i18n="nav_representation">Representation</a>
         <a href="#provenance-section" data-i18n="nav_about">About the data</a>
       </div>
       <div class="lang-switch">
@@ -217,6 +218,42 @@
     <div class="provenance-grid" id="provenance-grid"></div>
   </section>
 
+  <section class="section" id="representation-section">
+    <div class="section-head">
+      <span class="section-icon" aria-hidden="true">◒</span>
+      <div>
+        <h2 data-i18n="rep_title">Representation &amp; data completeness</h2>
+        <p data-i18n="rep_sub">Who's missing from this list is as important as who's on it — and honestly, the biggest gap is in our data, not necessarily in who got the award.</p>
+      </div>
+    </div>
+
+    <div class="card rep-card">
+      <h3 data-i18n="rep_completeness_h">How much of the roll is actually linked up</h3>
+      <div id="rep-completeness-bars" class="rep-bars"></div>
+      <p class="rep-note" data-i18n="rep_completeness_note">Every other stat on this page only describes the sliver of records with that data — treat percentages below as a lower bound on the real picture, not the full picture.</p>
+    </div>
+
+    <div class="card rep-card">
+      <h3 data-i18n="rep_gender_h">Gender, from Wikidata records</h3>
+      <p class="rep-note" id="rep-gender-summary"></p>
+      <div id="rep-gender-chart" class="rep-gender-chart"></div>
+      <p class="rep-note" data-i18n="rep_gender_caveat">Pulled from Wikidata's own sex-or-gender property for the recipients who have an item there — not inferred from names. Since Wikidata coverage itself likely skews toward better-documented recipients, this is probably a ceiling on the true share, not the true number.</p>
+    </div>
+
+    <div class="card rep-card">
+      <h3 data-i18n="rep_district_h">Districts</h3>
+      <p class="rep-note" id="rep-district-summary"></p>
+      <div id="rep-district-lowest" class="rep-lowest-list"></div>
+      <p class="rep-note" data-i18n="rep_district_caveat">All 31 districts appear somewhere in the sample, so nothing is at a confirmed zero — but with fewer than a quarter of records carrying a district at all, that's a statement about what we can see, not about what's true.</p>
+    </div>
+
+    <div class="card rep-card">
+      <h3 data-i18n="rep_enrich_h">What's sitting in Wikidata, ready to pull in</h3>
+      <div id="rep-enrich-bars" class="rep-bars"></div>
+      <p class="rep-note" data-i18n="rep_enrich_note">Percentages are of the recipients who have a Wikidata item, not the full roll. Caste, community, and religion aren't included here by design — Wikipedia/Wikidata rarely record them, and guessing from names is unreliable and not something this project will do. That data would need to come from the Karnataka government's own award records, if they record it.</p>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -238,6 +275,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="js/map.js"></script>
 <script src="js/wikidraft.js"></script>
+<script src="js/representation.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

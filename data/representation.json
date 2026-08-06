@@ -1,0 +1,113 @@
+{
+  "completeness": {
+    "total": 2102,
+    "with_field_pct": 99.8,
+    "with_location_pct": 21.9,
+    "with_wikipedia_pct": 16.5,
+    "with_wikidata_pct": 14.9,
+    "with_location_n": 460,
+    "with_wikipedia_n": 346,
+    "with_wikidata_n": 314
+  },
+  "gender": {
+    "sample_size": 310,
+    "sample_pct_of_total": 14.7,
+    "male": 247,
+    "female": 61,
+    "trans_female": 2,
+    "other": 0,
+    "female_pct": 19.7,
+    "by_decade": [
+      {
+        "decade": "1960s",
+        "male": 4,
+        "female": 1,
+        "other": 0,
+        "total": 5,
+        "female_pct": 20.0
+      },
+      {
+        "decade": "1970s",
+        "male": 13,
+        "female": 1,
+        "other": 0,
+        "total": 14,
+        "female_pct": 7.1
+      },
+      {
+        "decade": "1980s",
+        "male": 95,
+        "female": 18,
+        "other": 0,
+        "total": 113,
+        "female_pct": 15.9
+      },
+      {
+        "decade": "1990s",
+        "male": 23,
+        "female": 11,
+        "other": 0,
+        "total": 34,
+        "female_pct": 32.4
+      },
+      {
+        "decade": "2000s",
+        "male": 58,
+        "female": 12,
+        "other": 0,
+        "total": 70,
+        "female_pct": 17.1
+      },
+      {
+        "decade": "2010s",
+        "male": 47,
+        "female": 18,
+        "other": 2,
+        "total": 67,
+        "female_pct": 26.9
+      },
+      {
+        "decade": "2020s",
+        "male": 7,
+        "female": 0,
+        "other": 0,
+        "total": 7,
+        "female_pct": 0.0
+      }
+    ]
+  },
+  "district": {
+    "sample_size": 452,
+    "sample_pct_of_total": 21.5,
+    "districts_represented": 31,
+    "districts_total": 31,
+    "lowest": [
+      {
+        "district": "Vijayanagara",
+        "count": 5
+      },
+      {
+        "district": "Ramanagara",
+        "count": 6
+      },
+      {
+        "district": "Yadgir",
+        "count": 7
+      },
+      {
+        "district": "Bengaluru Rural",
+        "count": 7
+      },
+      {
+        "district": "Chitradurga",
+        "count": 7
+      }
+    ]
+  },
+  "enrichment_potential": {
+    "photo_pct": 53.2,
+    "occupation_pct": 96.2,
+    "birthplace_pct": 71.0,
+    "deceased_pct": 52.9
+  }
+}
