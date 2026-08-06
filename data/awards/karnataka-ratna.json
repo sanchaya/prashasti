@@ -1,0 +1,112 @@
+[
+  {
+    "year": 1992,
+    "name": "Kuvempu",
+    "field": "Literature",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kuvempu",
+    "wikidata_qid": "Q3351108",
+    "has_wikidata_statement": false,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 1992,
+    "name": "Dr. Rajkumar",
+    "field": "Cinema",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dr._Rajkumar",
+    "wikidata_qid": "Q984634",
+    "has_wikidata_statement": true,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 1999,
+    "name": "S. Nijalingappa",
+    "field": "Politics",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/S._Nijalingappa",
+    "wikidata_qid": "Q554171",
+    "has_wikidata_statement": false,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 2000,
+    "name": "C. N. R. Rao",
+    "field": "Science",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/C._N._R._Rao",
+    "wikidata_qid": "Q1248892",
+    "has_wikidata_statement": false,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 2001,
+    "name": "Devi Shetty",
+    "field": "Medicine",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Devi_Shetty",
+    "wikidata_qid": "Q5266968",
+    "has_wikidata_statement": true,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 2005,
+    "name": "Bhimsen Joshi",
+    "field": "Music",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bhimsen_Joshi",
+    "wikidata_qid": "Q121077",
+    "has_wikidata_statement": false,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 2007,
+    "name": "Shivakumara Swami",
+    "field": "Social service",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Shivakumara_Swami",
+    "wikidata_qid": "Q3694565",
+    "has_wikidata_statement": false,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 2008,
+    "name": "Javare Gowda",
+    "field": "Education and literature",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Javaregowda",
+    "wikidata_qid": "Q13639132",
+    "has_wikidata_statement": false,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 2009,
+    "name": "Veerendra Heggade",
+    "field": "Social service",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Veerendra_Heggade",
+    "wikidata_qid": "Q4776900",
+    "has_wikidata_statement": false,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 2022,
+    "name": "Puneeth Rajkumar",
+    "field": "Cinema and social service",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Puneeth_Rajkumar",
+    "wikidata_qid": "Q3351697",
+    "has_wikidata_statement": false,
+    "source": "en+kn Wikipedia, cross-checked"
+  },
+  {
+    "year": 2025,
+    "name": "B. Saroja Devi",
+    "field": "Cinema",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/B._Saroja_Devi",
+    "wikidata_qid": "Q3521068",
+    "has_wikidata_statement": false,
+    "source": "en+kn Wikipedia, cross-checked"
+  }
+]

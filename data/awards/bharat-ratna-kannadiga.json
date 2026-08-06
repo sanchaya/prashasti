@@ -1,0 +1,32 @@
+[
+  {
+    "year": 1955,
+    "name": "Sir M. Visvesvaraya",
+    "field": "Engineering / Public service",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/M._Visvesvaraya",
+    "wikidata_qid": "Q741700",
+    "has_wikidata_statement": true,
+    "source": "en Wikipedia, cross-checked across sources"
+  },
+  {
+    "year": 2008,
+    "name": "Bhimsen Joshi",
+    "field": "Music",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bhimsen_Joshi",
+    "wikidata_qid": "Q121077",
+    "has_wikidata_statement": true,
+    "source": "en Wikipedia, cross-checked across sources"
+  },
+  {
+    "year": 2014,
+    "name": "C. N. R. Rao",
+    "field": "Science",
+    "location": null,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/C._N._R._Rao",
+    "wikidata_qid": "Q1248892",
+    "has_wikidata_statement": true,
+    "source": "en Wikipedia, cross-checked across sources"
+  }
+]

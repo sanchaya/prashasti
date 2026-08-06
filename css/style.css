@@ -167,6 +167,8 @@ code{
 .award-switcher-menu li.is-active-award{
   color: var(--text); font-weight: 600; background: var(--blue-tint);
 }
+.award-switcher-menu li.is-active-award:hover{ background: #d9ecfd; cursor: pointer; }
+.award-switcher-menu li.is-selected{ background: var(--blue); color: #fff; }
 .award-switcher-menu li.is-planned{ color: var(--text-faint); }
 .award-switcher-menu .award-soon{
   font-family: 'IBM Plex Mono', monospace;
