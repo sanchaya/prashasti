@@ -1,158 +1,233 @@
 # ಪ್ರಶಸ್ತಿ ಸಂಚಯ — Prashasti Sanchaya
 
-An explorable, static site cataloguing recipients of the **Karnataka Rajyotsava Award**
-(Rajyotsava Prashasti), the state's second-highest civilian honour, from its founding in
-1966 through 2025. Styled to sit alongside [fonts.sanchaya.net](https://fonts.sanchaya.net)
-as part of the same family of projects.
+A static, multi-award, bilingual (English/Kannada) site cataloguing recipients of Karnataka's
+and Kannadigas' major civilian and literary honours. Built to sit alongside
+[fonts.sanchaya.net](https://fonts.sanchaya.net) as part of the same family of Sanchaya
+projects — same visual language, same "gaps are labelled, not hidden" ethos.
 
-**Suggested subdomain: `prashasti.sanchaya.net`** — ಪ್ರಶಸ್ತಿ ("award/honour") leaves room to
-add other Karnataka state honours later under the same roof, the way `fonts.sanchaya.net`
-houses many font families. If you'd rather scope it to just this one award,
-`rajyotsava.sanchaya.net` is the more literal alternative — the branding in `index.html` and
-`css/style.css` doesn't hardcode either, so renaming is just a text change in the `<nav>` and
-`<footer>`.
+**Suggested subdomain: `prashasti.sanchaya.net`**. Branding isn't hardcoded to one award — see
+**Architecture** below — so this is genuinely a multi-award platform, not a single-purpose site
+that happens to have a dropdown.
 
-**[Live demo →](#)** *(update this link once you've deployed it — see below)*
+**Live demo:** *(fill in once deployed — see Publishing below)*
 
-## What's here
+---
 
-- `index.html` / `css/style.css` / `js/app.js` — a single-page, client-side site. No build
-  step, no framework, no server. Open `index.html` through a local server (or GitHub Pages)
-  and it fetches `data/rajyotsava_data.json` and renders everything in the browser.
-- `data/rajyotsava_data.json` — **2,102 recipient records** across 40 documented ceremony
-  years, each with `year`, `name`, `field`, `location` (where known), `wikipedia_url` (where
-  a matching Wikipedia article was found), and `wikidata_qid` (where that article resolves to
-  a Wikidata item).
-- `data/quickstatements_batch.tsv` — a ready-to-run [QuickStatements](https://quickstatements.toolforge.org/)
-  batch. See **Contributing to Wikidata** below.
-- `data/missing_award_list.json` — the same list in a more human-readable form, for review
-  before you submit anything.
-- `data/district_counts.json` — recipient counts by home district (442 of 2,102 records have
-  a district attached), used to drive the map.
+## Quick start
+
+```bash
+git clone https://github.com/sanchaya/prashasti.git
+cd prashasti
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+No build step, no framework, no `npm install`. Browsers block `fetch()` on `file://` URLs, so
+you do need *some* local server — `python3 -m http.server` is the simplest option, but any
+static file server works.
+
+---
+
+## Architecture
+
+```
+index.html              All markup, incl. data-i18n attributes for translation
+css/style.css            Single stylesheet, CSS custom properties for theming
+js/
+  i18n.js                 EN/KN dictionaries + Sanchi18n helper (translation, field-name lookup)
+  app.js                  Core app: award switching, filtering, browse list, timeline, provenance
+  map.js                  SanchiMap — Leaflet district map, award-aware (only loads if the
+                           award's registry entry has has_location_data: true)
+  representation.js       Renders the Representation & Completeness section (Rajyotsava-only
+                           right now — see has_representation_data below)
+  wikidraft.js             Wikipedia draft-stub generator for recipients with no article yet
+data/
+  awards.json              THE REGISTRY — one entry per award, active or planned (see below)
+  awards/<id>.json          One recipient array per active award
+  district_counts.json      District-level aggregation for the map (Rajyotsava only)
+  representation.json       Precomputed gender/completeness stats (Rajyotsava only)
+  quickstatements_*.tsv     Per-award Wikidata QuickStatements batches (generated, not live)
+  missing_award_list.json   Human-readable version of the Rajyotsava Wikidata gap list
+```
+
+Everything is client-side. `app.js` fetches `data/awards.json` on load, finds the first
+`"status": "active"` entry, loads its `data_file`, and renders. Switching awards in the nav
+re-fetches and re-renders in place — no page reload.
+
+### The award registry (`data/awards.json`)
+
+Each entry looks like this:
+
+```json
+{
+  "id": "karnataka-ratna",
+  "status": "active",
+  "data_file": "data/awards/karnataka-ratna.json",
+  "name_en": "Karnataka Ratna",
+  "name_kn": "ಕರ್ನಾಟಕ ರತ್ನ",
+  "desc_en": "Karnataka's highest civilian honour, conferred since 1992.",
+  "desc_kn": "...",
+  "recipients": 11,
+  "year_range": "1992–2025",
+  "level": "state",
+  "wikidata_qid": "Q3630879",
+  "has_location_data": false,
+  "has_representation_data": false,
+  "quickstatements_file": "data/quickstatements_karnataka_ratna.tsv",
+  "hero_en": "Karnataka's highest civilian honour — instituted in 1992...",
+  "hero_kn": "..."
+}
+```
+
+- `status: "active"` awards are clickable in the nav switcher and have a real `data_file`.
+- `status: "planned"` awards show up greyed-out with a "Coming soon" pill — this is
+  deliberate, to show the platform's shape before every award is built out. Currently planned:
+  Pampa Award, Attimabbe Award, Nadoja Award, Sahitya Akademi (Kannada), Kempegowda Award.
+- `has_location_data` / `has_representation_data` gate whether the Map and Representation
+  sections render at all for that award. Both are `true` only for Rajyotsava Prashasti right
+  now, since district and demographic data haven't been compiled for the smaller awards yet
+  (see **Extending this project** below for what that would take).
+- `hero_en` / `hero_kn` are the one-line blurbs under the H1 — falls back to `desc_en`/`desc_kn`
+  if absent. **Don't** let these fall back silently for a new award without checking the
+  copy makes sense; a generic description reading as a hero line can sound off.
+
+### Per-recipient schema (`data/awards/<id>.json`)
+
+```json
+{
+  "year": 1992,
+  "name": "Kuvempu",
+  "field": "Literature",
+  "location": null,
+  "wikipedia_url": "https://en.wikipedia.org/wiki/Kuvempu",
+  "wikidata_qid": "Q3351108",
+  "has_wikidata_statement": false,
+  "source": "en+kn Wikipedia, cross-checked"
+}
+```
+
+`has_wikidata_statement` is `true`/`false` if we checked Wikidata for the `award received`
+(P166) statement pointing at this specific award, or `null` if we never checked (this matters —
+`null` and `false` are rendered differently; don't conflate them when adding new data).
+
+---
+
+## The four datasets currently active
+
+| Award | Recipients | Years | Level | Notes |
+|---|---|---|---|---|
+| **Rajyotsava Prashasti** | 2,102 | 1966–2025 | State (2nd highest) | The original build. Has map + representation data. |
+| **Karnataka Ratna** | 11 | 1992–2025 | State (highest) | 9 of 11 are missing the Wikidata statement — genuinely under-documented. |
+| **Jnanpith Award (Kannada)** | 8 | 1967–2010 | National | Fully documented on Wikidata already — nothing to contribute there. |
+| **Bharat Ratna (Kannadigas)** | 3 | 1955–2014 | National (highest of all) | Same — fully documented. |
+
+All four were cross-checked against **both English and Kannada Wikipedia**. That cross-check
+caught a real discrepancy once: English Wikipedia's Karnataka Ratna table included a 2025
+addition (B. Saroja Devi) that Kannada Wikipedia's version didn't have yet. Neither language is
+reliably more current — check both, every time, for any award you add.
+
+---
+
+## Extending this project
+
+**To add a new award** (e.g. Pampa Award, already a "planned" placeholder):
+
+1. Research and pull recipient data — check both English and Kannada Wikipedia; cross-reference
+   Wikidata for QIDs and the `award received` (P166) statement, same pattern as the four above.
+2. Write `data/awards/<id>.json` in the schema above.
+3. Flip its `data/awards.json` entry from `"planned"` to `"active"`, add `data_file`, and fill
+   in `hero_en`/`hero_kn`.
+4. If you have district-level location data for it, add a `district_counts.json`-style file,
+   point to it via `district_data_file` in the registry entry, and set `has_location_data: true`.
+5. Representation/completeness analysis (gender via Wikidata P21, data completeness bars) is
+   currently hand-rolled per award in `representation.js` / `app.js` rather than fully
+   generalized — extending it to a second award means either generalizing that code path or
+   accepting it stays Rajyotsava-only for now. Worth doing properly rather than copy-pasting.
+6. If any recipients are missing the Wikidata statement, generate a `quickstatements_*.tsv`
+   batch (see the Wikidata section below) and reference it via `quickstatements_file`.
+
+**To add a new UI language:** add a language block to `DICT` in `js/i18n.js`, add a
+`<button class="lang-btn" data-lang="xx">` to the nav in `index.html`, and add `xx` field-name
+entries to `FIELD_KN`-style lookup if you want field categories translated too (otherwise they
+fall back to English, which is safe but not ideal).
+
+---
 
 ## The map
 
-"Where they're from" plots recipients by home district on a light Leaflet/OpenStreetMap base,
-with circle size proportional to count. District attribution only survives in Wikipedia's
-coverage of later award years, so the map represents 442 recipients — a sample, not the full
-roll — and says so on the page. District names were normalized from the source data's messy
-variants (Bangalore/Bengaluru, Kalaburgi/Kalaburagi, South Kannada/Dakshina Kannada, etc.); a
-handful of unusual entries (single-name locations like "Hanumanthapura") didn't match a
-district and were dropped rather than guessed at.
+"Where they're from" (Rajyotsava only, currently) plots recipients by home district on a light
+Leaflet/OpenStreetMap base, circle size proportional to count. District attribution only
+survives in Wikipedia's coverage of later award years, so the map represents 442 of 2,102
+recipients — a sample, not the full roll, and the page says so. District names were normalized
+from messy source variants (Bangalore/Bengaluru, Kalaburgi/Kalaburagi, South Kannada/Dakshina
+Kannada, etc.); a handful of unusual entries didn't match a known district and were dropped
+rather than guessed at.
 
-## Multi-award, multilingual, Wikipedia drafts
+## Representation & data completeness
 
-- **Multiple awards.** `data/awards.json` is a registry of awards; `data/awards/` holds one
-  JSON file per award. Right now only Rajyotsava Prashasti is `"status": "active"` — Kempegowda
-  Award, Nadoja, and BBMP's Kannada Rajyotsava are listed as `"status": "planned"` placeholders
-  in the nav's award switcher, just to show the shape. To add a real one: drop a new file in
-  `data/awards/`, add an entry to `data/awards.json` with `"status": "active"`, and extend
-  `app.js` so the switcher can actually load a different dataset on click (right now it only
-  displays the list — wiring up the switch is the next step once there's a second real dataset).
-- **English / Kannada toggle.** `js/i18n.js` holds both dictionaries and a `Sanchi18n` helper.
-  UI chrome (nav, hero, section text, buttons, legends, provenance notes) is fully translated.
-  Recipient *data* (names) stays as-is — these are proper nouns. Field categories (Literature,
-  Music, Folklore, etc.) are translated for the ~40 most common values via a lookup table in
-  `i18n.js`; less common or compound field labels (e.g. "Yakshagana/Theatre") fall back to
-  English rather than risk a bad machine translation. Add more entries to `FIELD_KN` in
-  `i18n.js` to extend coverage.
-- **Wikipedia draft generator.** The "Draft a Wikipedia article" section (`js/wikidraft.js`)
-  lets you search recipients who don't have a Wikipedia article yet, and generates a starting
-  wikitext stub (infobox, intro sentence, category tags, `{{citation needed}}` placeholders)
-  from the structured data we have. This is template-generated, not AI-written prose —
-  Wikipedia's own norms are wary of auto-generated biographies, so the draft is deliberately a
-  skeleton you flesh out with real sources, not a finished article. Every recipient row without
-  a Wikipedia badge has a "+ draft article" pill that jumps straight to this section with that
-  person pre-loaded.
+Also Rajyotsava-only right now. Covers: what fraction of records have a field/district/
+Wikipedia/Wikidata link at all (most of the roll doesn't — that's the headline finding, not any
+single demographic gap); gender by decade, pulled from Wikidata's P21 property for the 14.7% of
+recipients with a Wikidata item (**not** inferred from names — deliberately, since name-based
+inference is unreliable and risks encoding stereotypes); and what's sitting in Wikidata ready to
+pull in (photos, occupation, birthplace, death status). Caste, community, and religion are
+excluded by design — Wikipedia/Wikidata rarely record them, and this project won't guess.
 
-## Where the data comes from
+## Wikipedia draft generator
 
-The original request was to pull this from
-[kannadasiri.karnataka.gov.in](https://kannadasiri.karnataka.gov.in/203/rajyotsavsa), but that
-site disallows automated access (`robots.txt`). Instead, this project draws on **Wikipedia's**
-own record of the awards:
-
-- `List of Rajyotsava Award recipients (1966–1970)`, `(1971–1976)`, `(1981–1990)`,
-  `(1991–2000)` — Wikipedia's decade-by-decade tables.
-- `Rajyotsava Awards (2003)` through `(2022)` — Wikipedia's individual year pages, where they
-  exist.
-- 2023 and 2025 — no dedicated Wikipedia page exists yet, so these were sourced from
-  contemporaneous news coverage (Business Standard for 2023, Coastal Digest for 2025) and
-  cross-checked for internal consistency.
-
-**Known gaps**, documented in the site's own "Where this data comes from" section and worth
-repeating here:
-
-| Years | Status |
-|---|---|
-| 1977–1980, 2009 | The award was **not conferred** those years — not a data gap. |
-| 1992–2002 | Wikipedia's own record is thin to nonexistent for most of this stretch. |
-| 2017–2018 | No dedicated Wikipedia page was found. |
-| 2024 | 69 recipients were announced, but no clean structured English-language list was
-found in the time available — not yet included as individual rows. |
-
-If you want a *complete* register, the next step is either OCR'ing the Karnataka government's
-own archived PDF list (linked from several Wikipedia citations, via the Wayback Machine) or
-manually transcribing the 2024 winners list from Kannada-language coverage.
-
-## Running it locally
-
-Browsers block `fetch()` on `file://` URLs, so don't just double-click `index.html`. From this
-folder:
-
-```bash
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
-
-## Publishing to GitHub Pages
-
-This repo is ready to push as-is:
-
-```bash
-git init
-git add .
-git commit -m "Rajyotsava Prashasti ledger"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git push -u origin main
-```
-
-Then in the repo's **Settings → Pages**, set the source to the `main` branch, root folder. The
-site will be live at `https://<your-username>.github.io/<repo-name>/` a minute or two later.
+For recipients without a Wikipedia article — most of the Rajyotsava roll, none of the other
+three — `js/wikidraft.js` generates a wikitext stub (infobox, intro sentence, category tags,
+`{{citation needed}}` placeholders) from the structured data on file. This is template output,
+not AI-written biography prose: Wikipedia's own norms are wary of auto-generated bios, so the
+draft is deliberately a skeleton for a human to source and expand, not a finished article.
 
 ## Contributing to Wikidata
 
-Wikipedia already links 342 of these recipients to their own biography articles; 311 of those
-resolve to a Wikidata item. Of those 311, only 5 currently record *this specific award* as a
-fact (`award received (P166)` → `Rajyotsava Prashasti (Q7286513)`). The other **306** are
-missing that one statement — a small, well-defined, genuinely useful gap to fill.
+Each active award's Wikidata coverage is computed live in the browser from
+`has_wikidata_statement` in its data file, and the "Fill the gaps" section adapts its own
+copy accordingly — full credit-batch UI for awards with gaps, a plain "fully documented,
+nothing to add" message for ones without (Jnanpith, Bharat Ratna).
 
-`data/quickstatements_batch.tsv` contains one line per person:
+Where there's a QuickStatements batch (`data/quickstatements_batch.tsv` for Rajyotsava,
+`data/quickstatements_karnataka_ratna.tsv` for Karnataka Ratna), each line adds an
+`award received` (P166) statement with the award year as a qualifier:
 
 ```
 qid	P166	qal585
-Q3347911	P166	Q7286513	P585	+1966-11-01T00:00:00Z/11
+Q3351108	P166	Q3630879	P585	+1992-11-01T00:00:00Z/11
 ...
 ```
 
-Each line adds "award received: Rajyotsava Prashasti" with the award year as a qualifier. To
-submit it:
+To submit: log in to **your own** Wikidata account, open
+[quickstatements.toolforge.org](https://quickstatements.toolforge.org/), authorise it via
+Wikidata's own OAuth screen (your credentials never pass through this project or through
+Claude), paste the batch under "Import commands (v1)", review the preview, and run it.
 
-1. Log in to **your own** account at [wikidata.org](https://www.wikidata.org/wiki/Special:UserLogin)
-   (create one first if you don't have one — it's free and takes a minute).
-2. Open [quickstatements.toolforge.org](https://quickstatements.toolforge.org/) and authorise
-   it via Wikidata's OAuth screen. This is a one-click consent flow between your browser and
-   Wikidata directly — no password or token ever passes through this project or through
-   Claude.
-3. Paste the contents of `quickstatements_batch.tsv` into "Import commands (v1)", review the
-   preview QuickStatements generates, and run the batch.
+## Where the Rajyotsava data comes from
 
-Worth skimming `missing_award_list.json` first — it's the same 306 names in plain JSON, useful
-for spot-checking a few entries before you commit to the batch.
+The original request was to pull this from
+[kannadasiri.karnataka.gov.in](https://kannadasiri.karnataka.gov.in/203/rajyotsavsa), but that
+site disallows automated access (`robots.txt`). Built instead from Wikipedia's own record —
+decade list pages for 1966–2000, individual `Rajyotsava Awards (year)` pages for 2003–2022, and
+contemporaneous news coverage for 2023 and 2025 (no dedicated Wikipedia page exists yet for
+either). Full gap-by-gap breakdown is on the site itself, under "About the data," and worth
+reading before treating any year as complete — 1977–1980 and 2009 the award simply wasn't
+given; 1992–2002, 2017–2018, and 2024 are genuine documentation gaps, not zero-recipient years.
+
+## Publishing to GitHub Pages
+
+This repo is already git-initialized with a `CNAME` file for `prashasti.sanchaya.net`.
+
+```bash
+git push -u origin main
+```
+
+Then in **Settings → Pages**: source = `main` branch, root folder. Add the custom domain
+(reads from `CNAME` automatically) and enable "Enforce HTTPS" once GitHub's certificate is
+issued. DNS side: a `CNAME` record for `prashasti` pointing at the org's `github.io` target.
 
 ## License
 
-The recipient data is derived from Wikipedia text and is offered under the same terms,
+Recipient data is derived from Wikipedia text and offered under the same terms,
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Site code (HTML/CSS/JS) is
-public domain / do whatever you like with it.
+public domain — do whatever you like with it.
