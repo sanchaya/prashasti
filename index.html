@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಪ್ರಶಸ್ತಿ ಸಂಚಯ — Prashasti Sanchaya</title>
+<meta name="description" content="A Sanchaya project: Karnataka state award recipients, searchable and mapped, cross-referenced with Wikidata.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Kannada:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="brand" href="#">
+      <span class="brand-mark" aria-hidden="true">ಪ್ರ</span>
+      <span class="brand-text">
+        <span class="brand-kn">ಪ್ರಶಸ್ತಿ ಸಂಚಯ</span>
+        <span class="brand-en">Prashasti Sanchaya</span>
+      </span>
+    </a>
+
+    <div class="topnav-center">
+      <div class="award-switcher" id="award-switcher">
+        <button class="award-switcher-btn" id="award-switcher-btn" aria-haspopup="listbox" aria-expanded="false">
+          <span id="award-switcher-label">Rajyotsava Prashasti</span>
+          <span class="chev">▾</span>
+        </button>
+        <ul class="award-switcher-menu" id="award-switcher-menu" role="listbox"></ul>
+      </div>
+    </div>
+
+    <div class="topnav-right">
+      <div class="topnav-links">
+        <a href="#browse-section" data-i18n="nav_browse">Browse</a>
+        <a href="#map-section" data-i18n="nav_map">Map</a>
+        <a href="#wikidata-section" data-i18n="nav_wikidata">Wikidata</a>
+        <a href="#provenance-section" data-i18n="nav_about">About the data</a>
+      </div>
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="kn">ಕನ್ನಡ</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow" data-i18n="eyebrow">A Sanchaya project · Government of Karnataka's second-highest civilian honour</p>
+    <h1 data-i18n="hero_h1">Every Rajyotsava Prashasti recipient on record</h1>
+    <p class="hero-desc" data-i18n="hero_desc">Every November 1st since 1966, Karnataka has honoured its own.</p>
+
+    <div class="hero-search">
+      <input type="search" id="hero-search-input" data-i18n-placeholder="search_placeholder" placeholder="Search a name, field, or district…">
+      <button id="hero-search-btn" class="btn-primary" data-i18n="search_btn">Search</button>
+    </div>
+
+    <div class="stat-row" id="stat-row">
+      <div class="stat"><span class="stat-num" id="stat-total">—</span><span class="stat-label" data-i18n="stat_total">Recipients on record</span></div>
+      <div class="stat"><span class="stat-num" id="stat-years">—</span><span class="stat-label" data-i18n="stat_years">Ceremonies, 1966–2025</span></div>
+      <div class="stat"><span class="stat-num" id="stat-fields">—</span><span class="stat-label" data-i18n="stat_fields">Fields of achievement</span></div>
+      <div class="stat"><span class="stat-num" id="stat-wiki">—</span><span class="stat-label" data-i18n="stat_wiki">Have a Wikipedia article</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section" id="timeline-section">
+    <div class="section-head">
+      <span class="section-icon" aria-hidden="true">◐</span>
+      <div>
+        <h2 data-i18n="tl_title">Recipients by year</h2>
+        <p data-i18n="tl_desc">Each bar is one ceremony.</p>
+      </div>
+    </div>
+    <div class="card timeline-card">
+      <div class="timeline-wrap">
+        <div class="timeline" id="timeline" role="list" aria-label="Awards by year"></div>
+      </div>
+      <div class="timeline-legend">
+        <span><i class="dot dot-full"></i><span data-i18n="tl_legend_full">documented year</span></span>
+        <span><i class="dot dot-gap"></i><span data-i18n="tl_legend_gap">not awarded that year</span></span>
+        <span><i class="dot dot-thin"></i><span data-i18n="tl_legend_thin">record incomplete</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="map-section">
+    <div class="section-head">
+      <span class="section-icon" aria-hidden="true">◎</span>
+      <div>
+        <h2 data-i18n="map_title">Where they're from</h2>
+        <p><span data-i18n="map_desc_pre">This map reflects</span> <strong id="map-coverage-count">—</strong> <span data-i18n="map_desc_post">recipients with a known district.</span></p>
+      </div>
+    </div>
+    <div class="card map-card">
+      <div id="karnataka-map"></div>
+    </div>
+    <p class="map-footnote" id="map-footnote"></p>
+  </section>
+
+  <section class="section" id="browse-section">
+    <div class="section-head">
+      <span class="section-icon" aria-hidden="true">☰</span>
+      <div>
+        <h2 data-i18n="browse_title">Browse the roll</h2>
+        <p data-i18n="browse_desc">Search by name, field, or district.</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="search" id="search-input" data-i18n-placeholder="search_placeholder" placeholder="Search a name, field, or district…">
+      <select id="field-select" aria-label="Filter by field">
+        <option value="" data-i18n="filter_all_fields">All fields</option>
+      </select>
+      <select id="year-select" aria-label="Filter by year">
+        <option value="" data-i18n="filter_all_years">All years</option>
+      </select>
+      <button id="clear-filters" class="btn-ghost" data-i18n="filter_clear">Clear</button>
+    </div>
+
+    <p class="result-count" id="result-count"></p>
+
+    <div class="card list-card">
+      <div class="recipient-list" id="recipient-list"></div>
+    </div>
+    <button id="load-more" class="btn-ghost load-more" data-i18n="load_more">Show more</button>
+  </section>
+
+  <section class="section wikidata-section" id="wikidata-section">
+    <div class="section-head">
+      <span class="section-icon" aria-hidden="true">⬡</span>
+      <div>
+        <h2 data-i18n="wd_title">Fill the gaps on Wikidata</h2>
+        <p id="wd-desc"></p>
+      </div>
+    </div>
+
+    <div class="wikidata-panel">
+      <div class="card wikidata-panel-col">
+        <h3 data-i18n="wd_col1_h">What this project can do</h3>
+        <ul class="check-list">
+          <li data-i18n="wd_col1_li1">Compiled a ready-to-run QuickStatements batch.</li>
+          <li data-i18n="wd_col1_li2">Left every statement unreviewed and unsent.</li>
+        </ul>
+        <a class="btn-primary" href="data/quickstatements_batch.tsv" download data-i18n="wd_download">Download the QuickStatements batch (.tsv)</a>
+      </div>
+      <div class="card wikidata-panel-col">
+        <h3 data-i18n="wd_col2_h">What this site can't do</h3>
+        <p data-i18n="wd_col2_desc">This project doesn't handle Wikidata credentials.</p>
+        <ol class="step-list">
+          <li data-i18n="wd_step1">Log in to your own account at wikidata.org.</li>
+          <li data-i18n="wd_step2">Open quickstatements.toolforge.org and authorise via OAuth.</li>
+          <li data-i18n="wd_step3">Paste the batch, review, and run it.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wikipedia-draft-section" id="wikipedia-draft-section">
+    <div class="section-head">
+      <span class="section-icon" aria-hidden="true">✎</span>
+      <div>
+        <h2 data-i18n="wp_title">Draft a Wikipedia article</h2>
+        <p data-i18n="wp_desc">Pick a recipient without a Wikipedia article and generate a starting draft.</p>
+      </div>
+    </div>
+
+    <div class="card wp-card">
+      <div class="wp-notability">
+        <strong data-i18n="wp_notability_h">Before you draft</strong>
+        <p data-i18n="wp_notability">Notability guidance.</p>
+      </div>
+
+      <div class="wp-picker">
+        <input type="text" id="wp-search" data-i18n-placeholder="wp_picker_placeholder" placeholder="Type a name without a Wikipedia article…" autocomplete="off">
+        <ul id="wp-suggestions" class="wp-suggestions"></ul>
+      </div>
+
+      <div id="wp-preview-wrap" class="wp-preview-wrap" style="display:none;">
+        <div class="wp-preview-head">
+          <span id="wp-selected-name" class="wp-selected-name"></span>
+          <div class="wp-preview-actions">
+            <button id="wp-generate-btn" class="btn-ghost" data-i18n="wp_generate">Generate draft</button>
+            <button id="wp-copy-btn" class="btn-ghost" data-i18n="wp_copy">Copy wikitext</button>
+            <button id="wp-download-btn" class="btn-ghost" data-i18n="wp_download">Download as .txt</button>
+          </div>
+        </div>
+        <textarea id="wp-preview" class="wp-preview" spellcheck="false"></textarea>
+
+        <div class="wp-steps">
+          <strong data-i18n="wp_steps_h">Submitting it</strong>
+          <ol class="step-list">
+            <li data-i18n="wp_step1">Log in to your own account at en.wikipedia.org.</li>
+            <li data-i18n="wp_step2">Open the Article Wizard and paste the draft in.</li>
+            <li data-i18n="wp_step3">Replace every [citation needed] with a real source.</li>
+            <li data-i18n="wp_step4">Submit via Articles for Creation.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section provenance-section" id="provenance-section">
+    <div class="section-head">
+      <span class="section-icon" aria-hidden="true">◍</span>
+      <div>
+        <h2 data-i18n="prov_title">Where this data comes from</h2>
+        <p data-i18n="prov_sub">Gaps are labelled, not hidden.</p>
+      </div>
+    </div>
+    <div class="provenance-grid" id="provenance-grid"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-brand">
+      <span class="brand-kn">ಪ್ರಶಸ್ತಿ ಸಂಚಯ</span>
+      <span class="footer-tagline" data-i18n="footer_tagline">A Sanchaya project</span>
+    </div>
+    <p data-i18n="footer_desc">Built as a static, client-side site.</p>
+    <div class="footer-links">
+      <a href="https://sanchaya.org" target="_blank" rel="noopener">Sanchaya</a>
+      <a href="https://sanchifoundation.org" target="_blank" rel="noopener">Sanchi Foundation</a>
+      <a href="https://fonts.sanchaya.net" target="_blank" rel="noopener">Fonts Sanchaya</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/map.js"></script>
+<script src="js/wikidraft.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

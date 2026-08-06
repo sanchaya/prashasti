@@ -1,0 +1,192 @@
+{
+  "districts": [
+    {
+      "district": "Haveri",
+      "count": 12,
+      "lat": 14.79,
+      "lon": 75.4
+    },
+    {
+      "district": "Mandya",
+      "count": 12,
+      "lat": 12.52,
+      "lon": 76.9
+    },
+    {
+      "district": "Shivamogga",
+      "count": 17,
+      "lat": 13.93,
+      "lon": 75.57
+    },
+    {
+      "district": "Gadag",
+      "count": 12,
+      "lat": 15.43,
+      "lon": 75.63
+    },
+    {
+      "district": "Koppal",
+      "count": 13,
+      "lat": 15.35,
+      "lon": 76.15
+    },
+    {
+      "district": "Kalaburagi",
+      "count": 9,
+      "lat": 17.33,
+      "lon": 76.84
+    },
+    {
+      "district": "Mysuru",
+      "count": 32,
+      "lat": 12.3,
+      "lon": 76.65
+    },
+    {
+      "district": "Chikkaballapur",
+      "count": 8,
+      "lat": 13.43,
+      "lon": 77.73
+    },
+    {
+      "district": "Ballari",
+      "count": 11,
+      "lat": 15.14,
+      "lon": 76.92
+    },
+    {
+      "district": "Raichur",
+      "count": 11,
+      "lat": 16.2,
+      "lon": 77.35
+    },
+    {
+      "district": "Chikkamagaluru",
+      "count": 11,
+      "lat": 13.32,
+      "lon": 75.77
+    },
+    {
+      "district": "Bengaluru Urban",
+      "count": 71,
+      "lat": 12.97,
+      "lon": 77.59
+    },
+    {
+      "district": "Tumakuru",
+      "count": 12,
+      "lat": 13.34,
+      "lon": 77.1
+    },
+    {
+      "district": "Dharwad",
+      "count": 20,
+      "lat": 15.46,
+      "lon": 75.02
+    },
+    {
+      "district": "Udupi",
+      "count": 19,
+      "lat": 13.34,
+      "lon": 74.75
+    },
+    {
+      "district": "Hassan",
+      "count": 10,
+      "lat": 13.0,
+      "lon": 76.1
+    },
+    {
+      "district": "Davanagere",
+      "count": 11,
+      "lat": 14.46,
+      "lon": 75.92
+    },
+    {
+      "district": "Uttara Kannada",
+      "count": 10,
+      "lat": 14.8,
+      "lon": 74.7
+    },
+    {
+      "district": "Vijayapura",
+      "count": 14,
+      "lat": 16.83,
+      "lon": 75.71
+    },
+    {
+      "district": "Bagalkot",
+      "count": 19,
+      "lat": 16.18,
+      "lon": 75.7
+    },
+    {
+      "district": "Ramanagara",
+      "count": 6,
+      "lat": 12.72,
+      "lon": 77.28
+    },
+    {
+      "district": "Yadgir",
+      "count": 7,
+      "lat": 16.77,
+      "lon": 77.14
+    },
+    {
+      "district": "Kodagu",
+      "count": 8,
+      "lat": 12.42,
+      "lon": 75.74
+    },
+    {
+      "district": "Dakshina Kannada",
+      "count": 26,
+      "lat": 12.87,
+      "lon": 75.2
+    },
+    {
+      "district": "Belagavi",
+      "count": 15,
+      "lat": 15.85,
+      "lon": 74.5
+    },
+    {
+      "district": "Kolar",
+      "count": 11,
+      "lat": 13.14,
+      "lon": 78.13
+    },
+    {
+      "district": "Bidar",
+      "count": 8,
+      "lat": 17.91,
+      "lon": 77.52
+    },
+    {
+      "district": "Bengaluru Rural",
+      "count": 7,
+      "lat": 13.23,
+      "lon": 77.6
+    },
+    {
+      "district": "Chamarajanagar",
+      "count": 8,
+      "lat": 11.92,
+      "lon": 76.94
+    },
+    {
+      "district": "Chitradurga",
+      "count": 7,
+      "lat": 14.23,
+      "lon": 76.4
+    },
+    {
+      "district": "Vijayanagara",
+      "count": 5,
+      "lat": 15.28,
+      "lon": 76.46
+    }
+  ],
+  "outside_karnataka": 10,
+  "unmapped": 8
+}

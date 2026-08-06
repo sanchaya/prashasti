@@ -1,0 +1,47 @@
+[
+  {
+    "id": "rajyotsava-prashasti",
+    "status": "active",
+    "data_file": "data/awards/rajyotsava-prashasti.json",
+    "name_en": "Rajyotsava Prashasti",
+    "name_kn": "ರಾಜ್ಯೋತ್ಸವ ಪ್ರಶಸ್ತಿ",
+    "desc_en": "Karnataka's second-highest civilian honour, conferred since 1966.",
+    "desc_kn": "1966ರಿಂದ ನೀಡಲಾಗುತ್ತಿರುವ ಕರ್ನಾಟಕದ ಎರಡನೇ ಅತ್ಯುನ್ನತ ನಾಗರಿಕ ಗೌರವ.",
+    "recipients": 2102,
+    "year_range": "1966–2025",
+    "wikidata_qid": "Q7286513"
+  },
+  {
+    "id": "kempegowda-award",
+    "status": "planned",
+    "name_en": "Kempegowda Award",
+    "name_kn": "ಕೆಂಪೇಗೌಡ ಪ್ರಶಸ್ತಿ",
+    "desc_en": "Bruhat Bengaluru Mahanagara Palike's civic honour for contributions to Bengaluru.",
+    "desc_kn": "ಬೆಂಗಳೂರಿಗೆ ನೀಡಿದ ಕೊಡುಗೆಗಳಿಗಾಗಿ ಬಿಬಿಎಂಪಿ ನೀಡುವ ನಾಗರಿಕ ಗೌರವ.",
+    "recipients": null,
+    "year_range": null,
+    "wikidata_qid": null
+  },
+  {
+    "id": "nadoja",
+    "status": "planned",
+    "name_en": "Nadoja Award",
+    "name_kn": "ನಾಡೋಜ ಪ್ರಶಸ್ತಿ",
+    "desc_en": "Hampi Kannada University's highest honorary award.",
+    "desc_kn": "ಹಂಪಿ ಕನ್ನಡ ವಿಶ್ವವಿದ್ಯಾಲಯದ ಅತ್ಯುನ್ನತ ಗೌರವ ಪ್ರಶಸ್ತಿ.",
+    "recipients": null,
+    "year_range": null,
+    "wikidata_qid": null
+  },
+  {
+    "id": "kannada-rajyotsava-bbmp",
+    "status": "planned",
+    "name_en": "Kannada Rajyotsava (BBMP)",
+    "name_kn": "ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ (ಬಿಬಿಎಂಪಿ)",
+    "desc_en": "City-level Rajyotsava honour conferred by Bengaluru's civic body.",
+    "desc_kn": "ಬೆಂಗಳೂರು ನಗರ ಮಟ್ಟದಲ್ಲಿ ಬಿಬಿಎಂಪಿ ನೀಡುವ ರಾಜ್ಯೋತ್ಸವ ಗೌರವ.",
+    "recipients": null,
+    "year_range": null,
+    "wikidata_qid": null
+  }
+]
