@@ -292,50 +292,69 @@ code{
   max-width: 14ch;
 }
 
-/* ===== Award chips ===== */
-.chips-wrap{
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
+/* ===== Award sidebar ===== */
+.award-sidebar{
   position: sticky;
-  top: 0;
-  z-index: 30;
-  box-shadow: var(--shadow-sm);
-}
-.award-chips{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0.7rem 1.5rem;
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
+  top: 74px;
+  align-self: start;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
   scrollbar-width: thin;
 }
-.chip{
-  flex-shrink: 0;
-  border: 1px solid transparent;
+.sidebar-head{
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  padding: 0 0.7rem 0.4rem;
+  margin-bottom: 0.15rem;
+}
+.award-sidebar-inner{
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem 0;
+}
+.award-nav-item{
+  text-align: left;
+  border: none;
   background: transparent;
   color: var(--text-dim);
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.45rem 0.7rem;
   border-radius: 6px;
   cursor: pointer;
-  white-space: nowrap;
-  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  line-height: 1.35;
+  transition: color 0.15s ease, background 0.15s ease;
 }
-.chip:hover{ color: var(--blue-dark); background: var(--bg-alt); }
-.chip.is-active{
+.award-nav-item:hover{
+  color: var(--blue-dark);
+  background: var(--bg-alt);
+}
+.award-nav-item.is-active{
   background: var(--blue);
-  border-color: var(--blue);
+  color: #fff;
+  font-weight: 600;
+}
+.award-nav-item.is-active:hover{
+  background: var(--blue);
   color: #fff;
 }
+.award-nav-all{
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 0.5rem;
+}
 
-/* ===== Home grid: map + timeline beside the recipients list ===== */
+/* ===== Home grid: sidebar + map + recipients ===== */
 main{ max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .home-grid{
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 200px 1fr 420px;
   gap: 1.6rem;
   align-items: start;
   padding: 2.2rem 0 3rem;
@@ -980,6 +999,31 @@ select{ cursor: pointer; }
   .browse-card{ max-height: none; }
   .recipient-list{ overflow-y: visible; max-height: none; }
   .award-head{ flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+  .award-sidebar{
+    position: static;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .award-sidebar-inner{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+    padding: 0;
+  }
+  .award-nav-item{
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+  .award-nav-all{
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0.4rem;
+  }
 }
 
 @media (max-width: 720px){

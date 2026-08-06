@@ -23,7 +23,7 @@
     resultCount: document.getElementById('result-count'),
     list: document.getElementById('recipient-list'),
     loadMore: document.getElementById('load-more'),
-    chips: document.getElementById('award-chips'),
+    awardNav: document.getElementById('award-nav-list'),
     wdDesc: document.getElementById('wd-desc'),
     wdDownload: document.getElementById('wd-download-btn'),
     missingCount: document.getElementById('missing-count'),
@@ -89,7 +89,7 @@
 
   // ---------------- wiring ----------------
 
-  renderChips();
+  renderAwardNav();
   updateHeroText(state.selectedAward);
   wireStaticControls();
   renderInitial();
@@ -109,7 +109,7 @@
   }
 
   window.addEventListener('sanchaya:langchange', () => {
-    renderChips();
+    renderAwardNav();
     updateHeroText(state.selectedAward);
     renderFieldOptions(els.fieldSelect.value);
     renderProvenance();
@@ -147,23 +147,23 @@
   window.addEventListener('hashchange', applyRoute);
   applyRoute();
 
-  // ---------------- award chips ----------------
+  // ---------------- award sidebar nav ----------------
 
-  function renderChips(){
-    if(!els.chips) return;
-    els.chips.innerHTML = '';
-    const mk = (label, isActive, onClick) => {
+  function renderAwardNav(){
+    if(!els.awardNav) return;
+    els.awardNav.innerHTML = '';
+    const mk = (label, isActive, onClick, extraClass = '') => {
       const b = document.createElement('button');
       b.type = 'button';
-      b.className = 'chip' + (isActive ? ' is-active' : '');
+      b.className = 'award-nav-item' + (isActive ? ' is-active' : '') + (extraClass ? ' ' + extraClass : '');
       b.setAttribute('role', 'tab');
       b.setAttribute('aria-selected', isActive ? 'true' : 'false');
       b.textContent = label;
       b.addEventListener('click', onClick);
-      els.chips.appendChild(b);
+      els.awardNav.appendChild(b);
     };
 
-    mk(Sanchi18n.t('chip_all'), !state.selectedAward, () => selectAward(null));
+    mk(Sanchi18n.t('chip_all'), !state.selectedAward, () => selectAward(null), 'award-nav-all');
     state.registry.filter(a => a.status === 'active').forEach(a => {
       const isActive = state.selectedAward && a.id === state.selectedAward.id;
       mk(awardLabel(a), !!isActive, () => selectAward(a));
@@ -176,7 +176,7 @@
     state.search = ''; state.field = ''; state.year = ''; state.shown = PAGE_SIZE;
     if(els.searchInput) els.searchInput.value = '';
     els.fieldSelect.value = ''; els.yearSelect.value = '';
-    renderChips();
+    renderAwardNav();
     updateHeroText(award);
     renderStats();
     renderTimeline();
