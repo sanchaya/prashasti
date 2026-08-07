@@ -63,17 +63,23 @@ unverifiable grounds.
 **Kempegowda Award** has no path to a complete list: BBMP has never published a recipient
 archive online (its site only has a nomination form), English Wikipedia's table is broken (rows
 disconnected from their years), and Kannada Wikipedia's page is a near-empty stub. Rather than
-leave it fully empty, it now ships as a **deliberately partial dataset** — 7 individually-named
-recipients (G. Venkatasubbiah, 2014; Aditi Ashok, Nithin Kamath, and Jayadeva Institute of
-Cardiovascular Sciences & Research, 2023; Bangalore Science Forum, 2024; Mahesh Bhupathi and
-Sangeetha Katti, 2025) each confirmed against a working, fetchable news source (Deccan Herald,
-National College Jayanagar). Several other names surfaced during research — 2011, 2013, 2016,
-2018, 2019 batch "notable recipients" reported by an earlier research pass, including a claim
-that Ashish Kumar Ballal received the 2016 award — could not be re-confirmed against a working
-primary source on direct verification and were left out rather than included on secondhand
-attribution. The award's public-facing description on the site itself says so explicitly: every
-number on this award's page is a lower bound, not a count, since annual batches typically run
-30–500+ people.
+leave it fully empty, it ships as a **deliberately partial dataset**, expanded in a second pass
+after a Kannada-language primary source turned up a full year's named list. It now has 40
+records from six sources: G. Venkatasubbiah (2014, Deccan Herald); Aditi Ashok, Nithin Kamath,
+and Jayadeva Institute of Cardiovascular Sciences & Research (2023, Deccan Herald); Bangalore
+Science Forum (2024, National College Jayanagar); Mahesh Bhupathi and Sangeetha Katti (2025,
+Deccan Herald); the full named **2020 batch of 30 recipients** transliterated from a Kannada
+Oneindia article (ಬಿಬಿಎಂಪಿಯಿಂದ 30 ಮಂದಿ ಸಾಧಕರಿಗೆ ಕೆಂಪೇಗೌಡ ಪ್ರಶಸ್ತಿ ಪ್ರದಾನ) — the only year with a
+complete named roster found so far; and the three 2022 **Kempegowda International Award**
+recipients (S M Krishna, N R Narayana Murthy, Prakash Padukone, tagged `tier: "Kempegowda
+International Award"` since that's a distinct variant of the base civic award introduced that
+year). Several other names surfaced during research — 2011, 2013, 2016, 2018, 2019 batch
+"notable recipients" reported by an earlier research pass, including a claim that Ashish Kumar
+Ballal received the 2016 award — could not be confirmed against a working primary source on
+direct verification and were left out rather than included on secondhand attribution. The
+award's public-facing description on the site itself says so explicitly: even with one full
+year captured, every number on this award's page is a lower bound, not a count, since annual
+batches typically run 30–500+ people.
 
 ## Arjuna, Dronacharya, and Khel Ratna (Karnataka recipients)
 

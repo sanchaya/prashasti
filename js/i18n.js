@@ -241,6 +241,7 @@ const FIELD_KN = {
   "Engineering": "ಎಂಜಿನಿಯರಿಂಗ್", "Photography": "ಛಾಯಾಗ್ರಹಣ",
   "Sanskrit": "ಸಂಸ್ಕೃತ", "Gamaka": "ಗಮಕ", "Others": "ಇತರೆ", "Other fields": "ಇತರೆ ಕ್ಷೇತ್ರಗಳು",
   "Miscellaneous": "ವಿವಿಧ", "Unspecified": "ಸ್ಪಷ್ಟಪಡಿಸಿಲ್ಲ",
+  "Architecture": "ವಾಸ್ತು ಶಿಲ್ಪ", "Government Service": "ಸರ್ಕಾರಿ ಸೇವೆ",
   "Freedom Struggle": "ಸ್ವಾತಂತ್ರ್ಯ ಹೋರಾಟ", "Overseas Kannadiga": "ಅನಿವಾಸಿ ಕನ್ನಡಿಗ",
   "Institution": "ಸಂಸ್ಥೆ",
   "Cooperation": "ಸಹಕಾರ", "Music and Dance": "ಸಂಗೀತ ಮತ್ತು ನೃತ್ಯ",

@@ -605,6 +605,28 @@
       "awards": [
         "kempegowda-award"
       ]
+    },
+    "oneindia_kempegowda_2020": {
+      "publisher": "Kannada Oneindia",
+      "language": "kn",
+      "kind": "news",
+      "id": "oneindia_kempegowda_2020",
+      "title": "ಬಿಬಿಎಂಪಿಯಿಂದ 30 ಮಂದಿ ಸಾಧಕರಿಗೆ ಕೆಂಪೇಗೌಡ ಪ್ರಶಸ್ತಿ ಪ್ರದಾನ (30 achievers conferred Kempegowda Award 2020 by BBMP)",
+      "url": "https://kannada.oneindia.com/news/bengaluru/kempegowda-awards-2020-winners-list-201626.html",
+      "awards": [
+        "kempegowda-award"
+      ]
+    },
+    "dh_kempegowda_international_2022": {
+      "publisher": "Deccan Herald",
+      "language": "en",
+      "kind": "news",
+      "id": "dh_kempegowda_international_2022",
+      "title": "First Kempegowda International Awards to SM Krishna, Narayana Murthy and Prakash Padukone",
+      "url": "https://www.deccanherald.com/india/karnataka/first-kempegowda-international-awards-to-sm-krishna-narayana-murthy-and-prakash-padukone-1121281.html",
+      "awards": [
+        "kempegowda-award"
+      ]
     }
   }
 }
