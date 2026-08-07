@@ -1127,6 +1127,67 @@ select{ cursor: pointer; }
 .footer-links a{ font-size: 0.82rem; color: var(--text-dim); font-weight: 500; }
 .footer-links a:hover{ color: var(--blue-dark); }
 
+/* ===== Atlas mode: fit the explorer (map + nav + list) inside one viewport on
+   desktop, no whole-page scroll — this is a tool to browse, not an article to
+   read. Each column scrolls internally instead. ===== */
+@media (min-width: 1001px){
+  html, body{ height: 100%; }
+  body{ display: flex; flex-direction: column; overflow: hidden; }
+  body.admin-mode{ overflow: auto; height: auto; }
+  body.admin-mode main{ display: block; flex: none; overflow: visible; }
+
+  .topnav{ flex: 0 0 auto; }
+
+  .award-head{
+    flex: 0 0 auto;
+    padding: 0.7rem 1.5rem 0.4rem;
+    gap: 1.4rem;
+  }
+  .award-head .eyebrow{ margin-bottom: 0.2rem; font-size: 0.7rem; }
+  .award-head h1{ font-size: 1.3rem; max-width: 44ch; line-height: 1.15; }
+  .award-head .hero-desc{ display: none; }
+  .stat-row{ gap: 0.4rem 1.3rem; }
+  .stat-num{ font-size: 1.15rem; }
+  .stat-label{ font-size: 0.66rem; max-width: 11ch; }
+
+  main{ flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+  .home-grid{
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 0.7rem 0 0.8rem;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-items: stretch;
+  }
+  .award-nav{ flex: 0 0 auto; padding: 0.25rem 0.4rem 0.4rem; }
+
+  .map-col{ min-height: 0; gap: 0; }
+  .map-card{ height: 100%; min-height: 0; display: flex; flex-direction: column; padding: 1.1rem 1.1rem 0.7rem; }
+  .map-head{ margin-bottom: 0.6rem; flex: 0 0 auto; }
+  .map-frame{ flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .map-stage{ flex: 1 1 auto; min-height: 120px; }
+  #karnataka-map{ height: 100%; min-height: 0; }
+  .timeline-section{ flex: 0 0 auto; }
+  .timeline{ height: 84px; }
+  .timeline-legend{ margin-top: 0.6rem; padding-top: 0.6rem; font-size: 0.72rem; gap: 1rem; }
+  .map-footnote{ margin-top: 0.5rem; flex: 0 0 auto; }
+
+  .list-col{ position: static; height: 100%; min-height: 0; }
+  .browse-card{ height: 100%; max-height: none; padding: 1rem 1.1rem 1rem; }
+  .browse-head{ flex: 0 0 auto; }
+  .browse-head h2{ font-size: 1.05rem; }
+  .controls{ flex: 0 0 auto; gap: 0.45rem; margin-top: 0.3rem; }
+  .controls input[type="search"], .controls select, .controls .btn-ghost{
+    padding: 0.45rem 0.8rem;
+    font-size: 0.82rem;
+  }
+  .map-filter-chip{ margin-top: 0.5rem; padding: 0.3rem 0.6rem 0.3rem 0.8rem; font-size: 0.78rem; }
+  .result-count{ margin: 0.6rem 0 0.4rem; }
+  .recipient-list{ flex: 1 1 auto; min-height: 0; }
+  .load-more{ flex: 0 0 auto; margin-top: 0.6rem; }
+
+  .site-footer{ display: none; }
+}
+
 @media (max-width: 1000px){
   .home-grid{ grid-template-columns: 1fr; }
   .list-col{ position: static; }

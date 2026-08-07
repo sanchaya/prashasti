@@ -1,0 +1,55 @@
+{
+  "districts": [
+    {
+      "district": "Bengaluru Urban",
+      "count": 9,
+      "lat": 12.97,
+      "lon": 77.59
+    },
+    {
+      "district": "Bagalkot",
+      "count": 2,
+      "lat": 16.18,
+      "lon": 75.7
+    },
+    {
+      "district": "Shivamogga",
+      "count": 2,
+      "lat": 13.93,
+      "lon": 75.57
+    },
+    {
+      "district": "Mysuru",
+      "count": 2,
+      "lat": 12.3,
+      "lon": 76.65
+    },
+    {
+      "district": "Kalaburagi",
+      "count": 1,
+      "lat": 17.33,
+      "lon": 76.84
+    },
+    {
+      "district": "Chitradurga",
+      "count": 1,
+      "lat": 14.23,
+      "lon": 76.4
+    },
+    {
+      "district": "Ballari",
+      "count": 1,
+      "lat": 15.14,
+      "lon": 76.92
+    },
+    {
+      "district": "Davanagere",
+      "count": 1,
+      "lat": 14.46,
+      "lon": 75.92
+    }
+  ],
+  "outside_karnataka": 0,
+  "unmapped": 5,
+  "other_locations": []
+}

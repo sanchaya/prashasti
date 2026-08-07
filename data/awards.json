@@ -142,7 +142,9 @@
     "year_range": "2000–2018",
     "level": "state",
     "data_file": "data/awards/basava-puraskara-award.json",
-    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that.",
+    "has_location_data": true,
+    "district_data_file": "data/awards/basava-puraskara_district_counts.json"
   },
   {
     "id": "padma-awards-karnataka",
@@ -221,14 +223,16 @@
     "id": "jakanachari-award",
     "status": "active",
     "name_en": "Jakanachari Award",
-    "name_kn": "ಜಕನಾಚಾರಿ ಪ್ರಶಸ್ತಿ",
+    "name_kn": "ಜಕಣಾಚಾರಿ ಪ್ರಶಸ್ತಿ",
     "desc_en": "State honour for master craftsmen in sculpture and temple architecture.",
     "desc_kn": "ಶಿಲ್ಪಕಲೆ ಮತ್ತು ದೇವಾಲಯ ವಾಸ್ತುಶಿಲ್ಪದ ಕುಶಲ ಕರಕುಶಲಿಗಳಿಗೆ ರಾಜ್ಯ ಗೌರವ.",
     "recipients": 24,
     "year_range": "1995–2018",
     "level": "state",
     "data_file": "data/awards/jakanachari-award.json",
-    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that.",
+    "has_location_data": true,
+    "district_data_file": "data/awards/jakanachari-award_district_counts.json"
   },
   {
     "id": "varnashilpi-venkatappa-award",
@@ -241,7 +245,9 @@
     "year_range": "1994–2018",
     "level": "state",
     "data_file": "data/awards/varnashilpi-venkatappa-award.json",
-    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that.",
+    "has_location_data": true,
+    "district_data_file": "data/awards/varnashilpi-venkatappa-award_district_counts.json"
   },
   {
     "id": "t-chowdaiah-award",
@@ -254,7 +260,9 @@
     "year_range": "1995–2018",
     "level": "state",
     "data_file": "data/awards/t-chowdaiah-award.json",
-    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that.",
+    "has_location_data": true,
+    "district_data_file": "data/awards/t-chowdaiah-award_district_counts.json"
   },
   {
     "id": "kanakashree-award",
@@ -267,7 +275,9 @@
     "year_range": "2008–2019",
     "level": "state",
     "data_file": "data/awards/kanakashree-award.json",
-    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that.",
+    "has_location_data": true,
+    "district_data_file": "data/awards/kanakashree-award_district_counts.json"
   },
   {
     "id": "sangolli-rayanna-award",
@@ -280,7 +290,9 @@
     "year_range": "2003–2018",
     "level": "state",
     "data_file": "data/awards/sangolli-rayanna-award.json",
-    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that.",
+    "has_location_data": true,
+    "district_data_file": "data/awards/sangolli-rayanna-award_district_counts.json"
   },
   {
     "id": "akkamahadevi-award",
@@ -293,7 +305,9 @@
     "year_range": "2016–2018",
     "level": "state",
     "data_file": "data/awards/akkamahadevi-award.json",
-    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that.",
+    "has_location_data": true,
+    "district_data_file": "data/awards/akkamahadevi-award_district_counts.json"
   },
   {
     "id": "ganayogi-gawai-award",

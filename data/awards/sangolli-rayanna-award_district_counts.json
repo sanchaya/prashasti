@@ -1,0 +1,25 @@
+{
+  "districts": [
+    {
+      "district": "Bengaluru Urban",
+      "count": 2,
+      "lat": 12.97,
+      "lon": 77.59
+    },
+    {
+      "district": "Raichur",
+      "count": 1,
+      "lat": 16.2,
+      "lon": 77.35
+    },
+    {
+      "district": "Mandya",
+      "count": 1,
+      "lat": 12.52,
+      "lon": 76.9
+    }
+  ],
+  "outside_karnataka": 0,
+  "unmapped": 2,
+  "other_locations": []
+}

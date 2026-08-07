@@ -110,6 +110,13 @@ const SanchiMap = (function(){
       maxZoom: 12,
       minZoom: 6,
     }).addTo(map);
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { if(map) map.invalidateSize(); }, 120);
+    });
+
     return map;
   }
 

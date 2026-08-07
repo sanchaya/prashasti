@@ -1,0 +1,37 @@
+{
+  "districts": [
+    {
+      "district": "Bengaluru Urban",
+      "count": 4,
+      "lat": 12.97,
+      "lon": 77.59
+    },
+    {
+      "district": "Dharwad",
+      "count": 2,
+      "lat": 15.46,
+      "lon": 75.02
+    },
+    {
+      "district": "Gadag",
+      "count": 1,
+      "lat": 15.43,
+      "lon": 75.63
+    },
+    {
+      "district": "Mysuru",
+      "count": 1,
+      "lat": 12.3,
+      "lon": 76.65
+    },
+    {
+      "district": "Vijayapura",
+      "count": 1,
+      "lat": 16.83,
+      "lon": 75.71
+    }
+  ],
+  "outside_karnataka": 0,
+  "unmapped": 9,
+  "other_locations": []
+}

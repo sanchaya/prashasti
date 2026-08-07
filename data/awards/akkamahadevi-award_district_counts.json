@@ -1,0 +1,19 @@
+{
+  "districts": [
+    {
+      "district": "Shivamogga",
+      "count": 1,
+      "lat": 13.93,
+      "lon": 75.57
+    },
+    {
+      "district": "Bengaluru Urban",
+      "count": 1,
+      "lat": 12.97,
+      "lon": 77.59
+    }
+  ],
+  "outside_karnataka": 0,
+  "unmapped": 1,
+  "other_locations": []
+}
