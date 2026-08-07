@@ -22,7 +22,7 @@ you need *some* static file server — `python3 -m http.server` is the simplest,
 ```
 index.html               Markup + data-i18n translation attributes (award sidebar + map card with in-map timeline)
 sources.html             Public Sources & citations page (every source, grouped by award)
-css/style.css            Single stylesheet, CSS custom properties (responsive: sidebar scrolls horizontally ≤1000px)
+css/style.css            Single stylesheet, CSS custom properties (big-map 2-column grid; award nav collapses to single column ≤1000px)
 js/
   i18n.js                KN/EN dictionaries + Sanchi18n helper (translation, field labels)
   app.js                 Core app: award switching (sidebar), filtering, browse, in-map timeline, stats, #admin routing

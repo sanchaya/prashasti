@@ -111,17 +111,18 @@ fuller citation lives in one place instead of thousands of records:
 
 ## Sections
 
-The public page (`#public-view`) renders a three-column home grid: an award **sidebar** on the
-left, the **map card** (map + timeline inside it) in the centre, and the **browse/filter list**
-on the right. `app.js` `renderAwardNav()` draws every active award as a `.award-nav-item`
-button; desktop the sidebar is sticky and vertically scrollable, and below `1000px` it flattens
-to a horizontally scrollable row. The timeline lives *inside* the map card (`#timeline-section`
-is a child of `.map-frame`, wrapped with the map in a `.map-stage` container) so the map legend
-stays anchored to the map only, not the card. An `#admin` view (hash-routed via
-`body.admin-mode` in `app.js`) holds the Wikidata-gaps, Wikipedia draft generator, provenance,
-and representation sections. `applyRoute()` maps `#admin/wikidata|draft|provenance|representation`
-to the corresponding section ids. Content hidden from public view (`#admin-view`) is hidden the
-same way on every viewport — nothing public-only renders on mobile.
+The public page (`#public-view`) renders a two-column home grid: a full-width **award nav
+strip** across the top (a horizontally scrollable row of every active award), then a **big map
+card** (map + timeline inside it) on the left and the **browse/filter list** on the right.
+`app.js` `renderAwardNav()` draws every active award as a `.award-nav-item` button in that
+strip. The timeline lives *inside* the map card (`#timeline-section` is a child of `.map-frame`,
+wrapped with the map in a `.map-stage` container) so the map legend stays anchored to the map
+only, not the card. Below `1000px` the grid collapses to a single column (map, then list). An
+`#admin` view (hash-routed via `body.admin-mode` in `app.js`) holds the Wikidata-gaps,
+Wikipedia draft generator, provenance, and representation sections. `applyRoute()` maps
+`#admin/wikidata|draft|provenance|representation` to the corresponding section ids. Content
+hidden from public view (`#admin-view`) is hidden the same way on every viewport — nothing
+public-only renders on mobile.
 
 ## The map (`js/map.js`)
 
