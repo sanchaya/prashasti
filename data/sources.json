@@ -461,6 +461,18 @@
       "awards": [
         "sangolli-rayanna-award"
       ]
+    },
+    "wiki_ksfa_best_film": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_ksfa_best_film",
+      "title": "Karnataka State Film Award for First Best Film",
+      "url": "https://en.wikipedia.org/wiki/Karnataka_State_Film_Award_for_First_Best_Film",
+      "awards": [
+        "karnataka-state-film-awards"
+      ]
     }
   }
 }

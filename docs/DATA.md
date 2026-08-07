@@ -26,6 +26,16 @@ awards), since that would mean a manual disambiguation pass per name rather than
 left for a future pass. Ganayogi Panchakshari Gawai Award has no list on this portal or on
 Wikipedia and remains a placeholder.
 
+## Karnataka State Film Award (Best Film)
+
+The film award family has dozens of categories (Best Film, Director, Actor, Actress,
+Screenplay, Playback Singer, and more), each documented on its own Wikipedia page — too much
+scope for one add-on pass. Only **Best Film** is built (54 films, 1967-68 to 2021, from
+[the Best Film Wikipedia page](https://en.wikipedia.org/wiki/Karnataka_State_Film_Award_for_First_Best_Film)).
+Records follow the same shape as `national-film-award-best-kannada-film.json`: the film title
+is the record's `name`, with `director` and `producer` as separate fields, `field: "Cinema"`,
+and no `location` (film awards aren't tied to a district). The other categories remain unbuilt.
+
 ## Where the Rajyotsava data comes from
 
 The original request was to pull this from

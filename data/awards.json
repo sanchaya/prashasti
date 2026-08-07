@@ -210,14 +210,15 @@
   {
     "id": "karnataka-state-film-awards",
     "status": "active",
-    "name_en": "Karnataka State Film Awards",
-    "name_kn": "ಕರ್ನಾಟಕ ರಾಜ್ಯ ಚಲನಚಿತ್ರ ಪ್ರಶಸ್ತಿಗಳು",
-    "desc_en": "Kannada cinema's state honours — Best Film, Director, Actor, Actress, Screenplay, Playback Singer and more.",
-    "desc_kn": "ಕನ್ನಡ ಚಿತ್ರರಂಗದ ರಾಜ್ಯ ಪ್ರಶಸ್ತಿಗಳು — ಅತ್ಯುತ್ತಮ ಚಿತ್ರ, ನಿರ್ದೇಶಕ, ನಟ, ನಟಿ, ಚಿತ್ರಕಥೆ, ಹಿನ್ನೆಲೆ ಗಾಯಕ ಹೀಗೆ ಹಲವು ವಿಭಾಗಗಳು.",
-    "recipients": null,
-    "year_range": null,
+    "name_en": "Karnataka State Film Award (Best Film)",
+    "name_kn": "ಕರ್ನಾಟಕ ರಾಜ್ಯ ಚಲನಚಿತ್ರ ಪ್ರಶಸ್ತಿ (ಅತ್ಯುತ್ತಮ ಚಿತ್ರ)",
+    "desc_en": "Best Film category of Kannada cinema's state honours — one category out of the dozens this award family covers.",
+    "desc_kn": "ಕನ್ನಡ ಚಿತ್ರರಂಗದ ರಾಜ್ಯ ಪ್ರಶಸ್ತಿಗಳ ಅತ್ಯುತ್ತಮ ಚಿತ್ರ ವಿಭಾಗ — ಈ ಪ್ರಶಸ್ತಿ ಕುಟುಂಬದ ಹಲವು ವಿಭಾಗಗಳಲ್ಲಿ ಒಂದು.",
+    "recipients": 54,
+    "year_range": "1967–2021",
     "level": "state",
-    "notes": "~56 years, dozens of categories (Best Film, Director, Actor, Actress, Screenplay, Playback Singer…). Extensive, well-documented per-category Wikipedia pages. Big scope — more like a second whole project than an add-on."
+    "notes": "Only the Best Film category is built so far (54 winning films, 1967-68 to 2021, from Wikipedia's Karnataka State Film Award for First Best Film page). The award has dozens of other categories -- Director, Actor, Actress, Screenplay, Playback Singer, and more -- each documented on its own Wikipedia page; those remain unbuilt. Records here store the film as name, with director/producer as separate fields, following the same pattern as National Film Award for Best Kannada Feature Film.",
+    "data_file": "data/awards/karnataka-state-film-award-best-film.json"
   },
   {
     "id": "jakanachari-award",
