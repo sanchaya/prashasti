@@ -1,6 +1,7 @@
 (async function(){
   const RAJYOTSAVA_NOT_AWARDED = new Set([1977,1978,1979,1980,2009]);
   const PAGE_SIZE = 60;
+  const LEVEL_ORDER = ['state', 'national', 'city'];
 
   const state = {
     registry: [],           // award registry entries (awards.json)
@@ -147,12 +148,13 @@
   window.addEventListener('hashchange', applyRoute);
   applyRoute();
 
-  // ---------------- award sidebar nav ----------------
+  // ---------------- award nav (grouped dropdown menus) ----------------
 
   function renderAwardNav(){
     if(!els.awardNav) return;
     els.awardNav.innerHTML = '';
-    const mk = (label, isActive, onClick, extraClass = '') => {
+
+    const mkItem = (label, isActive, onClick, extraClass = '') => {
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'award-nav-item' + (isActive ? ' is-active' : '') + (extraClass ? ' ' + extraClass : '');
@@ -160,15 +162,92 @@
       b.setAttribute('aria-selected', isActive ? 'true' : 'false');
       b.textContent = label;
       b.addEventListener('click', onClick);
-      els.awardNav.appendChild(b);
+      return b;
     };
 
-    mk(Sanchi18n.t('chip_all'), !state.selectedAward, () => selectAward(null), 'award-nav-all');
-    state.registry.filter(a => a.status === 'active').forEach(a => {
-      const isActive = state.selectedAward && a.id === state.selectedAward.id;
-      mk(awardLabel(a), !!isActive, () => selectAward(a));
+    // "All awards" first, outside any group
+    const all = mkItem(Sanchi18n.t('chip_all'), !state.selectedAward, () => selectAward(null), 'award-nav-all');
+    els.awardNav.appendChild(all);
+
+    const active = state.registry.filter(a => a.status === 'active');
+    const groups = LEVEL_ORDER.map(level => ({
+      level,
+      awards: active.filter(a => a.level === level),
+    })).filter(g => g.awards.length > 0);
+
+    groups.forEach(g => {
+      const group = document.createElement('div');
+      group.className = 'award-nav-group';
+
+      const btn = mkItem(
+        Sanchi18n.t('nav_group_' + g.level),
+        !!state.selectedAward && state.selectedAward.level === g.level,
+        () => toggleDropdown(group),
+        'award-nav-group-btn'
+      );
+      const caret = document.createElement('span');
+      caret.className = 'nav-caret';
+      btn.appendChild(caret);
+      group.appendChild(btn);
+
+      const dd = document.createElement('div');
+      dd.className = 'award-nav-dropdown';
+      dd.setAttribute('role', 'menu');
+
+      g.awards.forEach(a => {
+        const isActive = state.selectedAward && a.id === state.selectedAward.id;
+        const item = mkItem('', !!isActive, () => selectAward(a));
+        item.setAttribute('role', 'menuitem');
+        item.textContent = awardLabel(a);
+
+        const hasData = !!a.data_file;
+        const meta = document.createElement('span');
+        meta.className = hasData ? 'nav-count' : 'nav-pill-empty';
+        meta.textContent = hasData
+          ? (a.recipients ? a.recipients.toLocaleString() : Sanchi18n.t('nav_empty'))
+          : Sanchi18n.t('coming_soon');
+        item.appendChild(meta);
+
+        if(isActive) group.classList.add('open');
+        dd.appendChild(item);
+      });
+
+      group.appendChild(dd);
+      els.awardNav.appendChild(group);
     });
   }
+
+  function toggleDropdown(group){
+    const wasOpen = group.classList.contains('open');
+    document.querySelectorAll('.award-nav-group').forEach(g => g.classList.remove('open'));
+    if(!wasOpen){
+      group.classList.add('open');
+      positionDropdown(group);
+    }
+  }
+
+  function positionDropdown(group){
+    const dd = group.querySelector('.award-nav-dropdown');
+    if(!dd) return;
+    const r = dd.getBoundingClientRect();
+    const rightOver = r.right - window.innerWidth;
+    if(rightOver > 0){
+      const shift = Math.max(0, rightOver);
+      const left = Math.max(8, r.left - shift);
+      dd.style.left = (left - r.left) + 'px';
+    }
+  }
+
+  document.addEventListener('click', e => {
+    if(!e.target.closest('.award-nav-group')) {
+      document.querySelectorAll('.award-nav-group').forEach(g => g.classList.remove('open'));
+    }
+  });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') {
+      document.querySelectorAll('.award-nav-group').forEach(g => g.classList.remove('open'));
+    }
+  });
 
   async function selectAward(award){
     if(state.selectedAward && award && state.selectedAward.id === award.id) return;

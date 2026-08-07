@@ -6,6 +6,7 @@ const DICT = {
   en: {
     nav_browse: "Browse", nav_map: "Map", nav_admin: "Admin",
     award_label: "Award", coming_soon: "Coming soon", chip_all: "All awards",
+    nav_group_state: "State", nav_group_national: "National", nav_group_city: "City", nav_empty: "no recipients",
     sidebar_title: "Awards",
     nav_back: "← Back to the roll", nav_sources: "Sources & citations",
     admin_eyebrow: "Admin · Data management",
@@ -107,6 +108,7 @@ const DICT = {
   kn: {
     nav_browse: "ಪಟ್ಟಿ", nav_map: "ನಕ್ಷೆ", nav_admin: "ನಿರ್ವಹಣೆ",
     award_label: "ಪ್ರಶಸ್ತಿ", coming_soon: "ಶೀಘ್ರದಲ್ಲಿ ಬರಲಿದೆ", chip_all: "ಎಲ್ಲಾ ಪ್ರಶಸ್ತಿಗಳು",
+    nav_group_state: "ರಾಜ್ಯ", nav_group_national: "ರಾಷ್ಟ್ರೀಯ", nav_group_city: "ನಗರ", nav_empty: "ಫಲಾನುಭವಿಗಳಿಲ್ಲ",
     sidebar_title: "ಪ್ರಶಸ್ತಿಗಳು",
     nav_back: "← ಪಟ್ಟಿಗೆ ಹಿಂತಿರುಗಿ", nav_sources: "ಮೂಲಗಳು ಮತ್ತು ಉಲ್ಲೇಖಗಳು",
     admin_eyebrow: "ನಿರ್ವಹಣೆ · ದತ್ತಾಂಶ ನಿರ್ವಹಣೆ",
