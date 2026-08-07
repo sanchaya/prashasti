@@ -301,7 +301,7 @@
         els.heroH1.textContent = lang === 'kn' ? `${name} ಪುರಸ್ಕೃತ` : `${name} recipients`;
       } else {
         els.heroH1.textContent = lang === 'kn'
-          ? 'ದಾಖಲಾಗಿರುವ ಪ್ರತಿಯೊಬ್ಬ ಪುರಸ್ಕೃತ'
+          ? 'ದಾಖಲಾಗಿರುವ ಪ್ರಶಸ್ತಿ ಪುರಸ್ಕೃತರು'
           : 'Every recipient on record';
       }
     }
