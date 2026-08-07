@@ -10,7 +10,6 @@ const SanchiMap = (function(){
   let maxCount = 1;
   let districtLayers = {};
   let markersByKey = {};
-  let highlightTimer = null;
   let selectHandler = null;
   let selectedKey = null;
 
@@ -58,14 +57,20 @@ const SanchiMap = (function(){
     return key;
   }
 
-  function districtKeyFor(raw){
+  // Pure — resolves a raw location string to a canonical district key against
+  // an arbitrary set of valid keys. No dependency on the map/boundaries being
+  // loaded, so callers elsewhere (e.g. app.js stats) can use it immediately.
+  function resolveDistrictKey(raw, validKeys){
     if(!raw) return null;
     const clean = String(raw).replace(/[\[\].]/g, '').trim();
-    if(DISTRICT_ALIAS[clean]) return normalize(DISTRICT_ALIAS[clean]);
-    const n = normalize(clean);
-    if(districtLayers[n]) return n;
-    const found = Object.keys(districtLayers).find(k => k.includes(n) || n.includes(k));
-    return found || null;
+    const n = DISTRICT_ALIAS[clean] ? normalize(DISTRICT_ALIAS[clean]) : normalize(clean);
+    if(validKeys.has(n)) return n;
+    for(const k of validKeys){ if(k.includes(n) || n.includes(k)) return k; }
+    return null;
+  }
+
+  function districtKeyFor(raw){
+    return resolveDistrictKey(raw, new Set(Object.keys(districtLayers)));
   }
 
   function colorFor(t){
@@ -264,15 +269,6 @@ const SanchiMap = (function(){
     el.appendChild(labelO);
   }
 
-  function clearHighlight(){
-    if(highlightTimer){ clearTimeout(highlightTimer); highlightTimer = null; }
-    Object.keys(districtLayers).forEach(k => {
-      const lyr = districtLayers[k];
-      const f = lyr.feature;
-      if(f) lyr.setStyle(districtStyle(f));
-    });
-  }
-
   // ---------------- click-to-select (district or outside-location) ----------------
   // Persists until cleared — distinct from the ephemeral 5s flash used by highlightLocation()
   // when a recipient name is clicked in the browse list.
@@ -340,43 +336,24 @@ const SanchiMap = (function(){
     return districtKeyFor(rawLocation) === selectedKey;
   }
 
-  // Highlight a district from a recipient's raw location string.
-  // Returns true if a district matched and was flashed.
+  // Select a district from a recipient's raw location string — same persistent
+  // selection a map click produces (bidirectional: name click <-> map click).
+  // Returns true if a district matched.
   function highlightLocation(rawLocation, label){
     if(!map || !districtLayer || !rawLocation) return false;
     const key = districtKeyFor(rawLocation);
     if(!key || !districtLayers[key]) return false;
 
-    clearHighlight();
-    const lyr = districtLayers[key];
-    const f = lyr.feature;
+    const f = districtLayers[key].feature;
     const districtName = f && f.properties && f.properties.district;
+    const count = countByDistrict[key] || 0;
+    selectKey(key, districtName || rawLocation, count);
 
-    lyr.setStyle({
-      fillColor: '#7a368d',
-      fillOpacity: 0.85,
-      color: '#7a368d',
-      weight: 3,
-      opacity: 0.95,
-    });
-    lyr.bringToFront();
-    if(stateLayer) stateLayer.bringToFront();
-
-    if(districtName && map.getBounds){
-      map.flyToBounds(lyr.getBounds().pad(0.35), { maxZoom: 9, duration: 0.8 });
-    }
-
-    if(label){
+    if(label && districtLayers[key]){
       const tip = `<div class="district-tooltip"><strong>${escape(label)}</strong><br>${districtName ? escape(districtName) : ''}</div>`;
-      lyr.bindTooltip(tip, { direction: 'top', offset: [0, -14], sticky: false, opacity: 1 });
-      setTimeout(() => { try{ lyr.openTooltip(); }catch(e){} }, 900);
+      districtLayers[key].bindTooltip(tip, { direction: 'top', offset: [0, -14], sticky: false, opacity: 1 });
+      setTimeout(() => { try{ districtLayers[key].openTooltip(); }catch(e){} }, 900);
     }
-
-    highlightTimer = setTimeout(() => {
-      if(f) lyr.setStyle(districtStyle(f));
-      lyr.unbindTooltip();
-      highlightTimer = null;
-    }, 5000);
 
     return true;
   }
@@ -499,7 +476,7 @@ const SanchiMap = (function(){
     }, 50);
   }
 
-  return { load, refresh, highlightLocation, onSelect, clearSelection, matchesSelection };
+  return { load, refresh, highlightLocation, onSelect, clearSelection, matchesSelection, normalizeDistrictName: normalize, resolveDistrictKey };
 })();
 
 window.SanchiMap = SanchiMap;

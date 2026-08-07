@@ -216,19 +216,25 @@ const DICT = {
 // Compact field-category dictionary (top ~40 fields cover >95% of records).
 // Anything not listed here just displays in English — no silent mistranslation.
 const FIELD_KN = {
-  "Social Work": "ಸಮಾಜ ಸೇವೆ", "Social Service": "ಸಮಾಜ ಸೇವೆ", "Social service": "ಸಮಾಜ ಸೇವೆ",
-  "Literature": "ಸಾಹಿತ್ಯ", "Music": "ಸಂಗೀತ", "Medicine": "ವೈದ್ಯಕೀಯ", "Medical": "ವೈದ್ಯಕೀಯ",
+  "Social Work": "ಸಮಾಜ ಸೇವೆ",
+  "Literature": "ಸಾಹಿತ್ಯ", "Music": "ಸಂಗೀತ", "Medicine": "ವೈದ್ಯಕೀಯ",
   "Folklore": "ಜಾನಪದ", "Theatre": "ರಂಗಭೂಮಿ", "Drama": "ನಾಟಕ", "Sports": "ಕ್ರೀಡೆ",
   "Education": "ಶಿಕ್ಷಣ", "Cinema": "ಚಲನಚಿತ್ರ", "Journalism": "ಪತ್ರಿಕೋದ್ಯಮ", "Media": "ಮಾಧ್ಯಮ",
   "Agriculture": "ಕೃಷಿ", "Yakshagana": "ಯಕ್ಷಗಾನ", "Fine Arts": "ಲಲಿತಕಲೆ", "Dance": "ನೃತ್ಯ",
   "Science": "ವಿಜ್ಞಾನ", "Sculpture": "ಶಿಲ್ಪಕಲೆ", "Painting": "ಚಿತ್ರಕಲೆ", "Research": "ಸಂಶೋಧನೆ",
-  "Environment": "ಪರಿಸರ", "Folk Art": "ಜಾನಪದ ಕಲೆ", "Folk art": "ಜಾನಪದ ಕಲೆ",
+  "Environment": "ಪರಿಸರ", "Folk Art": "ಜಾನಪದ ಕಲೆ",
   "Administration": "ಆಡಳಿತ", "Yoga": "ಯೋಗ", "Judiciary": "ನ್ಯಾಯಾಂಗ",
   "Engineering": "ಎಂಜಿನಿಯರಿಂಗ್", "Photography": "ಛಾಯಾಗ್ರಹಣ",
   "Sanskrit": "ಸಂಸ್ಕೃತ", "Gamaka": "ಗಮಕ", "Others": "ಇತರೆ", "Other fields": "ಇತರೆ ಕ್ಷೇತ್ರಗಳು",
   "Miscellaneous": "ವಿವಿಧ", "Unspecified": "ಸ್ಪಷ್ಟಪಡಿಸಿಲ್ಲ",
   "Freedom Struggle": "ಸ್ವಾತಂತ್ರ್ಯ ಹೋರಾಟ", "Overseas Kannadiga": "ಅನಿವಾಸಿ ಕನ್ನಡಿಗ",
   "Institution": "ಸಂಸ್ಥೆ",
+  "Cooperation": "ಸಹಕಾರ", "Music and Dance": "ಸಂಗೀತ ಮತ್ತು ನೃತ್ಯ",
+  "Science and Technology": "ವಿಜ್ಞಾನ ಮತ್ತು ತಂತ್ರಜ್ಞಾನ",
+  "Agriculture and Environment": "ಕೃಷಿ ಮತ್ತು ಪರಿಸರ",
+  "Film and Television": "ಚಲನಚಿತ್ರ ಮತ್ತು ದೂರದರ್ಶನ",
+  "Literary Criticism": "ಸಾಹಿತ್ಯ ವಿಮರ್ಶೆ", "Cultural Organization": "ಸಾಂಸ್ಕೃತಿಕ ಸಂಘಟನೆ",
+  "Short Stories": "ಸಣ್ಣ ಕಥೆಗಳು", "Poetry": "ಕಾವ್ಯ", "Novel": "ಕಾದಂಬರಿ",
 };
 
 const Sanchi18n = (function(){

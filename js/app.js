@@ -51,17 +51,30 @@
   }
 
   const active = state.registry;
-  await Promise.all(active.map(async a => {
-    try{
-      if(!a.data_file){ state.data[a.id] = []; return; }
-      const res = await fetch(a.data_file);
-      const records = await res.json();
-      records.forEach(r => { r._award = a; r._awardId = a.id; });
-      state.data[a.id] = records;
-    }catch(e){
-      state.data[a.id] = [];
-    }
-  }));
+  let karnatakaDistrictKeys = new Set();
+  await Promise.all([
+    ...active.map(async a => {
+      try{
+        if(!a.data_file){ state.data[a.id] = []; return; }
+        const res = await fetch(a.data_file);
+        const records = await res.json();
+        records.forEach(r => { r._award = a; r._awardId = a.id; });
+        state.data[a.id] = records;
+      }catch(e){
+        state.data[a.id] = [];
+      }
+    }),
+    (async () => {
+      // Canonical Karnataka district list, for counting real districts in stats
+      // (as opposed to distinct raw location strings, which double-count spelling
+      // variants like Bangalore/Bengaluru and include non-Karnataka locations).
+      try{
+        const res = await fetch('data/district_counts.json');
+        const payload = await res.json();
+        karnatakaDistrictKeys = new Set((payload.districts || []).map(d => window.SanchiMap.normalizeDistrictName(d.district)));
+      }catch(e){ /* stat falls back to 0 */ }
+    })(),
+  ]);
 
   const rajyotsavaAward = state.registry.find(a => a.id === 'rajyotsava-prashasti');
 
@@ -358,7 +371,12 @@
     const total = baseRecords().length;
     const years = new Set(baseRecords().map(r => r.year));
     const fields = new Set(baseRecords().map(r => r.field));
-    const districts = new Set(baseRecords().map(r => r.location).filter(Boolean));
+    const districts = new Set();
+    baseRecords().forEach(r => {
+      if(!r.location || !window.SanchiMap) return;
+      const key = window.SanchiMap.resolveDistrictKey(r.location, karnatakaDistrictKeys);
+      if(key) districts.add(key);
+    });
     animateNumber(els.statTotal, total);
     els.statYears.textContent = years.size;
     els.statFields.textContent = fields.size;
