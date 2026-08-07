@@ -1,0 +1,13 @@
+{
+  "districts": [
+    {
+      "district": "Bengaluru Urban",
+      "count": 7,
+      "lat": 12.97,
+      "lon": 77.59
+    }
+  ],
+  "outside_karnataka": 0,
+  "unmapped": 0,
+  "other_locations": []
+}

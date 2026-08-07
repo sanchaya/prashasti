@@ -124,12 +124,15 @@
     "status": "active",
     "name_en": "Kempegowda Award",
     "name_kn": "ಕೆಂಪೇಗೌಡ ಪ್ರಶಸ್ತಿ",
-    "desc_en": "Bruhat Bengaluru Mahanagara Palike's civic honour for contributions to Bengaluru.",
-    "desc_kn": "ಬೆಂಗಳೂರಿಗೆ ನೀಡಿದ ಕೊಡುಗೆಗಳಿಗಾಗಿ ಬಿಬಿಎಂಪಿ ನೀಡುವ ನಾಗರಿಕ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "desc_en": "Bruhat Bengaluru Mahanagara Palike's civic honour for contributions to Bengaluru. Annual batches run from a few dozen to 500+ people; only a handful of individually-named, independently verifiable recipients are listed here -- this is a small sample, not the roster.",
+    "desc_kn": "ಬೆಂಗಳೂರಿಗೆ ನೀಡಿದ ಕೊಡುಗೆಗಳಿಗಾಗಿ ಬಿಬಿಎಂಪಿ ನೀಡುವ ನಾಗರಿಕ ಗೌರವ. ವಾರ್ಷಿಕ ಪಟ್ಟಿ ಕೆಲವು ಡಜನ್‌ನಿಂದ 500ಕ್ಕೂ ಹೆಚ್ಚು ಜನರವರೆಗೆ ಇರುತ್ತದೆ -- ಇಲ್ಲಿ ಪಟ್ಟಿ ಮಾಡಿರುವುದು ಸ್ವತಂತ್ರವಾಗಿ ಪರಿಶೀಲಿಸಬಹುದಾದ ಕೆಲವೇ ಹೆಸರುಗಳು ಮಾತ್ರ -- ಇದು ಪೂರ್ಣ ಪಟ್ಟಿ ಅಲ್ಲ, ಒಂದು ಸಣ್ಣ ಮಾದರಿ.",
+    "recipients": 7,
+    "year_range": "2014–2025",
     "level": "city",
-    "notes": "Investigated in depth: no complete recipient roster exists anywhere online. BBMP has never published one (its website only has a nomination form); English Wikipedia's table is broken (rows disconnected from years); Kannada Wikipedia's page is a near-empty stub. News coverage only ever names 2-15 'notable' honorees out of each year's 30-500+ recipients -- there is no path to a genuinely complete list without BBMP itself publishing one. Left as a placeholder rather than shipping a partial roster that would misrepresent itself as complete."
+    "notes": "Deliberately partial. BBMP has never published a recipient archive online, English Wikipedia's table is broken (rows disconnected from years), and Kannada Wikipedia is a stub -- so there is no complete roster to build from. These 7 records are individually-named recipients confirmed via a direct, working source URL (Deccan Herald, National College Jayanagar), out of what are typically 30-500+ recipients per year. Several other names surfaced during research (2011, 2013, 2016, 2018, 2019 batches) but could not be confirmed against a working, fetchable primary source in this pass, so they were left out rather than included on secondhand attribution. Treat every number on this award's page as a lower bound, not a count.",
+    "data_file": "data/awards/kempegowda-award.json",
+    "has_location_data": true,
+    "district_data_file": "data/awards/kempegowda-award_district_counts.json"
   },
   {
     "id": "basava-puraskara",

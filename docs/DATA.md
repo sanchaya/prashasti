@@ -60,12 +60,20 @@ Wikipedia or karnataka.gov.in. A third, 2024–25 candidate name turned up only 
 snippet whose source page wouldn't render on fetch — left out rather than included on
 unverifiable grounds.
 
-**Kempegowda Award** stays a placeholder after real investigation: BBMP has never published a
-recipient archive online (its site only has a nomination form), English Wikipedia's table is
-broken (rows disconnected from their years), Kannada Wikipedia's page is a near-empty stub, and
-news coverage only ever names a handful of "notable" honorees out of each year's 30–500+
-recipients. There's no path to a genuinely complete list without BBMP publishing one itself.
-It is, as of this pass, the only one of the original six "hard" awards still unbuilt.
+**Kempegowda Award** has no path to a complete list: BBMP has never published a recipient
+archive online (its site only has a nomination form), English Wikipedia's table is broken (rows
+disconnected from their years), and Kannada Wikipedia's page is a near-empty stub. Rather than
+leave it fully empty, it now ships as a **deliberately partial dataset** — 7 individually-named
+recipients (G. Venkatasubbiah, 2014; Aditi Ashok, Nithin Kamath, and Jayadeva Institute of
+Cardiovascular Sciences & Research, 2023; Bangalore Science Forum, 2024; Mahesh Bhupathi and
+Sangeetha Katti, 2025) each confirmed against a working, fetchable news source (Deccan Herald,
+National College Jayanagar). Several other names surfaced during research — 2011, 2013, 2016,
+2018, 2019 batch "notable recipients" reported by an earlier research pass, including a claim
+that Ashish Kumar Ballal received the 2016 award — could not be re-confirmed against a working
+primary source on direct verification and were left out rather than included on secondhand
+attribution. The award's public-facing description on the site itself says so explicitly: every
+number on this award's page is a lower bound, not a count, since annual batches typically run
+30–500+ people.
 
 ## Arjuna, Dronacharya, and Khel Ratna (Karnataka recipients)
 

@@ -557,6 +557,54 @@
       "awards": [
         "arjuna-award-karnataka"
       ]
+    },
+    "dh_kempegowda_2014": {
+      "publisher": "Deccan Herald",
+      "language": "en",
+      "kind": "news",
+      "license": null,
+      "id": "dh_kempegowda_2014",
+      "title": "Kempegowda Award list swells to 136",
+      "url": "https://www.deccanherald.com/content/416209/kempegowda-award-list-swells-136.html",
+      "awards": [
+        "kempegowda-award"
+      ]
+    },
+    "dh_kempegowda_2023": {
+      "publisher": "Deccan Herald",
+      "language": "en",
+      "kind": "news",
+      "license": null,
+      "id": "dh_kempegowda_2023",
+      "title": "Golfer Aditi, Jayadeva hospital bag Kempegowda awards",
+      "url": "https://www.deccanherald.com/india/karnataka/golfer-aditi-jayadeva-hospital-bag-kempegowda-awards-1231487.html",
+      "awards": [
+        "kempegowda-award"
+      ]
+    },
+    "ncj_kempegowda_2024": {
+      "publisher": "National College Jayanagar",
+      "language": "en",
+      "kind": "news",
+      "license": null,
+      "id": "ncj_kempegowda_2024",
+      "title": "Nadaprabhu Kempegowda award given to Bangalore Science Forum",
+      "url": "https://ncjayanagar.com/nadaprabhu-kempegowda-award-were-given-to-bangalore-science-forum-a-unit-of-the-national-education-society-of-karnataka-r-at-a-celebration-held-on-june-27-2024-at-kanteerava-indoor-stadium/",
+      "awards": [
+        "kempegowda-award"
+      ]
+    },
+    "dh_kempegowda_2025": {
+      "publisher": "Deccan Herald",
+      "language": "en",
+      "kind": "news",
+      "license": null,
+      "id": "dh_kempegowda_2025",
+      "title": "Kempegowda Awards 2025: Mahesh Bhupathi, Sangeetha Katti Among 52 Honourees",
+      "url": "https://www.deccanherald.com/india/karnataka/bengaluru/mahesh-bhupathi-sangeetha-katti-chosen-for-kempegowda-award-3604736",
+      "awards": [
+        "kempegowda-award"
+      ]
     }
   }
 }

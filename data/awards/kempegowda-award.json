@@ -1,0 +1,86 @@
+[
+  {
+    "year": 2014,
+    "name": "G. Venkatasubbiah",
+    "field": "Literature",
+    "location": "Bengaluru",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/G._Venkatasubbiah",
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "Deccan Herald — \"Kempegowda Award list swells to 136\"",
+    "source_id": "dh_kempegowda_2014",
+    "source_url": "https://www.deccanherald.com/content/416209/kempegowda-award-list-swells-136.html"
+  },
+  {
+    "year": 2023,
+    "name": "Aditi Ashok",
+    "field": "Sports",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "Deccan Herald — \"Golfer Aditi, Jayadeva hospital bag Kempegowda awards\"",
+    "source_id": "dh_kempegowda_2023",
+    "source_url": "https://www.deccanherald.com/india/karnataka/golfer-aditi-jayadeva-hospital-bag-kempegowda-awards-1231487.html"
+  },
+  {
+    "year": 2023,
+    "name": "Nithin Kamath",
+    "field": "Trade and Industry",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "Deccan Herald — \"Golfer Aditi, Jayadeva hospital bag Kempegowda awards\"",
+    "source_id": "dh_kempegowda_2023",
+    "source_url": "https://www.deccanherald.com/india/karnataka/golfer-aditi-jayadeva-hospital-bag-kempegowda-awards-1231487.html"
+  },
+  {
+    "year": 2023,
+    "name": "Jayadeva Institute of Cardiovascular Sciences & Research",
+    "field": "Medicine",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "Deccan Herald — \"Golfer Aditi, Jayadeva hospital bag Kempegowda awards\"",
+    "source_id": "dh_kempegowda_2023",
+    "source_url": "https://www.deccanherald.com/india/karnataka/golfer-aditi-jayadeva-hospital-bag-kempegowda-awards-1231487.html"
+  },
+  {
+    "year": 2024,
+    "name": "Bangalore Science Forum",
+    "field": "Science and Technology",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "National College Jayanagar — \"Nadaprabhu Kempegowda award was given to Bangalore Science Forum...\"",
+    "source_id": "ncj_kempegowda_2024",
+    "source_url": "https://ncjayanagar.com/nadaprabhu-kempegowda-award-were-given-to-bangalore-science-forum-a-unit-of-the-national-education-society-of-karnataka-r-at-a-celebration-held-on-june-27-2024-at-kanteerava-indoor-stadium/"
+  },
+  {
+    "year": 2025,
+    "name": "Mahesh Bhupathi",
+    "field": "Sports",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "Deccan Herald — \"Kempegowda Awards 2025: Mahesh Bhupathi, Sangeetha Katti Among 52 Honourees\"",
+    "source_id": "dh_kempegowda_2025",
+    "source_url": "https://www.deccanherald.com/india/karnataka/bengaluru/mahesh-bhupathi-sangeetha-katti-chosen-for-kempegowda-award-3604736"
+  },
+  {
+    "year": 2025,
+    "name": "Sangeetha Katti",
+    "field": "Music",
+    "location": "Bengaluru",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sangeetha_Katti",
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "Deccan Herald — \"Kempegowda Awards 2025: Mahesh Bhupathi, Sangeetha Katti Among 52 Honourees\"",
+    "source_id": "dh_kempegowda_2025",
+    "source_url": "https://www.deccanherald.com/india/karnataka/bengaluru/mahesh-bhupathi-sangeetha-katti-chosen-for-kempegowda-award-3604736"
+  }
+]
