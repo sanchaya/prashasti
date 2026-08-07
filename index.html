@@ -59,12 +59,16 @@
     </aside>
 
     <div class="map-col">
-      <section class="card map-card" id="map-section">
+      <section class="card map-card view-fields" id="map-section">
         <div class="section-head map-head">
           <span class="section-icon" aria-hidden="true">◎</span>
           <div>
-            <h2 data-i18n="map_title">ಅವರು ಯಾವ ಊರಿನವರು</h2>
+            <h2 id="explorer-title" data-i18n="fields_title">ಅವರು ಯಾವ ಕ್ಷೇತ್ರದವರು</h2>
             <p class="map-award-note" id="map-award-note"></p>
+          </div>
+          <div class="view-tabs" id="view-tabs" role="tablist">
+            <button type="button" class="view-tab is-active" data-view="fields" role="tab" aria-selected="true" data-i18n="view_fields">ಕ್ಷೇತ್ರವಾರು</button>
+            <button type="button" class="view-tab" data-view="map" role="tab" aria-selected="false" data-i18n="view_map">ನಕ್ಷೆ</button>
           </div>
         </div>
         <div class="map-frame">
@@ -72,6 +76,7 @@
             <div id="karnataka-map"></div>
             <div class="map-legend" id="map-legend"></div>
           </div>
+          <div class="field-explorer" id="field-explorer"></div>
           <div class="timeline-section" id="timeline-section">
             <div class="timeline-wrap">
               <div class="timeline" id="timeline" role="list" aria-label="Awards by year"></div>

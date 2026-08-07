@@ -10,6 +10,7 @@
     filtered: [], shown: PAGE_SIZE,
     search: '', field: '', year: '',
     location: null,         // { key, label, count, isOther } from a map click, or null
+    view: 'fields',         // 'fields' (default, works for every award) or 'map'
   };
 
   const els = {
@@ -33,6 +34,10 @@
     mapAwardNote: document.getElementById('map-award-note'),
     repSection: document.getElementById('representation-section'),
     mapFilterChip: document.getElementById('map-filter-chip'),
+    viewTabs: document.getElementById('view-tabs'),
+    fieldExplorer: document.getElementById('field-explorer'),
+    mapCard: document.getElementById('map-section'),
+    explorerTitle: document.getElementById('explorer-title'),
     adminNavRepresentation: document.querySelector('a[href="#admin/representation"]'),
     heroEyebrow: document.querySelector('.eyebrow'),
     heroH1: document.getElementById('hero-h1'),
@@ -108,12 +113,14 @@
   renderAwardNav();
   updateHeroText(state.selectedAward);
   wireStaticControls();
+  wireViewTabs();
   renderInitial();
 
   async function renderInitial(){
     renderStats();
     renderTimeline();
     renderFieldOptions();
+    renderFieldExplorer();
     renderYearOptions();
     await loadMap();
     applyFilters();
@@ -128,6 +135,8 @@
     renderAwardNav();
     updateHeroText(state.selectedAward);
     renderFieldOptions(els.fieldSelect.value);
+    renderFieldExplorer();
+    if(els.explorerTitle) els.explorerTitle.textContent = Sanchi18n.t(state.view === 'map' ? 'map_title' : 'fields_title');
     renderProvenance();
     renderWikidataDesc();
     renderList();
@@ -276,6 +285,7 @@
     renderStats();
     renderTimeline();
     renderFieldOptions();
+    renderFieldExplorer();
     renderYearOptions();
     applyFilters();
     renderProvenance();
@@ -328,7 +338,7 @@
 
   function wireStaticControls(){
     els.searchInput.addEventListener('input', debounce(() => { state.search = els.searchInput.value.trim().toLowerCase(); state.shown = PAGE_SIZE; applyFilters(); }, 150));
-    els.fieldSelect.addEventListener('change', () => { state.field = els.fieldSelect.value; state.shown = PAGE_SIZE; applyFilters(); });
+    els.fieldSelect.addEventListener('change', () => { state.field = els.fieldSelect.value; state.shown = PAGE_SIZE; applyFilters(); renderFieldExplorer(); });
     els.yearSelect.addEventListener('change', () => { state.year = els.yearSelect.value; state.shown = PAGE_SIZE; applyFilters(); syncTimelineActive(); });
     els.clearBtn.addEventListener('click', () => {
       state.search=''; state.field=''; state.year=''; state.shown = PAGE_SIZE;
@@ -336,6 +346,7 @@
       if(window.SanchiMap) window.SanchiMap.clearSelection();
       else { state.location = null; applyFilters(); renderMapFilterChip(); }
       syncTimelineActive();
+      renderFieldExplorer();
     });
     els.loadMore.addEventListener('click', () => { state.shown += PAGE_SIZE; renderList(); });
 
@@ -454,6 +465,66 @@
       els.fieldSelect.appendChild(opt);
     }
     if(preserveValue) els.fieldSelect.value = preserveValue;
+  }
+
+  // Default explorer view — a clickable field cloud, sized by count. Unlike
+  // the map, this works for every award regardless of district coverage.
+  function renderFieldExplorer(){
+    if(!els.fieldExplorer) return;
+    const counts = {};
+    baseRecords().forEach(r => { counts[r.field] = (counts[r.field] || 0) + 1; });
+    const entries = Object.entries(counts).filter(([f]) => f).sort((a, b) => b[1] - a[1]);
+    els.fieldExplorer.innerHTML = '';
+    if(!entries.length){
+      const empty = document.createElement('p');
+      empty.className = 'field-explorer-empty';
+      empty.textContent = Sanchi18n.t('fields_explorer_empty');
+      els.fieldExplorer.appendChild(empty);
+      return;
+    }
+    const max = entries[0][1];
+    const frag = document.createDocumentFragment();
+    entries.forEach(([field, count]) => {
+      const h = fieldHue(field);
+      const scale = 0.82 + (count / max) * 0.85;
+      const pill = document.createElement('button');
+      pill.type = 'button';
+      pill.className = 'field-pill' + (state.field === field ? ' is-active' : '');
+      pill.style.setProperty('--h', h);
+      pill.style.fontSize = scale.toFixed(2) + 'rem';
+      pill.innerHTML = `${escapeHtml(Sanchi18n.fieldLabel(field))} <span class="fp-count">${count}</span>`;
+      pill.addEventListener('click', () => {
+        state.field = (state.field === field) ? '' : field;
+        state.shown = PAGE_SIZE;
+        if(els.fieldSelect) els.fieldSelect.value = state.field;
+        applyFilters();
+        renderFieldExplorer();
+      });
+      frag.appendChild(pill);
+    });
+    els.fieldExplorer.appendChild(frag);
+  }
+
+  function wireViewTabs(){
+    if(!els.viewTabs) return;
+    els.viewTabs.querySelectorAll('.view-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const view = btn.dataset.view;
+        if(state.view === view) return;
+        state.view = view;
+        els.viewTabs.querySelectorAll('.view-tab').forEach(b => {
+          const active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        if(els.mapCard){
+          els.mapCard.classList.toggle('view-map', view === 'map');
+          els.mapCard.classList.toggle('view-fields', view === 'fields');
+        }
+        if(els.explorerTitle) els.explorerTitle.textContent = Sanchi18n.t(view === 'map' ? 'map_title' : 'fields_title');
+        if(view === 'map' && window.SanchiMap) window.SanchiMap.refresh();
+      });
+    });
   }
 
   function renderYearOptions(){

@@ -30,6 +30,11 @@ const DICT = {
     tl_legend_full: "documented year", tl_legend_gap: "not awarded that year", tl_legend_thin: "award given, but the record is incomplete",
 
     map_title: "Which place they belong to",
+    fields_title: "Which field they belong to",
+    view_fields: "By field",
+    view_map: "Map",
+    fields_explorer_hint: "Every field, sized by how many recipients — click one to filter the list. Every award has this; not every award has district data, so the map is here if you want it.",
+    fields_explorer_empty: "No field data for this award yet.",
     map_award_note: "Rajyotsava Prashasti roll · 1966–2025",
     map_no_location: "This award's records don't include district attribution yet. The map shows only the Rajyotsava Prashasti roll — select it (or All awards) to see where recipients came from.",
     map_legend_title: "Recipients per district",
@@ -136,6 +141,11 @@ const DICT = {
     tl_legend_full: "ದಾಖಲಾದ ವರ್ಷ", tl_legend_gap: "ಆ ವರ್ಷ ಪ್ರಶಸ್ತಿ ನೀಡಿಲ್ಲ", tl_legend_thin: "ಪ್ರಶಸ್ತಿ ನೀಡಲಾಗಿದೆ, ಆದರೆ ದಾಖಲೆ ಅಪೂರ್ಣ",
 
     map_title: "ಅವರು ಯಾವ ಊರಿನವರು",
+    fields_title: "ಅವರು ಯಾವ ಕ್ಷೇತ್ರದವರು",
+    view_fields: "ಕ್ಷೇತ್ರವಾರು",
+    view_map: "ನಕ್ಷೆ",
+    fields_explorer_hint: "ಪ್ರತಿ ಕ್ಷೇತ್ರವೂ ಇಲ್ಲಿದೆ, ಪುರಸ್ಕೃತರ ಸಂಖ್ಯೆಗೆ ಅನುಗುಣವಾಗಿ ಗಾತ್ರ — ಪಟ್ಟಿ ಫಿಲ್ಟರ್ ಮಾಡಲು ಒಂದನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ. ಇದು ಎಲ್ಲಾ ಪ್ರಶಸ್ತಿಗಳಿಗೂ ಇದೆ; ಎಲ್ಲಾ ಪ್ರಶಸ್ತಿಗಳಿಗೆ ಜಿಲ್ಲಾ ಮಾಹಿತಿ ಇಲ್ಲದಿರುವುದರಿಂದ, ಬೇಕಿದ್ದವರಿಗೆ ನಕ್ಷೆ ಇಲ್ಲಿದೆ.",
+    fields_explorer_empty: "ಈ ಪ್ರಶಸ್ತಿಗೆ ಇನ್ನೂ ಕ್ಷೇತ್ರ ಮಾಹಿತಿ ಇಲ್ಲ.",
     map_award_note: "ರಾಜ್ಯೋತ್ಸವ ಪ್ರಶಸ್ತಿ ಪಟ್ಟಿ · 1966–2025",
     map_no_location: "ಈ ಪ್ರಶಸ್ತಿಯ ದಾಖಲೆಗಳಲ್ಲಿ ಜಿಲ್ಲಾ ವಿವರವನ್ನು ಇನ್ನೂ ಸೇರಿಸಿಲ್ಲ. ನಕ್ಷೆಯು ಕೇವಲ ರಾಜ್ಯೋತ್ಸವ ಪ್ರಶಸ್ತಿ ಪಟ್ಟಿಯನ್ನು ತೋರಿಸುತ್ತದೆ — ಅದನ್ನು (ಅಥವಾ ಎಲ್ಲಾ ಪ್ರಶಸ್ತಿಗಳು) ಆರಿಸಿದರೆ ಪುರಸ್ಕೃತರು ಎಲ್ಲಿಂದ ಬಂದವರು ಎಂದು ನೋಡಬಹುದು.",
     map_legend_title: "ಜಿಲ್ಲೆಗೆ ಪುರಸ್ಕೃತರು",

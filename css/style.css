@@ -528,6 +528,71 @@ main{ max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .dot-gap{ border: 1px dashed var(--text-faint); }
 .dot-thin{ background: var(--magenta); }
 
+/* ===== View tabs (Fields / Map) ===== */
+.map-head{ align-items: flex-start; }
+.view-tabs{
+  margin-left: auto;
+  flex-shrink: 0;
+  display: flex;
+  gap: 0.3rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem;
+}
+.view-tab{
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.view-tab:hover{ color: var(--blue-dark); }
+.view-tab.is-active{ background: var(--card); color: var(--blue-dark); box-shadow: var(--shadow-sm); }
+
+/* ===== Field explorer (default view — works for every award, unlike the map) ===== */
+.field-explorer{
+  flex: 1 1 auto;
+  min-height: 120px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.5rem;
+  padding: 0.3rem 0.15rem;
+}
+.map-card.view-map .field-explorer{ display: none; }
+.map-card.view-fields .map-stage{ display: none; }
+.map-card.view-fields .map-footnote{ display: none; }
+.field-pill{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  border: 1px solid hsl(var(--h) 55% 82%);
+  background: hsl(var(--h) 72% 94%);
+  color: hsl(var(--h) 55% 28%);
+  padding: 0.42em 0.9em;
+  border-radius: var(--radius-pill);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.3;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+.field-pill:hover{ transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.field-pill.is-active{ background: hsl(var(--h) 55% 40%); color: #fff; border-color: transparent; }
+.field-pill .fp-count{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75em;
+  opacity: 0.75;
+}
+.field-explorer-empty{ color: var(--text-faint); font-size: 0.88rem; padding: 1rem 0.2rem; }
+
 /* ===== Map ===== */
 .map-card{ padding: 1.6rem 1.6rem 1.1rem; overflow: hidden; }
 .map-head{ margin-bottom: 1rem; }
@@ -1185,7 +1250,24 @@ select{ cursor: pointer; }
   .recipient-list{ flex: 1 1 auto; min-height: 0; }
   .load-more{ flex: 0 0 auto; margin-top: 0.6rem; }
 
-  .site-footer{ display: none; }
+  /* Keep the footer visible but compact — a single slim bar rather than a
+     full block, so its links (Sanchaya, sources, fonts) aren't lost, but it
+     doesn't reintroduce page scroll. */
+  .site-footer{ flex: 0 0 auto; }
+  .site-footer-inner{
+    padding: 0.55rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-brand{ margin-bottom: 0; gap: 0.5rem; }
+  .footer-brand .brand-kn{ font-size: 0.85rem; }
+  .footer-tagline{ display: none; }
+  .site-footer p{ display: none; }
+  .footer-links{ gap: 1rem; }
+  .footer-links a{ font-size: 0.76rem; }
 }
 
 @media (max-width: 1000px){
