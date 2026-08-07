@@ -36,6 +36,36 @@ Records follow the same shape as `national-film-award-best-kannada-film.json`: t
 is the record's `name`, with `director` and `producer` as separate fields, `field: "Cinema"`,
 and no `location` (film awards aren't tied to a district). The other categories remain unbuilt.
 
+## Padma Awards (Karnataka recipients) and Ganayogi Panchakshari Gavai Award
+
+Two more of the original six "genuinely hard" placeholders turned out to be buildable on a
+second, deeper pass:
+
+**Padma Awards** — Wikipedia's recipient lists have no state/birthplace column, and a Wikidata
+SPARQL cross-reference was blocked by a tool URL-length limit. The actual working source turned
+out to be the **Press Information Bureau's own annual Padma Awards press release**
+(pib.gov.in), which lists every awardee's State/Country directly in the table. Built from the
+2024 and 2025 releases (18 Karnataka recipients, tier — Shri/Bhushan/Vibhushan — stored per
+record). Earlier years' PIB releases weren't checked for the same table format; extending
+further back is a bounded follow-up, not a dead end. Arjuna, Dronacharya, and Khel Ratna were
+investigated the same way — PIB's Sports Ministry releases don't carry a State field at all, so
+those three remain placeholders. Khel Ratna (62 people total, ever) and Dronacharya (~159) are
+realistically buildable via a per-person Wikipedia birthplace lookup as a future pass; Arjuna
+(967+) is a genuine multi-session project, flagged out of scope rather than forced.
+
+**Ganayogi Panchakshari Gavai Award** — a January 2024 Hindu article covering that year's
+Karnataka state awards batch named two recipients: Pandit Somnath Maradur (Hindustani vocal,
+Dharwad) and Dr. Nagamani Srinath (Carnatic vocal, Mysuru). No consolidated list exists on
+Wikipedia or karnataka.gov.in. A third, 2024–25 candidate name turned up only in a search
+snippet whose source page wouldn't render on fetch — left out rather than included on
+unverifiable grounds.
+
+**Kempegowda Award** stays a placeholder after real investigation: BBMP has never published a
+recipient archive online (its site only has a nomination form), English Wikipedia's table is
+broken (rows disconnected from their years), Kannada Wikipedia's page is a near-empty stub, and
+news coverage only ever names a handful of "notable" honorees out of each year's 30–500+
+recipients. There's no path to a genuinely complete list without BBMP publishing one itself.
+
 ## Where the Rajyotsava data comes from
 
 The original request was to pull this from

@@ -1,0 +1,19 @@
+{
+  "districts": [
+    {
+      "district": "Dharwad",
+      "count": 1,
+      "lat": 15.46,
+      "lon": 75.02
+    },
+    {
+      "district": "Mysuru",
+      "count": 1,
+      "lat": 12.3,
+      "lon": 76.65
+    }
+  ],
+  "outside_karnataka": 0,
+  "unmapped": 0,
+  "other_locations": []
+}

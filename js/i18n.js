@@ -364,6 +364,12 @@ const FIELD_KN = {
   "Sculpture/Crafts/Visual Art": "ಶಿಲ್ಪಕಲೆ/ಕರಕುಶಲ/ದೃಶ್ಯಕಲೆ",
   "Sculptures/Art/Handicraft": "ಶಿಲ್ಪಕಲೆ/ಕಲೆ/ಕರಕುಶಲ",
   "Sculpture/Painting/Handicraft": "ಶಿಲ್ಪಕಲೆ/ಚಿತ್ರಕಲೆ/ಕರಕುಶಲ",
+
+  // Padma Awards (PIB field categories)
+  "Art": "ಕಲೆ",
+  "Trade and Industry": "ವ್ಯಾಪಾರ ಮತ್ತು ಕೈಗಾರಿಕೆ",
+  "Literature and Education": "ಸಾಹಿತ್ಯ ಮತ್ತು ಶಿಕ್ಷಣ",
+  "Literature and Education-Journalism": "ಸಾಹಿತ್ಯ ಮತ್ತು ಶಿಕ್ಷಣ - ಪತ್ರಿಕೋದ್ಯಮ",
 };
 
 const Sanchi18n = (function(){

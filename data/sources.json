@@ -473,6 +473,42 @@
       "awards": [
         "karnataka-state-film-awards"
       ]
+    },
+    "pib_padma_2024": {
+      "publisher": "Press Information Bureau, Government of India",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "id": "pib_padma_2024",
+      "title": "Padma Awards 2024 announced",
+      "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1999790",
+      "awards": [
+        "padma-awards-karnataka"
+      ]
+    },
+    "pib_padma_2025": {
+      "publisher": "Press Information Bureau, Government of India",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "id": "pib_padma_2025",
+      "title": "Padma Awards 2025 announced",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2096285&reg=3&lang=2",
+      "awards": [
+        "padma-awards-karnataka"
+      ]
+    },
+    "hindu_ganayogi_2024_announcement": {
+      "publisher": "The Hindu",
+      "language": "en",
+      "kind": "news",
+      "license": null,
+      "id": "hindu_ganayogi_2024_announcement",
+      "title": "Civil rights activist Anand Teltumbde chosen for Basava Award; Na DSouza gets Pampa Prashasti",
+      "url": "https://www.inkl.com/news/civil-rights-activist-anand-teltumbde-chosen-for-basava-award-na-d-souza-gets-pampa-prashasti",
+      "awards": [
+        "ganayogi-gawai-award"
+      ]
     }
   }
 }

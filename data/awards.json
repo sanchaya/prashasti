@@ -129,7 +129,7 @@
     "recipients": null,
     "year_range": null,
     "level": "city",
-    "notes": "Messy. Swung from 536 recipients one year (widely criticised) to ~52 the next. Wikipedia's own recipient table is currently empty; would need heavy news-scraping per year."
+    "notes": "Investigated in depth: no complete recipient roster exists anywhere online. BBMP has never published one (its website only has a nomination form); English Wikipedia's table is broken (rows disconnected from years); Kannada Wikipedia's page is a near-empty stub. News coverage only ever names 2-15 'notable' honorees out of each year's 30-500+ recipients -- there is no path to a genuinely complete list without BBMP itself publishing one. Left as a placeholder rather than shipping a partial roster that would misrepresent itself as complete."
   },
   {
     "id": "basava-puraskara",
@@ -153,10 +153,11 @@
     "name_kn": "ಪದ್ಮ ಪ್ರಶಸ್ತಿಗಳು (ಕರ್ನಾಟಕದವರು)",
     "desc_en": "India's civilian honours — Shri, Bhushan, Vibhushan — awarded to Karnataka-born or Karnataka-based recipients.",
     "desc_kn": "ಕರ್ನಾಟಕದಲ್ಲಿ ಜನಿಸಿದ ಅಥವಾ ನೆಲೆಸಿದವರಿಗೆ ನೀಡಲಾದ ಭಾರತದ ನಾಗರಿಕ ಗೌರವಗಳು — ಪದ್ಮಶ್ರೀ, ಪದ್ಮಭೂಷಣ, ಪದ್ಮವಿಭೂಷಣ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 18,
+    "year_range": "2024–2025",
     "level": "national",
-    "notes": "National, not Karnataka-specific — would need filtering logic against Wikipedia's Padma lists (Karnataka-born/based). Large (hundreds of recipients). Bigger undertaking."
+    "notes": "Only 2024 and 2025 are built so far, from the Press Information Bureau's own annual Padma Awards press releases, which list each awardee's State/Country -- the one reliable way to filter this national award down to Karnataka recipients, since neither Wikipedia's list pages nor Wikidata offered a usable state field for this award. Earlier years' PIB releases were not checked for the same table format; extending this further back is a bounded future task, not a dead end.",
+    "data_file": "data/awards/padma-awards-karnataka.json"
   },
   {
     "id": "national-film-award-best-kannada-film",
@@ -181,7 +182,7 @@
     "recipients": null,
     "year_range": null,
     "level": "national",
-    "notes": "Same filtering problem as Padma — cross-reference national lists against Karnataka birthplace."
+    "notes": "Investigated: no State field anywhere in the primary sources (PIB releases, Wikipedia lists). With 967+ recipients nationally since 1961, a reliable per-person birthplace lookup is a genuine multi-session project on its own, not something to attempt in a single pass -- flagged as out of scope rather than forced."
   },
   {
     "id": "dronacharya-award-karnataka",
@@ -193,7 +194,7 @@
     "recipients": null,
     "year_range": null,
     "level": "national",
-    "notes": "Same filtering problem as Padma — cross-reference national lists against Karnataka birthplace."
+    "notes": "Investigated: same as Khel Ratna, no State field in PIB's Sports Ministry releases or on Wikipedia. ~159 recipients nationally since 1985 -- a per-person birthplace lookup is 2-3x the effort of Khel Ratna's but still a bounded task for a dedicated future pass."
   },
   {
     "id": "khel-ratna-karnataka",
@@ -205,7 +206,7 @@
     "recipients": null,
     "year_range": null,
     "level": "national",
-    "notes": "Same filtering problem as Padma — cross-reference national lists against Karnataka birthplace."
+    "notes": "Investigated: PIB's own National Sports Awards press releases do not include a State field for Khel Ratna (unlike the Padma Awards, which do). Only 62 recipients exist nationally since 1991-92 though, so a per-person Wikipedia birthplace lookup is realistic -- just not done in this pass. Genuinely buildable as a bounded follow-up task, not a dead end."
   },
   {
     "id": "karnataka-state-film-awards",
@@ -317,9 +318,12 @@
     "name_kn": "ಗಾನಯೋಗಿ ಪಂಚಾಕ್ಷರಿ ಗವಾಯಿ ಪ್ರಶಸ್ತಿ",
     "desc_en": "State honour for musicians with visual impairment.",
     "desc_kn": "ದೃಷ್ಟಿದೋಷಿತ ಸಂಗೀತಗಾರರಿಗೆ ರಾಜ್ಯ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 2,
+    "year_range": "2023–2024",
     "level": "state",
-    "notes": "Thin — mostly single news articles per year, no Wikipedia lists."
+    "notes": "Two years found via a January 2024 Hindu article announcing that year's Karnataka state awards batch: Pandit Somnath Maradur (Hindustani vocal, Dharwad) and Dr. Nagamani Srinath (Carnatic vocal, Mysuru). No consolidated list exists anywhere (not on Wikipedia, not on karnataka.gov.in's rendered pages); a 2024-25 candidate recipient (Begum Parween Sultana) turned up in a search snippet whose source page would not render on fetch, so it was left out rather than included on unverifiable grounds.",
+    "data_file": "data/awards/ganayogi-gawai-award.json",
+    "has_location_data": true,
+    "district_data_file": "data/awards/ganayogi-gawai-award_district_counts.json"
   }
 ]
