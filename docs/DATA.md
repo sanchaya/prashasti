@@ -39,6 +39,17 @@ documentation gaps, not zero-recipient years.
 
 ## Map data notes
 
+Each award's map is driven by its own `district_data_file` (falling back to
+`data/district_counts.json`, the Rajyotsava roll, when an award has none). Eight awards
+currently have one: Rajyotsava Prashasti plus the seven government-sourced awards listed
+above (Basava Puraskara, Jakanachari, Varnashilpi Venkatappa, T. Chowdaiah, Kanakashree,
+Sangolli Rayanna, Akkamahadevi) — built by aggregating each award's own recipient `location`
+values against the same 31-district centroid table, via
+`data/awards.json`'s `has_location_data`/`district_data_file` fields. Awards whose source data
+carries no location values at all (Pampa, Attimabbe, Nadoja, Sahitya Akademi, Karnataka Ratna,
+Jnanpith, Bharat Ratna, National Film Award) correctly show the "no location data" state on the
+map rather than a fabricated one.
+
 `data/district_counts.json` aggregates the Rajyotsava roll by district (442 of 2,102 records
 carry a district at all — district attribution only survives in Wikipedia's coverage of later
 award years). District names were normalized from messy source variants (Bangalore/Bengaluru,
