@@ -10,6 +10,8 @@ const SanchiMap = (function(){
   let maxCount = 1;
   let districtLayers = {};
   let markersByKey = {};
+  let centroidByKey = {};
+  let personPins = [];
   let selectHandler = null;
   let selectedKey = null;
 
@@ -115,6 +117,55 @@ const SanchiMap = (function(){
     markers.forEach(m => m.remove());
     markers = [];
     markersByKey = {};
+    centroidByKey = {};
+    clearPersonPins();
+  }
+
+  // ---------------- individual name pins (shown for the selected district only) ----------------
+  // No per-person geocoding exists (scripts/geocode_locations.py is WIP/unfinished), so pins are
+  // jittered around the district's centroid rather than a real per-person location -- honest about
+  // precision, but still puts every name on the map once you select a district.
+
+  function clearPersonPins(){
+    personPins.forEach(p => p.remove());
+    personPins = [];
+  }
+
+  function jitteredPoint(center, index){
+    if(index === 0) return center;
+    const ring = Math.ceil(index / 8);
+    const angle = ((index % 8) / 8) * Math.PI * 2;
+    const radius = 0.045 * ring;
+    return [center[0] + Math.sin(angle) * radius, center[1] + Math.cos(angle) * radius];
+  }
+
+  function showPersonPins(records, key){
+    clearPersonPins();
+    if(!map || !key) return;
+    const center = centroidByKey[key];
+    if(!center) return;
+    const permanent = records.length <= 60;
+    records.forEach((r, i) => {
+      const pt = jitteredPoint(center, i);
+      const dot = L.circleMarker(pt, {
+        radius: 4,
+        fillColor: '#e67e22',
+        fillOpacity: 0.95,
+        color: '#a85a1a',
+        weight: 1,
+        opacity: 0.95,
+      }).addTo(map);
+      dot.bindTooltip(escape(r.name), {
+        permanent,
+        direction: 'top',
+        offset: [0, -6],
+        opacity: 0.95,
+        className: 'person-pin-label',
+      });
+      dot.bindPopup(`<div class="district-tooltip"><strong>${escape(r.name)}</strong><br>${escape([r.year, r.field].filter(Boolean).join(' · '))}</div>`);
+      dot.bringToFront();
+      personPins.push(dot);
+    });
   }
 
   function hideLegend(){
@@ -322,6 +373,7 @@ const SanchiMap = (function(){
     }
     if(markersByKey[selectedKey]) styleUnselected(selectedKey, markersByKey[selectedKey]);
     selectedKey = null;
+    clearPersonPins();
     if(selectHandler) selectHandler(null);
   }
 
@@ -438,6 +490,7 @@ const SanchiMap = (function(){
       circle.on('click', () => selectKey(key, d.district, d.count));
       markers.push(circle);
       markersByKey[key] = { layer: circle, isOther: false };
+      centroidByKey[key] = [d.lat, d.lon];
     });
 
     others.forEach(o => {
@@ -460,6 +513,7 @@ const SanchiMap = (function(){
       circle.on('click', () => selectKey(key, o.location, o.count, { isOther: true }));
       markers.push(circle);
       markersByKey[key] = { layer: circle, isOther: true };
+      centroidByKey[key] = [o.lat, o.lon];
     });
 
     // fix sizing glitch when the map div was hidden (display:none) during init
@@ -476,7 +530,7 @@ const SanchiMap = (function(){
     }, 50);
   }
 
-  return { load, refresh, highlightLocation, onSelect, clearSelection, matchesSelection, normalizeDistrictName: normalize, resolveDistrictKey };
+  return { load, refresh, highlightLocation, onSelect, clearSelection, matchesSelection, normalizeDistrictName: normalize, resolveDistrictKey, showPersonPins, clearPersonPins };
 })();
 
 window.SanchiMap = SanchiMap;

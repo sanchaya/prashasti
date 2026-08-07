@@ -353,6 +353,8 @@
         renderMapFilterChip();
         if(selection){
           document.getElementById('browse-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.SanchiMap.clearPersonPins();
         }
       });
     }
@@ -477,6 +479,9 @@
     });
     state.filtered.sort((a,b) => b.year - a.year || a.name.localeCompare(b.name));
     renderList();
+    if(state.location && window.SanchiMap){
+      window.SanchiMap.showPersonPins(state.filtered.map(r => ({ name: r.name, year: r.year, field: r.field })), state.location.key);
+    }
   }
 
   function renderList(){
