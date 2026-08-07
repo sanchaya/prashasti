@@ -303,7 +303,9 @@ code{
   flex-wrap: wrap;
   gap: 0.8rem 1.6rem;
 }
-.award-head-bottom .controls{ flex: 1 1 320px; max-width: 640px; margin-top: 0; justify-content: flex-end; }
+.award-head-bottom .controls{ flex: 0 1 auto; margin-top: 0; justify-content: flex-end; }
+.award-head-search{ width: 100%; }
+.award-head-search input[type="search"]{ width: 100%; }
 
 /* ===== Award nav (grouped dropdown menu) ===== */
 .award-nav{
