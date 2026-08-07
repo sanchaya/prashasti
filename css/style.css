@@ -1205,15 +1205,21 @@ select{ cursor: pointer; }
 
   .award-head{
     flex: 0 0 auto;
-    padding: 0.7rem 1.5rem 0.4rem;
+    padding: 0.6rem 1.5rem;
     gap: 1.4rem;
+    align-items: center;
   }
-  .award-head .eyebrow{ margin-bottom: 0.2rem; font-size: 0.7rem; }
-  .award-head h1{ font-size: 1.3rem; max-width: 44ch; line-height: 1.15; }
+  .award-head .eyebrow{ margin-bottom: 0.15rem; font-size: 0.68rem; }
+  .award-head h1{ font-size: 1.25rem; max-width: 44ch; line-height: 1.15; }
   .award-head .hero-desc{ display: none; }
-  .stat-row{ gap: 0.4rem 1.3rem; }
-  .stat-num{ font-size: 1.15rem; }
-  .stat-label{ font-size: 0.66rem; max-width: 11ch; }
+  .stat-row{
+    grid-template-columns: repeat(4, auto);
+    gap: 0.2rem 1.6rem;
+    align-self: center;
+  }
+  .stat{ flex-direction: row; align-items: baseline; gap: 0.4rem; }
+  .stat-num{ font-size: 1.1rem; }
+  .stat-label{ font-size: 0.65rem; max-width: 11ch; }
 
   main{ flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
   .home-grid{
