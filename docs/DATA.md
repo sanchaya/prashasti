@@ -14,6 +14,18 @@ caught a real discrepancy once: English Wikipedia's Karnataka Ratna table includ
 addition (B. Saroja Devi) that Kannada Wikipedia's version didn't have yet. Neither language is
 reliably more current — check both, every time, for any award you add.
 
+## Government-sourced awards (Kanaka Shri, T. Chowdaiah, Varnashilpi Venkatappa,
+## Jakanachari, Akkamahadevi, Basava Puraskara, Sangolli Rayanna)
+
+These seven have no usable Wikipedia list (mostly stubs or no page at all), so they were built
+from karnataka.gov.in's own "State Awards" recipient pages (Dept. of Kannada & Culture), which
+the department last updated in 2020 — years after that are not reflected. Names are stripped of
+honorifics (Shri/Smt/Dr/Pandit/etc.) and split from a trailing location where the source listed
+one; no per-record `wikipedia_url` or `wikidata_qid` was looked up (unlike the Wikipedia-sourced
+awards), since that would mean a manual disambiguation pass per name rather than a bulk pull —
+left for a future pass. Ganayogi Panchakshari Gawai Award has no list on this portal or on
+Wikipedia and remains a placeholder.
+
 ## Where the Rajyotsava data comes from
 
 The original request was to pull this from

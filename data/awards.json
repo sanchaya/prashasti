@@ -138,10 +138,11 @@
     "name_kn": "ಬಸವ ಪುರಸ್ಕಾರ",
     "desc_en": "Karnataka government's national-level award for social reform and communal harmony.",
     "desc_kn": "ಸಾಮಾಜಿಕ ಸುಧಾರಣೆ ಮತ್ತು ಸರ್ವಧರ್ಮ ಸಮನ್ವಯಕ್ಕಾಗಿ ಕರ್ನಾಟಕ ಸರ್ಕಾರ ನೀಡುವ ರಾಷ್ಟ್ರಮಟ್ಟದ ಪ್ರಶಸ್ತಿ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 18,
+    "year_range": "2000–2018",
     "level": "state",
-    "notes": "Thinner Wikipedia coverage; mostly news-sourced."
+    "data_file": "data/awards/basava-puraskara-award.json",
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
   },
   {
     "id": "padma-awards-karnataka",
@@ -223,10 +224,11 @@
     "name_kn": "ಜಕನಾಚಾರಿ ಪ್ರಶಸ್ತಿ",
     "desc_en": "State honour for master craftsmen in sculpture and temple architecture.",
     "desc_kn": "ಶಿಲ್ಪಕಲೆ ಮತ್ತು ದೇವಾಲಯ ವಾಸ್ತುಶಿಲ್ಪದ ಕುಶಲ ಕರಕುಶಲಿಗಳಿಗೆ ರಾಜ್ಯ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 24,
+    "year_range": "1995–2018",
     "level": "state",
-    "notes": "Thin — mostly single news articles per year, no Wikipedia lists."
+    "data_file": "data/awards/jakanachari-award.json",
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
   },
   {
     "id": "varnashilpi-venkatappa-award",
@@ -235,10 +237,11 @@
     "name_kn": "ವರ್ಣಶಿಲ್ಪಿ ವೆಂಕಟಪ್ಪ ಪ್ರಶಸ್ತಿ",
     "desc_en": "State honour for excellence in painting and visual arts.",
     "desc_kn": "ಚಿತ್ರಕಲೆ ಮತ್ತು ದೃಶ್ಯ ಕಲೆಗಳಲ್ಲಿ ಶ್ರೇಷ್ಠತೆಗಾಗಿ ರಾಜ್ಯ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 25,
+    "year_range": "1994–2018",
     "level": "state",
-    "notes": "Thin — mostly single news articles per year, no Wikipedia lists."
+    "data_file": "data/awards/varnashilpi-venkatappa-award.json",
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
   },
   {
     "id": "t-chowdaiah-award",
@@ -247,10 +250,11 @@
     "name_kn": "ಟಿ. ಚೌಡಯ್ಯ ಪ್ರಶಸ್ತಿ",
     "desc_en": "State honour for master musicians and violinists.",
     "desc_kn": "ಪ್ರವೀಣ ಸಂಗೀತಗಾರರು ಮತ್ತು ವಯಲಿನ್ ವಾದಕರಿಗೆ ರಾಜ್ಯ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 24,
+    "year_range": "1995–2018",
     "level": "state",
-    "notes": "Thin — mostly single news articles per year, no Wikipedia lists."
+    "data_file": "data/awards/t-chowdaiah-award.json",
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
   },
   {
     "id": "kanakashree-award",
@@ -259,10 +263,11 @@
     "name_kn": "ಕನಕಶ್ರೀ ಪ್ರಶಸ್ತಿ",
     "desc_en": "State honour for excellence in theatre and performing arts.",
     "desc_kn": "ರಂಗಭೂಮಿ ಮತ್ತು ಪ್ರದರ್ಶನ ಕಲೆಗಳಲ್ಲಿ ಶ್ರೇಷ್ಠತೆಗಾಗಿ ರಾಜ್ಯ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 12,
+    "year_range": "2008–2019",
     "level": "state",
-    "notes": "Thin — mostly single news articles per year, no Wikipedia lists."
+    "data_file": "data/awards/kanakashree-award.json",
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
   },
   {
     "id": "sangolli-rayanna-award",
@@ -271,10 +276,11 @@
     "name_kn": "ಸಂಗೊಳ್ಳಿ ರಾಯಣ್ಣ ಪ್ರಶಸ್ತಿ",
     "desc_en": "State honour for bravery and social service.",
     "desc_kn": "ಧೈರ್ಯ ಮತ್ತು ಸಾಮಾಜಿಕ ಸೇವೆಗಾಗಿ ರಾಜ್ಯ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 6,
+    "year_range": "2003–2018",
     "level": "state",
-    "notes": "Thin — mostly single news articles per year, no Wikipedia lists."
+    "data_file": "data/awards/sangolli-rayanna-award.json",
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
   },
   {
     "id": "akkamahadevi-award",
@@ -283,10 +289,11 @@
     "name_kn": "ಅಕ್ಕಮಹಾದೇವಿ ಪ್ರಶಸ್ತಿ",
     "desc_en": "State honour for women in social reform and literature.",
     "desc_kn": "ಸಾಮಾಜಿಕ ಸುಧಾರಣೆ ಮತ್ತು ಸಾಹಿತ್ಯದಲ್ಲಿನ ಮಹಿಳೆಯರಿಗೆ ರಾಜ್ಯ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 3,
+    "year_range": "2016–2018",
     "level": "state",
-    "notes": "Thin — mostly single news articles per year, no Wikipedia lists."
+    "data_file": "data/awards/akkamahadevi-award.json",
+    "notes": "Official Karnataka govt recipient list (karnataka.gov.in), last updated by the department in 2020 -- may not reflect years after that."
   },
   {
     "id": "ganayogi-gawai-award",

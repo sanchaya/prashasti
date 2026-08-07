@@ -37,6 +37,7 @@
     const kinds = {};
     Object.keys(src).forEach(id => { kinds[id] = src[id].kind; });
     const hasNews = Object.keys(src).some(id => kinds[id] === 'news');
+    const hasGovernment = Object.keys(src).some(id => kinds[id] === 'government-list');
 
     // Group sources by award, keeping award registry order.
     const awardGroups = registry
@@ -81,6 +82,8 @@
         const langLabel = langTag === 'kn' ? 'ಕನ್ನಡ' : 'English';
         const kindLabel = s.kind === 'news'
           ? escapeHtml(Sanchi18n.t('ref_source_news'))
+          : s.kind === 'government-list'
+          ? escapeHtml(Sanchi18n.t('ref_source_government'))
           : escapeHtml(Sanchi18n.t('ref_source_wiki'));
         row.innerHTML = `
           <div class="reference-main">
@@ -99,7 +102,8 @@
     notes.className = 'ref-license';
     const wikiNote = Sanchi18n.t('ref_license_wiki');
     const newsNote = Sanchi18n.t('ref_license_news');
-    notes.textContent = [wikiNote, hasNews ? newsNote : ''].filter(Boolean).join(' ');
+    const govNote = Sanchi18n.t('ref_license_government');
+    notes.textContent = [wikiNote, hasNews ? newsNote : '', hasGovernment ? govNote : ''].filter(Boolean).join(' ');
     list.appendChild(notes);
   }
 

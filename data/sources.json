@@ -377,6 +377,90 @@
       "awards": [
         "national-film-award-best-kannada-film"
       ]
+    },
+    "govt_kanakashree": {
+      "id": "govt_kanakashree",
+      "title": "Profile of recipients of the Kanakashree Award",
+      "url": "https://karnataka.gov.in/page/Awards/State%20Awards/Kanaka%20Shri%20Awards/en",
+      "publisher": "Government of Karnataka — Dept. of Kannada & Culture",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "awards": [
+        "kanakashree-award"
+      ]
+    },
+    "govt_t_chowdaiah": {
+      "id": "govt_t_chowdaiah",
+      "title": "Profile of recipients of the T Chowdaiah Award",
+      "url": "https://karnataka.gov.in/page/Awards/State%20Awards/T%20Choudayya%20National%20Awards/en",
+      "publisher": "Government of Karnataka — Dept. of Kannada & Culture",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "awards": [
+        "t-chowdaiah-award"
+      ]
+    },
+    "govt_varnashilpi_venkatappa": {
+      "id": "govt_varnashilpi_venkatappa",
+      "title": "Profile of recipients of the Varnashilpi Venkatappa Award",
+      "url": "https://karnataka.gov.in/page/Awards/State%20Awards/Varnashilpi%20Venkatappa%20Awards/en",
+      "publisher": "Government of Karnataka — Dept. of Kannada & Culture",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "awards": [
+        "varnashilpi-venkatappa-award"
+      ]
+    },
+    "govt_jakanachari": {
+      "id": "govt_jakanachari",
+      "title": "Profile of recipients of the Jakanachari Award",
+      "url": "https://karnataka.gov.in/page/Awards/State%20Awards/Jakanachari%20Awards/en",
+      "publisher": "Government of Karnataka — Dept. of Kannada & Culture",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "awards": [
+        "jakanachari-award"
+      ]
+    },
+    "govt_akkamahadevi": {
+      "id": "govt_akkamahadevi",
+      "title": "Profile of recipients of the Akkamahadevi Award",
+      "url": "https://karnataka.gov.in/page/Awards/State%20Awards/Akka%20Mahadevi%20Awards/en",
+      "publisher": "Government of Karnataka — Dept. of Kannada & Culture",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "awards": [
+        "akkamahadevi-award"
+      ]
+    },
+    "govt_basava_puraskara": {
+      "id": "govt_basava_puraskara",
+      "title": "Profile of recipients of the Basava Puraskara Award",
+      "url": "https://karnataka.gov.in/page/Awards/State%20Awards/Basava%20Puraskara%20Awards/en",
+      "publisher": "Government of Karnataka — Dept. of Kannada & Culture",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "awards": [
+        "basava-puraskara-award"
+      ]
+    },
+    "govt_sangolli_rayanna": {
+      "id": "govt_sangolli_rayanna",
+      "title": "Profile of recipients of the Sangolli Rayanna Award",
+      "url": "https://karnataka.gov.in/page/Awards/State%20Awards/Sangolli%20Rayanna%20Awards/en",
+      "publisher": "Government of Karnataka — Dept. of Kannada & Culture",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "awards": [
+        "sangolli-rayanna-award"
+      ]
     }
   }
 }

@@ -31,7 +31,7 @@ js/
   representation.js      Representation & completeness section (Rajyotsava only)
   wikidraft.js           Wikipedia draft-stub generator for recipients without an article
 data/
-  awards.json            Registry — one entry per award (all 23 active; 9 with data files, 14 placeholders)
+  awards.json            Registry — one entry per award (all 23 active; 16 with data files, 7 placeholders)
   awards/<id>.json       One recipient array per award
   sources.json           Citation registry — one entry per source page, keyed by source_id
   district_counts.json   District-level aggregation for the map (incl. other_locations)

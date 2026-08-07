@@ -3,11 +3,11 @@
 ## How it loads
 
 Everything is client-side. `app.js` fetches `data/awards.json` on load, then loads every
-award's `data_file` that exists. All awards in the registry are `"status": "active"` — some
-have full recipient data, others (Kempegowda, Basava Puraskara, Padma, Sports honours, State
-Film Awards, Smaller Honours) are active in the sidebar but their data files are still being
-built, so they render with an empty roll. Switching awards re-renders in place — no page
-reload. Awards are split one-per-entry (Arjuna/Dronacharya/Khel Ratna and the seven smaller
+award's `data_file` that exists. All awards in the registry are `"status": "active"` — 16 have
+full recipient data, seven (Kempegowda, Padma, Arjuna/Dronacharya/Khel Ratna, Karnataka State
+Film Awards, Ganayogi Panchakshari Gawai) are active in the sidebar but their data files are
+still being built, so they render with an empty roll. Switching awards re-renders in place — no
+page reload. Awards are split one-per-entry (Arjuna/Dronacharya/Khel Ratna and the smaller
 honours each have their own entry) rather than clubbed under a single row.
 
 ### The award registry (`data/awards.json`)
@@ -103,8 +103,10 @@ fuller citation lives in one place instead of thousands of records:
 }
 ```
 
-- `kind` is `wikipedia-list` or `news`. Wikipedia sources carry `license: "CC BY-SA 4.0"`;
-  news sources carry a publication `date` and `license: null`.
+- `kind` is `wikipedia-list`, `news`, or `government-list`. Wikipedia sources carry
+  `license: "CC BY-SA 4.0"`; news and government-list sources carry `license: null` (news
+  additionally carries a publication `date`). Government-list sources are official Karnataka
+  govt recipient pages (karnataka.gov.in) — cited for provenance/attribution only.
 - `awards[]` lists which award(s) each source feeds, so the registry can be filtered per award.
 - Rajyotsava year pages get ids `wiki_raj_<year>`; decade lists `wiki_raj_<start>_<end>`;
   `news_2023` → `news_hindu_2023`, `news_2025` → `news_indianexpress_2025`.

@@ -85,9 +85,11 @@ const DICT = {
     ref_desc: "Every record carries a citation pointing at the page it was taken from, so the data can be re-verified — and so a Wikipedia article or Wikidata statement about a recipient can be written with the source in hand. The citation travels with the record.",
     ref_source_wiki: "Wikipedia list",
     ref_source_news: "News report",
+    ref_source_government: "Government of Karnataka record",
     ref_records_label: "records cite this source",
     ref_license_wiki: "Recipient data from Wikipedia is offered under CC BY-SA 4.0.",
     ref_license_news: "News sources are cited for attribution only.",
+    ref_license_government: "Government of Karnataka source pages are cited for attribution and provenance only, not under any open-reuse license.",
 
     rep_title: "Representation & data completeness",
     rep_sub: "Who's missing from this list is as important as who's on it — and honestly, the biggest gap is in our data, not necessarily in who got the award.",
@@ -189,9 +191,11 @@ const DICT = {
     ref_desc: "ಪ್ರತಿ ದಾಖಲೆಯೂ ಅದನ್ನು ತೆಗೆದುಕೊಂಡ ಪುಟಕ್ಕೆ ಸೂಚಿಸುವ ಒಂದು ಉಲ್ಲೇಖವನ್ನು ಹೊಂದಿರುತ್ತದೆ — ದತ್ತಾಂಶವನ್ನು ಮತ್ತೆ ಪರಿಶೀಲಿಸಲು, ಮತ್ತು ಪುರಸ್ಕೃತರ ಬಗ್ಗೆ ವಿಕಿಪೀಡಿಯಾ ಲೇಖನ ಅಥವಾ ವಿಕಿಡೇಟಾ ಹೇಳಿಕೆ ಬರೆಯುವಾಗ ಮೂಲ ಕೈಯಲ್ಲಿ ಇರಲು. ಉಲ್ಲೇಖವು ದಾಖಲೆಯೊಂದಿಗೆ ಜೊತೆಗೆ ಚಲಿಸುತ್ತದೆ.",
     ref_source_wiki: "ವಿಕಿಪೀಡಿಯಾ ಪಟ್ಟಿ",
     ref_source_news: "ಸುದ್ದಿ ವರದಿ",
+    ref_source_government: "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ದಾಖಲೆ",
     ref_records_label: "ದಾಖಲೆಗಳು ಈ ಮೂಲವನ್ನು ಉಲ್ಲೇಖಿಸುತ್ತವೆ",
     ref_license_wiki: "ವಿಕಿಪೀಡಿಯಾದಿಂದ ಪಡೆದ ಪುರಸ್ಕೃತರ ದತ್ತಾಂಶವು CC BY-SA 4.0 ಪರವಾನಗಿಯಡಿ ಲಭ್ಯವಿದೆ.",
     ref_license_news: "ಸುದ್ದಿ ಮೂಲಗಳನ್ನು ಗುರುತಿಸುವಿಕೆಗಾಗಿ ಮಾತ್ರ ಉಲ್ಲೇಖಿಸಲಾಗಿದೆ.",
+    ref_license_government: "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಮೂಲ ಪುಟಗಳನ್ನು ಗುರುತಿಸುವಿಕೆ ಮತ್ತು ಮೂಲದ ಪುರಾವೆಗಾಗಿ ಮಾತ್ರ ಉಲ್ಲೇಖಿಸಲಾಗಿದೆ, ಮುಕ್ತ-ಬಳಕೆಯ ಪರವಾನಗಿಯಡಿ ಅಲ್ಲ.",
 
     rep_title: "ಪ್ರಾತಿನಿಧ್ಯ ಮತ್ತು ದತ್ತಾಂಶ ಪೂರ್ಣತೆ",
     rep_sub: "ಈ ಪಟ್ಟಿಯಲ್ಲಿ ಯಾರು ಇಲ್ಲ ಎಂಬುದು ಯಾರು ಇದ್ದಾರೆ ಎಂಬುದಷ್ಟೇ ಮುಖ್ಯ — ಮತ್ತು ನಿಜ ಹೇಳಬೇಕೆಂದರೆ, ದೊಡ್ಡ ಕೊರತೆ ನಮ್ಮ ದತ್ತಾಂಶದಲ್ಲಿದೆ, ಯಾರಿಗೆ ಪ್ರಶಸ್ತಿ ಸಿಕ್ಕಿದೆ ಎಂಬುದರಲ್ಲಲ್ಲ.",
