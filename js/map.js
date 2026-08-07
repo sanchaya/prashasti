@@ -8,16 +8,61 @@ const SanchiMap = (function(){
   let hasFitted = false;
   let countByDistrict = {};
   let maxCount = 1;
+  let districtLayers = {};
+  let highlightTimer = null;
 
   const DISTRICT_ALIAS = {
     'Chamarajanagar': 'Chamarajanagara',
+    'Chamarajnagar': 'Chamarajanagara',
+    'Chamrajanagar': 'Chamarajanagara',
     'Chikkaballapur': 'Chikkaballapura',
+    'Chikballapur': 'Chikkaballapura',
     'Bagalkot': 'Bagalkote',
+    'Bagalakot': 'Bagalkote',
+    'Bagalakote': 'Bagalkote',
+    'Balakote': 'Bagalkote',
+    'Bangalore': 'Bengaluru Urban',
+    'Bengaluru': 'Bengaluru Urban',
+    'Bengaluru City': 'Bengaluru Urban',
+    'Bangalore Rural': 'Bengaluru Rural',
+    'Bengaluru Rural': 'Bengaluru Rural',
+    'Belgaum': 'Belagavi',
+    'Bellary': 'Ballari',
+    'Bijapur': 'Vijayapura',
+    'Vijaypur': 'Vijayapura',
+    'Chikmagalur': 'Chikkamagaluru',
+    'Chikmagaluru': 'Chikkamagaluru',
+    'Dakshin Kannada': 'Dakshina Kannada',
+    'South Kannada': 'Dakshina Kannada',
+    'Davangere': 'Davanagere',
+    'Gulbarga': 'Kalaburagi',
+    'Kalaburgi': 'Kalaburagi',
+    'Mysore': 'Mysuru',
+    'Ramanagar': 'Ramanagara',
+    'Ramanagaram': 'Ramanagara',
+    'Shimoga': 'Shivamogga',
+    'Shivmoga': 'Shivamogga',
+    'Tumkur': 'Tumakuru',
+    'Udipi': 'Udupi',
+    'Uttar Kannada': 'Uttara Kannada',
+    'Vijayanagar': 'Vijayanagara',
+    'Yadagiri': 'Yadgir',
+    'Kodagu': 'Kodagu',
   };
 
   function normalize(name){
     const key = (DISTRICT_ALIAS[name] || name || '').toLowerCase().replace(/[^a-z]/g, '');
     return key;
+  }
+
+  function districtKeyFor(raw){
+    if(!raw) return null;
+    const clean = String(raw).replace(/[\[\].]/g, '').trim();
+    if(DISTRICT_ALIAS[clean]) return normalize(DISTRICT_ALIAS[clean]);
+    const n = normalize(clean);
+    if(districtLayers[n]) return n;
+    const found = Object.keys(districtLayers).find(k => k.includes(n) || n.includes(k));
+    return found || null;
   }
 
   function colorFor(t){
@@ -79,6 +124,7 @@ const SanchiMap = (function(){
     if(stateLayer){ stateLayer.remove(); stateLayer = null; }
     boundariesLoaded = false;
     currentAwardId = null;
+    districtLayers = {};
 
     const frame = document.querySelector('.map-frame');
     if(!frame) return;
@@ -118,6 +164,7 @@ const SanchiMap = (function(){
       districtLayer = L.geoJSON(distGeo, {
         style: districtStyle,
         onEachFeature: (f, lyr) => {
+          districtLayers[normalize(f.properties.district)] = lyr;
           lyr.on('mouseover', () => lyr.setStyle({ weight: 1.6, fillOpacity: 0.8 }));
           lyr.on('mouseout', () => lyr.setStyle(districtStyle(f)));
         },
@@ -204,6 +251,62 @@ const SanchiMap = (function(){
     labelO.className = 'legend-key';
     labelO.textContent = Sanchi18n ? Sanchi18n.t('map_legend_outside') : 'Outside Karnataka';
     el.appendChild(labelO);
+  }
+
+  function clearHighlight(){
+    if(highlightTimer){ clearTimeout(highlightTimer); highlightTimer = null; }
+    Object.keys(districtLayers).forEach(k => {
+      const lyr = districtLayers[k];
+      const f = lyr.feature;
+      if(f) lyr.setStyle(districtStyle(f));
+    });
+  }
+
+  // Highlight a district from a recipient's raw location string.
+  // Returns true if a district matched and was flashed.
+  function highlightLocation(rawLocation, label){
+    if(!map || !districtLayer || !rawLocation) return false;
+    const key = districtKeyFor(rawLocation);
+    if(!key || !districtLayers[key]) return false;
+
+    clearHighlight();
+    const lyr = districtLayers[key];
+    const f = lyr.feature;
+    const districtName = f && f.properties && f.properties.district;
+
+    lyr.setStyle({
+      fillColor: '#7a368d',
+      fillOpacity: 0.85,
+      color: '#7a368d',
+      weight: 3,
+      opacity: 0.95,
+    });
+    lyr.bringToFront();
+    if(stateLayer) stateLayer.bringToFront();
+
+    if(districtName && map.getBounds){
+      map.flyToBounds(lyr.getBounds().pad(0.35), { maxZoom: 9, duration: 0.8 });
+    }
+
+    if(label){
+      const tip = `<div class="district-tooltip"><strong>${escape(label)}</strong><br>${districtName ? escape(districtName) : ''}</div>`;
+      lyr.bindTooltip(tip, { direction: 'top', offset: [0, -14], sticky: false, opacity: 1 });
+      setTimeout(() => { try{ lyr.openTooltip(); }catch(e){} }, 900);
+    }
+
+    highlightTimer = setTimeout(() => {
+      if(f) lyr.setStyle(districtStyle(f));
+      lyr.unbindTooltip();
+      highlightTimer = null;
+    }, 5000);
+
+    return true;
+  }
+
+  function escape(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[c]));
   }
 
   async function load(award){
@@ -310,7 +413,7 @@ const SanchiMap = (function(){
     }, 50);
   }
 
-  return { load, refresh };
+  return { load, refresh, highlightLocation };
 })();
 
 window.SanchiMap = SanchiMap;

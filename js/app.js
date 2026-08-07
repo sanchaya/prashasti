@@ -272,7 +272,7 @@
     if(els.heroH1){
       if(award){
         const name = lang === 'kn' ? award.name_kn : award.name_en;
-        els.heroH1.textContent = lang === 'kn' ? `ದಾಖಲಾಗಿರುವ ಪ್ರತಿಯೊಬ್ಬ ${name} ಪುರಸ್ಕೃತ` : `Every ${name} recipient on record`;
+        els.heroH1.textContent = lang === 'kn' ? `${name} ಪುರಸ್ಕೃತ` : `${name} recipients`;
       } else {
         els.heroH1.textContent = lang === 'kn'
           ? 'ದಾಖಲಾಗಿರುವ ಪ್ರತಿಯೊಬ್ಬ ಪುರಸ್ಕೃತ'
@@ -479,7 +479,12 @@
       name.setAttribute('role', 'button');
       name.setAttribute('tabindex', '0');
       name.title = Sanchi18n.t('detail_read');
-      const open = () => toggleDetails(row, r);
+      const open = () => {
+        toggleDetails(row, r);
+        if(r.location && window.SanchiMap){
+          window.SanchiMap.highlightLocation(r.location, r.name);
+        }
+      };
       name.addEventListener('click', open);
       name.addEventListener('keydown', e => {
         if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); }
