@@ -509,6 +509,54 @@
       "awards": [
         "ganayogi-gawai-award"
       ]
+    },
+    "wiki_pankaj_advani": {
+      "publisher": "Wikipedia",
+      "language": "en",
+      "kind": "wikipedia-list",
+      "license": "CC BY-SA 4.0",
+      "id": "wiki_pankaj_advani",
+      "title": "Pankaj Advani (billiards player)",
+      "url": "https://en.wikipedia.org/wiki/Pankaj_Advani_(billiards_player)",
+      "awards": [
+        "khel-ratna-karnataka"
+      ]
+    },
+    "pib_khel_ratna_2021": {
+      "publisher": "Press Information Bureau, Government of India",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "id": "pib_khel_ratna_2021",
+      "title": "National Sports Awards 2021",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=1769041",
+      "awards": [
+        "khel-ratna-karnataka"
+      ]
+    },
+    "yas_dronacharya_list": {
+      "publisher": "Ministry of Youth Affairs & Sports, Government of India",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "id": "yas_dronacharya_list",
+      "title": "Dronacharya Award recipients (official list)",
+      "url": "https://yas.gov.in/sites/default/files/Dronacharya_1.pdf",
+      "awards": [
+        "dronacharya-award-karnataka"
+      ]
+    },
+    "karnataka_dyes_arjuna_list": {
+      "publisher": "Government of Karnataka, Dept. of Youth Empowerment and Sports",
+      "language": "en",
+      "kind": "government-list",
+      "license": null,
+      "id": "karnataka_dyes_arjuna_list",
+      "title": "List of Arjuna Awardees (Karnataka)",
+      "url": "https://ysd.karnataka.gov.in/storage/pdf-files/ARJUNA.pdf",
+      "awards": [
+        "arjuna-award-karnataka"
+      ]
     }
   }
 }

@@ -1,0 +1,93 @@
+[
+  {
+    "year": 1994,
+    "name": "Md. Ilyas Babar",
+    "field": "Sports",
+    "location": "Kalaburagi",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ilyas_Babar",
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "connection": "born (Gulbarga, Karnataka; coaching career was with the Rajputana Rifles in Secunderabad/Delhi)",
+    "source": "Wikipedia — Ilyas Babar; Ministry of Youth Affairs & Sports official Dronacharya recipients list",
+    "source_id": "yas_dronacharya_list",
+    "source_url": "https://yas.gov.in/sites/default/files/Dronacharya_1.pdf"
+  },
+  {
+    "year": 2014,
+    "name": "N. Lingappa",
+    "field": "Sports",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "connection": "based (Bengaluru-based athletics coach for six decades; trained Ashwini Nachappa, P.C. Ponnappa)",
+    "source": "Deccan Herald and Varthabharati obituaries; Ministry of Youth Affairs & Sports official Dronacharya recipients list",
+    "source_id": "yas_dronacharya_list",
+    "source_url": "https://yas.gov.in/sites/default/files/Dronacharya_1.pdf"
+  },
+  {
+    "year": 2015,
+    "name": "Nihar Ameen",
+    "field": "Sports",
+    "location": "Bengaluru",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Nihar_Ameen",
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "connection": "based (leads Dolphin Aquatics and the Padukone-Dravid Centre for Sports Excellence, Bengaluru)",
+    "source": "Wikipedia — Nihar Ameen; Ministry of Youth Affairs & Sports official Dronacharya recipients list",
+    "source_id": "yas_dronacharya_list",
+    "source_url": "https://yas.gov.in/sites/default/files/Dronacharya_1.pdf"
+  },
+  {
+    "year": 2018,
+    "name": "C. A. Kuttappa",
+    "field": "Sports",
+    "location": "Kodagu",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "connection": "born (Kodagu/Coorg, Karnataka; also received the Karnataka Rajyotsava Award)",
+    "source": "Star of Mysore; Coorg.com; Ministry of Youth Affairs & Sports official Dronacharya recipients list",
+    "source_id": "yas_dronacharya_list",
+    "source_url": "https://yas.gov.in/sites/default/files/Dronacharya_1.pdf"
+  },
+  {
+    "year": 2018,
+    "name": "V. R. Beedu",
+    "field": "Sports",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "connection": "based (Bengaluru-based athletics coach; trained Ashwini Nachappa, Reeth Abraham, Angel Mary)",
+    "source": "Olympics.com; Ministry of Youth Affairs & Sports official Dronacharya recipients list",
+    "source_id": "yas_dronacharya_list",
+    "source_url": "https://yas.gov.in/sites/default/files/Dronacharya_1.pdf"
+  },
+  {
+    "year": 2019,
+    "name": "U. Vimal Kumar",
+    "field": "Sports",
+    "location": "Bengaluru",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/U._Vimal_Kumar",
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "connection": "based (born Trivandrum, Kerala; Chief Coach, Prakash Padukone Badminton Academy, Bengaluru, since the 2000s)",
+    "source": "Wikipedia — U. Vimal Kumar; Ministry of Youth Affairs & Sports official Dronacharya recipients list",
+    "source_id": "yas_dronacharya_list",
+    "source_url": "https://yas.gov.in/sites/default/files/Dronacharya_1.pdf"
+  },
+  {
+    "year": 2020,
+    "name": "Purushotham Rai",
+    "field": "Sports",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "connection": "based (Bengaluru-based SAI athletics coach, retired 2001; died in Bengaluru the day before receiving the award)",
+    "source": "Olympics.com; Deccan Herald; Ministry of Youth Affairs & Sports official Dronacharya recipients list",
+    "source_id": "yas_dronacharya_list",
+    "source_url": "https://yas.gov.in/sites/default/files/Dronacharya_1.pdf"
+  }
+]

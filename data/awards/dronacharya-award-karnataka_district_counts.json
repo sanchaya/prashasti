@@ -1,0 +1,25 @@
+{
+  "districts": [
+    {
+      "district": "Bengaluru Urban",
+      "count": 5,
+      "lat": 12.97,
+      "lon": 77.59
+    },
+    {
+      "district": "Kalaburagi",
+      "count": 1,
+      "lat": 17.33,
+      "lon": 76.84
+    },
+    {
+      "district": "Kodagu",
+      "count": 1,
+      "lat": 12.42,
+      "lon": 75.74
+    }
+  ],
+  "outside_karnataka": 0,
+  "unmapped": 0,
+  "other_locations": []
+}

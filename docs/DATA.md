@@ -65,6 +65,30 @@ recipient archive online (its site only has a nomination form), English Wikipedi
 broken (rows disconnected from their years), Kannada Wikipedia's page is a near-empty stub, and
 news coverage only ever names a handful of "notable" honorees out of each year's 30–500+
 recipients. There's no path to a genuinely complete list without BBMP publishing one itself.
+It is, as of this pass, the only one of the original six "hard" awards still unbuilt.
+
+## Arjuna, Dronacharya, and Khel Ratna (Karnataka recipients)
+
+A second pass found real paths for all three:
+
+- **Khel Ratna** — the full 62-person national roster (1991–92 to present) was reconstructed
+  from the Ministry of Youth Affairs & Sports and checked person-by-person for a Karnataka
+  connection. 2 confirmed: Pankaj Advani and Sunil Chhetri (both Bengaluru-based). High
+  confidence this is complete or very close to it.
+- **Dronacharya** — 7 confirmed Karnataka-connected recipients out of ~159 nationally
+  (1985–2024), each independently verified. Only ~13 of the 159 names were individually checked
+  in this pass; the rest were triaged by surname/institution signals for other states, which is
+  reasonable but not a completeness guarantee. Treat as a strong partial list.
+- **Arjuna** — the actual unlock was Karnataka's own Dept. of Youth Empowerment and Sports
+  publishing its own pre-filtered subset of the national Arjuna roll
+  (`ysd.karnataka.gov.in/storage/pdf-files/ARJUNA.pdf`), which made an otherwise-infeasible
+  967+-person national list tractable. Only 11 names came out of it, likely reflecting the
+  department's own record-keeping gaps (and a ~2023 last-modified date, so 2023–2026 winners
+  aren't included) rather than Karnataka's true full count since 1961.
+
+Each record on these three carries a `connection` or `discipline` field noting the specific
+basis (born vs. based, in the sports two's case) and pointing at its source, rather than
+asserting a bare "Karnataka" tag without explanation.
 
 ## Where the Rajyotsava data comes from
 

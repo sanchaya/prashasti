@@ -179,10 +179,13 @@
     "name_kn": "ಅರ್ಜುನ ಪ್ರಶಸ್ತಿ (ಕರ್ನಾಟಕ)",
     "desc_en": "India's national sports honour for athletes, Karnataka recipients.",
     "desc_kn": "ಕ್ರೀಡಾಪಟುಗಳಿಗೆ ಭಾರತದ ರಾಷ್ಟ್ರೀಯ ಕ್ರೀಡಾ ಗೌರವ, ಕರ್ನಾಟಕದ ಪುರಸ್ಕೃತರು.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 11,
+    "year_range": "1981–2017",
     "level": "national",
-    "notes": "Investigated: no State field anywhere in the primary sources (PIB releases, Wikipedia lists). With 967+ recipients nationally since 1961, a reliable per-person birthplace lookup is a genuine multi-session project on its own, not something to attempt in a single pass -- flagged as out of scope rather than forced."
+    "notes": "Built from Karnataka's own Dept. of Youth Empowerment and Sports official PDF -- the state government's own pre-filtered subset of the national Arjuna Award roll, which made this tractable despite 967+ recipients nationally. Only 11 names, likely reflecting the department's own record-keeping gaps rather than Karnataka's true full count since 1961 -- and the PDF's last-modified date (~2023) means any 2023-2026 Karnataka winners aren't included yet. Cite as 'per Karnataka DYES official list', not as definitively complete.",
+    "data_file": "data/awards/arjuna-award-karnataka.json",
+    "has_location_data": true,
+    "district_data_file": "data/awards/arjuna-award-karnataka_district_counts.json"
   },
   {
     "id": "dronacharya-award-karnataka",
@@ -191,10 +194,13 @@
     "name_kn": "ದ್ರೋಣಾಚಾರ್ಯ ಪ್ರಶಸ್ತಿ (ಕರ್ನಾಟಕ)",
     "desc_en": "India's national sports honour for coaches, Karnataka recipients.",
     "desc_kn": "ತರಬೇತುದಾರರಿಗೆ ಭಾರತದ ರಾಷ್ಟ್ರೀಯ ಕ್ರೀಡಾ ಗೌರವ, ಕರ್ನಾಟಕದ ಪುರಸ್ಕೃತರು.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 7,
+    "year_range": "1994–2020",
     "level": "national",
-    "notes": "Investigated: same as Khel Ratna, no State field in PIB's Sports Ministry releases or on Wikipedia. ~159 recipients nationally since 1985 -- a per-person birthplace lookup is 2-3x the effort of Khel Ratna's but still a bounded task for a dedicated future pass."
+    "notes": "7 confirmed Karnataka-connected recipients out of ~159 nationally (1985-2024), each independently verified (obituaries, Wikipedia, official records). Only ~13 of the 159 names were individually checked in this pass -- the rest were triaged out based on other-state surname/institution signals (e.g. Punjabi surnames dominating wrestling/hockey/kabaddi), which is a reasonable filter but not a guarantee; a full 159-name pass could still turn up one or two more. Treat as a strong partial list, not a certified-complete one.",
+    "data_file": "data/awards/dronacharya-award-karnataka.json",
+    "has_location_data": true,
+    "district_data_file": "data/awards/dronacharya-award-karnataka_district_counts.json"
   },
   {
     "id": "khel-ratna-karnataka",
@@ -203,10 +209,13 @@
     "name_kn": "ಖೇಲ್ ರತ್ನ (ಕರ್ನಾಟಕ)",
     "desc_en": "India's highest sports honour, Karnataka recipients.",
     "desc_kn": "ಭಾರತದ ಅತ್ಯುನ್ನತ ಕ್ರೀಡಾ ಗೌರವ, ಕರ್ನಾಟಕದ ಪುರಸ್ಕೃತರು.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 2,
+    "year_range": "2006–2021",
     "level": "national",
-    "notes": "Investigated: PIB's own National Sports Awards press releases do not include a State field for Khel Ratna (unlike the Padma Awards, which do). Only 62 recipients exist nationally since 1991-92 though, so a per-person Wikipedia birthplace lookup is realistic -- just not done in this pass. Genuinely buildable as a bounded follow-up task, not a dead end."
+    "notes": "Full 62-person national roster reconstructed (Ministry of Youth Affairs & Sports PDF + verified 2021-2024 additions) and checked person-by-person for a Karnataka connection. Two confirmed: Pankaj Advani (raised/based in Bengaluru) and Sunil Chhetri (Bengaluru-based, born Secunderabad). High confidence this is complete or very close to it -- one small residual gap on two under-documented 1990s Navy officer recipients whose hometowns couldn't be pinned down either way.",
+    "data_file": "data/awards/khel-ratna-karnataka.json",
+    "has_location_data": true,
+    "district_data_file": "data/awards/khel-ratna-karnataka_district_counts.json"
   },
   {
     "id": "karnataka-state-film-awards",
