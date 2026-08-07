@@ -38,6 +38,8 @@ const DICT = {
     map_desc_pre: "District attribution only appears in the record for more recent award years, so this map reflects",
     map_desc_post: "recipients with a known district — a sample, not the full roll. Circle size is how many recipients came from that district; the shaded district fills show the same numbers.",
     map_footnote: (outside, unmapped) => `${outside} recipients were credited to places outside Karnataka — plotted here as teal markers (Mumbai, Chennai and Telangana sit on this view; the Gulf ones appear when you zoom out). A further ${unmapped} have locations too vague to map (e.g. "Non-Resident").`,
+    map_click_hint: "click to see them",
+    map_filter_showing: (label, count) => `Showing ${count.toLocaleString()} recipient${count === 1 ? '' : 's'} from ${label}`,
 
     browse_title: "Browse the roll",
     browse_desc: "Search by name, field, or district. This filters the full register.",
@@ -140,6 +142,8 @@ const DICT = {
     map_desc_pre: "ಜಿಲ್ಲಾ ಮಾಹಿತಿ ಇತ್ತೀಚಿನ ವರ್ಷಗಳ ದಾಖಲೆಗಳಲ್ಲಿ ಮಾತ್ರ ಕಂಡುಬರುತ್ತದೆ, ಆದ್ದರಿಂದ ಈ ನಕ್ಷೆ",
     map_desc_post: "ಜಿಲ್ಲೆ ತಿಳಿದಿರುವ ಪುರಸ್ಕೃತರನ್ನು ತೋರಿಸುತ್ತದೆ — ಇದು ಪೂರ್ಣ ಪಟ್ಟಿಯಲ್ಲ, ಒಂದು ಮಾದರಿ. ವೃತ್ತದ ಗಾತ್ರ ಆ ಜಿಲ್ಲೆಯ ಪುರಸ್ಕೃತರ ಸಂಖ್ಯೆ; ಜಿಲ್ಲೆಯ ಬಣ್ಣದ ತುಂಬುವಿಕೆಯೂ ಅದೇ ಸಂಖ್ಯೆಯನ್ನು ತೋರಿಸುತ್ತದೆ.",
     map_footnote: (outside, unmapped) => `${outside} ಪುರಸ್ಕೃತರನ್ನು ಕರ್ನಾಟಕದ ಹೊರಗಿನ ಸ್ಥಳಗಳಿಗೆ ಗುರುತಿಸಲಾಗಿದೆ — ಇಲ್ಲಿ ಹಸಿರು ಬಿಂದುಗಳಾಗಿ ತೋರಿಸಲಾಗಿದೆ (ಮುಂಬೈ, ಚೆನ್ನೈ, ತೆಲಂಗಾಣ ಈ ವೀಕ್ಷಣೆಯಲ್ಲಿ ಕಾಣುತ್ತವೆ; ಗಲ್ಫ್ ಪ್ರದೇಶದವು ಝೂಮ್ ಔಟ್ ಮಾಡಿದಾಗ ಕಾಣಿಸುತ್ತವೆ). ಹೆಚ್ಚುವರಿ ${unmapped} ಮಂದಿಯ ಸ್ಥಳಗಳು ನಕ್ಷೆಗೆ ಸಾಕಾಗುವಷ್ಟು ಸ್ಪಷ್ಟವಿಲ್ಲ (ಉದಾ. "Non-Resident").`,
+    map_click_hint: "ನೋಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ",
+    map_filter_showing: (label, count) => `${label} ಇಂದ ${count.toLocaleString()} ಪುರಸ್ಕೃತರನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ`,
 
     browse_title: "ಪಟ್ಟಿಯನ್ನು ವೀಕ್ಷಿಸಿ",
     browse_desc: "ಹೆಸರು, ಕ್ಷೇತ್ರ, ಅಥವಾ ಜಿಲ್ಲೆಯಿಂದ ಹುಡುಕಿ. ಇದು ಪೂರ್ಣ ನೋಂದಣಿಯನ್ನು ಫಿಲ್ಟರ್ ಮಾಡುತ್ತದೆ.",

@@ -9,7 +9,10 @@ const SanchiMap = (function(){
   let countByDistrict = {};
   let maxCount = 1;
   let districtLayers = {};
+  let markersByKey = {};
   let highlightTimer = null;
+  let selectHandler = null;
+  let selectedKey = null;
 
   const DISTRICT_ALIAS = {
     'Chamarajanagar': 'Chamarajanagara',
@@ -106,6 +109,7 @@ const SanchiMap = (function(){
   function clearMarkers(){
     markers.forEach(m => m.remove());
     markers = [];
+    markersByKey = {};
   }
 
   function hideLegend(){
@@ -125,6 +129,7 @@ const SanchiMap = (function(){
     boundariesLoaded = false;
     currentAwardId = null;
     districtLayers = {};
+    if(selectedKey){ selectedKey = null; if(selectHandler) selectHandler(null); }
 
     const frame = document.querySelector('.map-frame');
     if(!frame) return;
@@ -164,9 +169,15 @@ const SanchiMap = (function(){
       districtLayer = L.geoJSON(distGeo, {
         style: districtStyle,
         onEachFeature: (f, lyr) => {
-          districtLayers[normalize(f.properties.district)] = lyr;
-          lyr.on('mouseover', () => lyr.setStyle({ weight: 1.6, fillOpacity: 0.8 }));
-          lyr.on('mouseout', () => lyr.setStyle(districtStyle(f)));
+          const key = normalize(f.properties.district);
+          districtLayers[key] = lyr;
+          lyr.on('mouseover', () => { if(selectedKey !== key) lyr.setStyle({ weight: 1.6, fillOpacity: 0.8 }); });
+          lyr.on('mouseout', () => { if(selectedKey !== key) lyr.setStyle(districtStyle(f)); });
+          lyr.on('click', () => {
+            const count = countByDistrict[key] || 0;
+            if(count === 0) return;
+            selectKey(key, f.properties.district, count);
+          });
         },
       }).addTo(m);
 
@@ -260,6 +271,73 @@ const SanchiMap = (function(){
       const f = lyr.feature;
       if(f) lyr.setStyle(districtStyle(f));
     });
+  }
+
+  // ---------------- click-to-select (district or outside-location) ----------------
+  // Persists until cleared — distinct from the ephemeral 5s flash used by highlightLocation()
+  // when a recipient name is clicked in the browse list.
+
+  function styleSelected(entry){
+    if(entry.isOther){
+      entry.layer.setStyle({ fillOpacity: 1, weight: 3, color: '#7a368d' });
+    } else {
+      entry.layer.setStyle({ fillOpacity: 0.9, color: '#7a368d', fillColor: '#a83480', weight: 2.5 });
+    }
+    entry.layer.bringToFront();
+  }
+
+  function styleUnselected(key, entry){
+    if(entry.isOther){
+      entry.layer.setStyle({ fillOpacity: 0.7, weight: 1.5, color: '#0f6b58' });
+    } else {
+      entry.layer.setStyle({ fillOpacity: 0.45, color: '#1876c9', fillColor: '#2196f3' });
+    }
+  }
+
+  function selectKey(key, label, count, opts){
+    if(selectedKey === key){ clearSelection(); return; }
+    // reset previous selection's visuals
+    if(selectedKey){
+      if(districtLayers[selectedKey]){
+        const f = districtLayers[selectedKey].feature;
+        if(f) districtLayers[selectedKey].setStyle(districtStyle(f));
+      }
+      if(markersByKey[selectedKey]) styleUnselected(selectedKey, markersByKey[selectedKey]);
+    }
+    selectedKey = key;
+    const isOther = !!(opts && opts.isOther);
+    if(!isOther && districtLayers[key]){
+      districtLayers[key].setStyle({ fillColor: '#7a368d', fillOpacity: 0.85, color: '#7a368d', weight: 3, opacity: 0.95 });
+      districtLayers[key].bringToFront();
+      if(stateLayer) stateLayer.bringToFront();
+      if(map && districtLayers[key].getBounds){
+        map.flyToBounds(districtLayers[key].getBounds().pad(0.35), { maxZoom: 9, duration: 0.8 });
+      }
+    }
+    if(markersByKey[key]) styleSelected(markersByKey[key]);
+    if(selectHandler) selectHandler({ key, label, count, isOther });
+  }
+
+  function clearSelection(){
+    if(!selectedKey) return;
+    if(districtLayers[selectedKey]){
+      const f = districtLayers[selectedKey].feature;
+      if(f) districtLayers[selectedKey].setStyle(districtStyle(f));
+    }
+    if(markersByKey[selectedKey]) styleUnselected(selectedKey, markersByKey[selectedKey]);
+    selectedKey = null;
+    if(selectHandler) selectHandler(null);
+  }
+
+  function onSelect(fn){ selectHandler = fn; }
+
+  // Does a recipient's raw location string belong to the current map selection?
+  function matchesSelection(rawLocation){
+    if(!selectedKey || !rawLocation) return false;
+    if(selectedKey.indexOf('other:') === 0){
+      return selectedKey === 'other:' + String(rawLocation).toLowerCase();
+    }
+    return districtKeyFor(rawLocation) === selectedKey;
   }
 
   // Highlight a district from a recipient's raw location string.
@@ -364,6 +442,7 @@ const SanchiMap = (function(){
     }
 
     districts.sort((a, b) => b.count - a.count).forEach(d => {
+      const key = normalize(d.district);
       const circle = L.circleMarker([d.lat, d.lon], {
         radius: radiusFor(d.count, maxCount),
         fillColor: '#2196f3',
@@ -374,15 +453,18 @@ const SanchiMap = (function(){
       }).addTo(m);
 
       circle.bindTooltip(
-        `<div class="district-tooltip"><strong>${d.district}</strong><br>${d.count} recipient${d.count === 1 ? '' : 's'}</div>`,
+        `<div class="district-tooltip"><strong>${d.district}</strong><br>${d.count} recipient${d.count === 1 ? '' : 's'} — ${Sanchi18n ? Sanchi18n.t('map_click_hint') : 'click to see them'}</div>`,
         { direction: 'top', offset: [0, -radiusFor(d.count, maxCount)], sticky: false }
       );
-      circle.on('mouseover', () => circle.setStyle({ fillOpacity: 0.8, color: '#7a368d', fillColor: '#a83480' }));
-      circle.on('mouseout', () => circle.setStyle({ fillOpacity: 0.45, color: '#1876c9', fillColor: '#2196f3' }));
+      circle.on('mouseover', () => { if(selectedKey !== key) circle.setStyle({ fillOpacity: 0.8, color: '#7a368d', fillColor: '#a83480' }); });
+      circle.on('mouseout', () => { if(selectedKey !== key) circle.setStyle({ fillOpacity: 0.45, color: '#1876c9', fillColor: '#2196f3' }); });
+      circle.on('click', () => selectKey(key, d.district, d.count));
       markers.push(circle);
+      markersByKey[key] = { layer: circle, isOther: false };
     });
 
     others.forEach(o => {
+      const key = 'other:' + o.location.toLowerCase();
       const circle = L.circleMarker([o.lat, o.lon], {
         radius: radiusFor(o.count, maxCount),
         fillColor: '#16a085',
@@ -396,7 +478,11 @@ const SanchiMap = (function(){
         `<div class="district-tooltip"><strong>${o.location}</strong><br>${o.count} recipient${o.count === 1 ? '' : 's'} — outside Karnataka</div>`,
         { direction: 'top', offset: [0, -radiusFor(o.count, maxCount)], sticky: false }
       );
+      circle.on('mouseover', () => { if(selectedKey !== key) circle.setStyle({ fillOpacity: 1, weight: 2.5 }); });
+      circle.on('mouseout', () => { if(selectedKey !== key) circle.setStyle({ fillOpacity: 0.7, weight: 1.5 }); });
+      circle.on('click', () => selectKey(key, o.location, o.count, { isOther: true }));
       markers.push(circle);
+      markersByKey[key] = { layer: circle, isOther: true };
     });
 
     // fix sizing glitch when the map div was hidden (display:none) during init
@@ -413,7 +499,7 @@ const SanchiMap = (function(){
     }, 50);
   }
 
-  return { load, refresh, highlightLocation };
+  return { load, refresh, highlightLocation, onSelect, clearSelection, matchesSelection };
 })();
 
 window.SanchiMap = SanchiMap;

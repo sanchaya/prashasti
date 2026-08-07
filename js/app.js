@@ -9,6 +9,7 @@
     selectedAward: null,    // null = "All awards" chip
     filtered: [], shown: PAGE_SIZE,
     search: '', field: '', year: '',
+    location: null,         // { key, label, count, isOther } from a map click, or null
   };
 
   const els = {
@@ -31,6 +32,7 @@
     provenanceGrid: document.getElementById('provenance-grid'),
     mapAwardNote: document.getElementById('map-award-note'),
     repSection: document.getElementById('representation-section'),
+    mapFilterChip: document.getElementById('map-filter-chip'),
     adminNavRepresentation: document.querySelector('a[href="#admin/representation"]'),
     heroEyebrow: document.querySelector('.eyebrow'),
     heroH1: document.getElementById('hero-h1'),
@@ -117,6 +119,7 @@
     renderWikidataDesc();
     renderList();
     updateMapNote();
+    renderMapFilterChip();
     if(window.SanchiMap) window.SanchiMap.load(state.selectedAward || rajyotsavaAward);
   });
 
@@ -317,9 +320,36 @@
     els.clearBtn.addEventListener('click', () => {
       state.search=''; state.field=''; state.year=''; state.shown = PAGE_SIZE;
       els.searchInput.value=''; els.fieldSelect.value=''; els.yearSelect.value='';
-      applyFilters(); syncTimelineActive();
+      if(window.SanchiMap) window.SanchiMap.clearSelection();
+      else { state.location = null; applyFilters(); renderMapFilterChip(); }
+      syncTimelineActive();
     });
     els.loadMore.addEventListener('click', () => { state.shown += PAGE_SIZE; renderList(); });
+
+    if(els.mapFilterChip){
+      els.mapFilterChip.addEventListener('click', () => {
+        if(window.SanchiMap) window.SanchiMap.clearSelection();
+      });
+    }
+
+    if(window.SanchiMap){
+      window.SanchiMap.onSelect(selection => {
+        state.location = selection;
+        state.shown = PAGE_SIZE;
+        applyFilters();
+        renderMapFilterChip();
+        if(selection){
+          document.getElementById('browse-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+  }
+
+  function renderMapFilterChip(){
+    if(!els.mapFilterChip) return;
+    if(!state.location){ els.mapFilterChip.style.display = 'none'; return; }
+    els.mapFilterChip.style.display = '';
+    els.mapFilterChip.innerHTML = `<span class="map-filter-label">${escapeHtml(Sanchi18n.t('map_filter_showing', state.location.label, state.location.count))}</span><span class="map-filter-x" aria-hidden="true">×</span>`;
   }
 
   // ---------------- rendering ----------------
@@ -418,6 +448,7 @@
 
   function applyFilters(){
     state.filtered = baseRecords().filter(r => {
+      if(state.location && !(window.SanchiMap && window.SanchiMap.matchesSelection(r.location))) return false;
       if(state.year && String(r.year) !== state.year) return false;
       if(state.field && r.field !== state.field) return false;
       if(state.search){

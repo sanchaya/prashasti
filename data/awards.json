@@ -74,12 +74,12 @@
     "data_file": "data/awards/pampa-award.json",
     "name_en": "Pampa Award",
     "name_kn": "ಪಂಪ ಪ್ರಶಸ್ತಿ",
-    "desc_en": "Karnataka's highest literary honour, conferred since 1987 — 37 recipients and counting.",
+    "desc_en": "Karnataka's highest literary honour, conferred since 1987 — 39 recipients and counting.",
     "desc_kn": "1987ರಿಂದ ನೀಡಲಾಗುತ್ತಿರುವ ಕರ್ನಾಟಕದ ಅತ್ಯುನ್ನತ ಸಾಹಿತ್ಯ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 39,
+    "year_range": "1987–2025",
     "level": "state",
-    "notes": "Clean build. Wikipedia has a structured list page; first winner Kuvempu, most recent Devanur Mahadeva. 37 winners since 1987."
+    "notes": "Clean build. Wikipedia has a structured list page; first winner Kuvempu, most recent Devanur Mahadeva. 39 winners since 1987."
   },
   {
     "id": "attimabbe-award",
@@ -89,10 +89,10 @@
     "name_kn": "ದಾನಚಿಂತಾಮಣಿ ಅತ್ತಿಮಬ್ಬೆ ಪ್ರಶಸ್ತಿ",
     "desc_en": "Karnataka's highest literary honour for women writers, since 1995.",
     "desc_kn": "1995ರಿಂದ ಮಹಿಳಾ ಬರಹಗಾರರಿಗೆ ನೀಡಲಾಗುತ್ತಿರುವ ಕರ್ನಾಟಕದ ಅತ್ಯುನ್ನತ ಸಾಹಿತ್ಯ ಗೌರವ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 25,
+    "year_range": "1995–2019",
     "level": "state",
-    "notes": "Clean build. Wikipedia page exists; 24 winners since 1995."
+    "notes": "Clean build. Wikipedia page exists; 25 winners since 1995."
   },
   {
     "id": "nadoja",
@@ -102,8 +102,8 @@
     "name_kn": "ನಾಡೋಜ ಪ್ರಶಸ್ತಿ",
     "desc_en": "Hampi Kannada University's highest honorary award, since 1995.",
     "desc_kn": "1995ರಿಂದ ನೀಡಲಾಗುತ್ತಿರುವ ಹಂಪಿ ಕನ್ನಡ ವಿಶ್ವವಿದ್ಯಾಲಯದ ಅತ್ಯುನ್ನತ ಗೌರವ ಪ್ರಶಸ್ತಿ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 97,
+    "year_range": "1995–2025",
     "level": "state",
     "notes": "Clean build. Wikipedia page with a year-by-year table; since 1995."
   },
@@ -115,8 +115,8 @@
     "name_kn": "ಸಾಹಿತ್ಯ ಅಕಾಡೆಮಿ ಪ್ರಶಸ್ತಿ (ಕನ್ನಡ)",
     "desc_en": "India's national literary award, Kannada-language recipients since 1955.",
     "desc_kn": "1955ರಿಂದ ಕನ್ನಡ ಭಾಷೆಗೆ ನೀಡಲಾಗುತ್ತಿರುವ ಭಾರತದ ರಾಷ್ಟ್ರೀಯ ಸಾಹಿತ್ಯ ಪ್ರಶಸ್ತಿ.",
-    "recipients": null,
-    "year_range": null,
+    "recipients": 69,
+    "year_range": "1955–2025",
     "level": "national"
   },
   {
@@ -161,10 +161,10 @@
     "data_file": "data/awards/national-film-award-best-kannada-film.json",
     "name_en": "National Film Award (Best Kannada Film)",
     "name_kn": "ರಾಷ್ಟ್ರೀಯ ಚಲನಚಿತ್ರ ಪ್ರಶಸ್ತಿ (ಅತ್ಯುತ್ತಮ ಕನ್ನಡ ಚಿತ್ರ)",
-    "desc_en": "National recognition of Kannada cinema, since 1968.",
-    "desc_kn": "1968ರಿಂದ ಕನ್ನಡ ಚಿತ್ರರಂಗಕ್ಕೆ ಸಂದ ರಾಷ್ಟ್ರೀಯ ಮನ್ನಣೆ.",
-    "recipients": null,
-    "year_range": null,
+    "desc_en": "National recognition of Kannada cinema, since 1954.",
+    "desc_kn": "1954ರಿಂದ ಕನ್ನಡ ಚಿತ್ರರಂಗಕ್ಕೆ ಸಂದ ರಾಷ್ಟ್ರೀಯ ಮನ್ನಣೆ.",
+    "recipients": 75,
+    "year_range": "1954–2024",
     "level": "national",
     "notes": "National recognition of Kannada cinema. Decent Wikipedia coverage, moderate scope."
   },
