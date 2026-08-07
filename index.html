@@ -42,11 +42,24 @@
     <p class="hero-desc" id="hero-desc" data-i18n="hero_desc">1966ರಿಂದ ಪ್ರತಿ ನವೆಂಬರ್ 1ರಂದು, ಕರ್ನಾಟಕ ತನ್ನವರನ್ನು ಗೌರವಿಸುತ್ತಾ ಬಂದಿದೆ — ಸಾಹಿತಿಗಳು, ಕುಸ್ತಿಪಟುಗಳು, ಜಾನಪದ ಕಲಾವಿದರು, ವಿಜ್ಞಾನಿಗಳು. ಈ ಯೋಜನೆಯು ಆ ಗೌರವ ಪಟ್ಟಿಯನ್ನು ಒಂದೇ ಕಡೆ ಹುಡುಕಬಹುದಾದಂತೆ ಸಂಗ್ರಹಿಸುತ್ತದೆ.</p>
   </div>
 
-  <div class="stat-row" id="stat-row">
-    <div class="stat"><span class="stat-num" id="stat-total">—</span><span class="stat-label" data-i18n="stat_total">ದಾಖಲಾದ ಪುರಸ್ಕೃತರು</span></div>
-    <div class="stat"><span class="stat-num" id="stat-years">—</span><span class="stat-label" data-i18n="stat_years">ಸಮಾರಂಭಗಳು</span></div>
-    <div class="stat"><span class="stat-num" id="stat-fields">—</span><span class="stat-label" data-i18n="stat_fields">ಸಾಧನಾ ಕ್ಷೇತ್ರಗಳು</span></div>
-    <div class="stat"><span class="stat-num" id="stat-districts">—</span><span class="stat-label" data-i18n="stat_districts">ಜಿಲ್ಲೆಗಳು</span></div>
+  <div class="award-head-bottom">
+    <div class="stat-row" id="stat-row">
+      <div class="stat"><span class="stat-num" id="stat-total">—</span><span class="stat-label" data-i18n="stat_total">ದಾಖಲಾದ ಪುರಸ್ಕೃತರು</span></div>
+      <div class="stat"><span class="stat-num" id="stat-years">—</span><span class="stat-label" data-i18n="stat_years">ಸಮಾರಂಭಗಳು</span></div>
+      <div class="stat"><span class="stat-num" id="stat-fields">—</span><span class="stat-label" data-i18n="stat_fields">ಸಾಧನಾ ಕ್ಷೇತ್ರಗಳು</span></div>
+      <div class="stat"><span class="stat-num" id="stat-districts">—</span><span class="stat-label" data-i18n="stat_districts">ಜಿಲ್ಲೆಗಳು</span></div>
+    </div>
+
+    <div class="controls" id="head-controls">
+      <input type="search" id="search-input" data-i18n-placeholder="search_placeholder" placeholder="ಹೆಸರು, ಕ್ಷೇತ್ರ, ಅಥವಾ ಜಿಲ್ಲೆ ಹುಡುಕಿ…">
+      <select id="field-select" aria-label="Filter by field">
+        <option value="" data-i18n="filter_all_fields">ಎಲ್ಲಾ ಕ್ಷೇತ್ರಗಳು</option>
+      </select>
+      <select id="year-select" aria-label="Filter by year">
+        <option value="" data-i18n="filter_all_years">ಎಲ್ಲಾ ವರ್ಷಗಳು</option>
+      </select>
+      <button id="clear-filters" class="btn-ghost" data-i18n="filter_clear">ಅಳಿಸಿ</button>
+    </div>
   </div>
 </div>
 
@@ -96,16 +109,6 @@
       <section class="card browse-card" id="browse-section">
         <div class="browse-head">
           <h2 data-i18n="browse_title">ಪುರಸ್ಕೃತರ ಪಟ್ಟಿ</h2>
-        </div>
-        <div class="controls">
-          <input type="search" id="search-input" data-i18n-placeholder="search_placeholder" placeholder="ಹೆಸರು, ಕ್ಷೇತ್ರ, ಅಥವಾ ಜಿಲ್ಲೆ ಹುಡುಕಿ…">
-          <select id="field-select" aria-label="Filter by field">
-            <option value="" data-i18n="filter_all_fields">ಎಲ್ಲಾ ಕ್ಷೇತ್ರಗಳು</option>
-          </select>
-          <select id="year-select" aria-label="Filter by year">
-            <option value="" data-i18n="filter_all_years">ಎಲ್ಲಾ ವರ್ಷಗಳು</option>
-          </select>
-          <button id="clear-filters" class="btn-ghost" data-i18n="filter_clear">ಅಳಿಸಿ</button>
         </div>
 
         <button type="button" id="map-filter-chip" class="map-filter-chip" style="display:none;"></button>
@@ -272,7 +275,6 @@
     <div class="footer-links">
       <a href="https://sanchaya.org" target="_blank" rel="noopener">Sanchaya</a>
       <a href="https://sanchifoundation.org" target="_blank" rel="noopener">Sanchi Foundation</a>
-      <a href="https://fonts.sanchaya.net" target="_blank" rel="noopener">Fonts Sanchaya</a>
     </div>
   </div>
 </footer>

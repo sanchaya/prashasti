@@ -292,6 +292,19 @@ code{
   max-width: 14ch;
 }
 
+/* Row under the title: stats on the left, the search/field/year filters on
+   the right — keeps the filter controls close at hand without eating
+   vertical space from the recipient list below. */
+.award-head-bottom{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.6rem;
+}
+.award-head-bottom .controls{ flex: 1 1 320px; max-width: 640px; margin-top: 0; justify-content: flex-end; }
+
 /* ===== Award nav (grouped dropdown menu) ===== */
 .award-nav{
   grid-column: 1 / -1;
@@ -1272,7 +1285,7 @@ select{ cursor: pointer; }
   }
   .footer-brand{ margin-bottom: 0; gap: 0.5rem; }
   .footer-brand .brand-kn{ font-size: 0.85rem; }
-  .footer-tagline{ display: none; }
+  .footer-tagline{ font-size: 0.72rem; }
   .site-footer p{ display: none; }
   .footer-links{ gap: 1rem; }
   .footer-links a{ font-size: 0.76rem; }
