@@ -1205,17 +1205,19 @@ select{ cursor: pointer; }
 
   .award-head{
     flex: 0 0 auto;
-    padding: 0.6rem 1.5rem;
-    gap: 1.4rem;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.6rem 1.5rem 0.55rem;
+    gap: 0.5rem;
   }
+  .award-head-main{ width: 100%; }
   .award-head .eyebrow{ margin-bottom: 0.15rem; font-size: 0.68rem; }
-  .award-head h1{ font-size: 1.25rem; max-width: 44ch; line-height: 1.15; }
+  .award-head h1{ font-size: 1.25rem; max-width: 60ch; line-height: 1.15; }
   .award-head .hero-desc{ display: none; }
   .stat-row{
     grid-template-columns: repeat(4, auto);
     gap: 0.2rem 1.6rem;
-    align-self: center;
+    align-self: flex-start;
   }
   .stat{ flex-direction: row; align-items: baseline; gap: 0.4rem; }
   .stat-num{ font-size: 1.1rem; }
