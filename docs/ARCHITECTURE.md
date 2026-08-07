@@ -5,8 +5,10 @@
 Everything is client-side. `app.js` fetches `data/awards.json` on load, then loads every
 award's `data_file` that exists. All awards in the registry are `"status": "active"` — some
 have full recipient data, others (Kempegowda, Basava Puraskara, Padma, Sports honours, State
-Film Awards, Smaller Honours) are active as chips but their data files are still being built,
-so they render with an empty roll. Switching awards re-renders in place — no page reload.
+Film Awards, Smaller Honours) are active in the sidebar but their data files are still being
+built, so they render with an empty roll. Switching awards re-renders in place — no page
+reload. Awards are split one-per-entry (Arjuna/Dronacharya/Khel Ratna and the seven smaller
+honours each have their own entry) rather than clubbed under a single row.
 
 ### The award registry (`data/awards.json`)
 
@@ -33,8 +35,9 @@ Each entry looks like this:
 }
 ```
 
-- `status: "active"` awards are clickable in the nav switcher. All fifteen entries are active;
-  nine have a real `data_file` with recipient records, six are still data-less placeholders.
+- `status: "active"` awards are clickable in the sidebar nav. All twenty-three entries are
+  active; nine have a real `data_file` with recipient records, fourteen are still data-less
+  placeholders.
 - `has_location_data` / `has_representation_data` gate whether the Map and Representation
   sections render for that award. Both are `true` only for Rajyotsava Prashasti right now.
 - `hero_en` / `hero_kn` are the one-line blurbs under the H1 — falls back to `desc_en`/`desc_kn`
@@ -108,10 +111,17 @@ fuller citation lives in one place instead of thousands of records:
 
 ## Sections
 
-The public page renders Map → Timeline → Browse. An `#admin` view (hash-routed via
+The public page (`#public-view`) renders a three-column home grid: an award **sidebar** on the
+left, the **map card** (map + timeline inside it) in the centre, and the **browse/filter list**
+on the right. `app.js` `renderAwardNav()` draws every active award as a `.award-nav-item`
+button; desktop the sidebar is sticky and vertically scrollable, and below `1000px` it flattens
+to a horizontally scrollable row. The timeline lives *inside* the map card (`#timeline-section`
+is a child of `.map-frame`, wrapped with the map in a `.map-stage` container) so the map legend
+stays anchored to the map only, not the card. An `#admin` view (hash-routed via
 `body.admin-mode` in `app.js`) holds the Wikidata-gaps, Wikipedia draft generator, provenance,
 and representation sections. `applyRoute()` maps `#admin/wikidata|draft|provenance|representation`
-to the corresponding section ids.
+to the corresponding section ids. Content hidden from public view (`#admin-view`) is hidden the
+same way on every viewport — nothing public-only renders on mobile.
 
 ## The map (`js/map.js`)
 
@@ -124,6 +134,10 @@ GeoJSON feature names (`map.js` `DISTRICT_ALIAS`: e.g. Chamarajanagar → Chamar
 Chikkaballapur → Chikkaballapura, Bagalkot → Bagalkote). Vijayanagara (a 2020 district) has no
 2011-census polygon, so it shows as a circle marker only. `SanchiMap.refresh()` is called when
 leaving admin mode to fix Leaflet sizing after `display:none`.
+
+The map card's in-card legend (`#map-legend`) is absolutely positioned at the bottom of a
+`.map-stage` wrapper that holds only the map, so it overlays the map (not the timeline below it)
+and its `flex-wrap` prevents it overflowing the card on narrow viewports.
 
 ## Representation & data completeness (`js/representation.js`, `data/representation.json`)
 

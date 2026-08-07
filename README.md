@@ -20,24 +20,26 @@ you need *some* static file server — `python3 -m http.server` is the simplest,
 ## Repo layout
 
 ```
-index.html               Markup + data-i18n translation attributes
+index.html               Markup + data-i18n translation attributes (award sidebar + map card with in-map timeline)
 sources.html             Public Sources & citations page (every source, grouped by award)
-css/style.css            Single stylesheet, CSS custom properties
+css/style.css            Single stylesheet, CSS custom properties (responsive: sidebar scrolls horizontally ≤1000px)
 js/
   i18n.js                KN/EN dictionaries + Sanchi18n helper (translation, field labels)
-  app.js                 Core app: award switching, filtering, browse, timeline, stats, #admin routing
+  app.js                 Core app: award switching (sidebar), filtering, browse, in-map timeline, stats, #admin routing
   sources.js             Sources & citations page renderer
   map.js                 SanchiMap — Leaflet map (Karnataka district choropleth + outside-Karnataka markers)
   representation.js      Representation & completeness section (Rajyotsava only)
   wikidraft.js           Wikipedia draft-stub generator for recipients without an article
 data/
-  awards.json            Registry — one entry per award (all active; some data files still pending)
+  awards.json            Registry — one entry per award (all 23 active; 9 with data files, 14 placeholders)
   awards/<id>.json       One recipient array per award
   sources.json           Citation registry — one entry per source page, keyed by source_id
   district_counts.json   District-level aggregation for the map (incl. other_locations)
   karnataka-districts.geojson / karnataka-state.geojson   Map boundary layers
   representation.json    Precomputed gender/completeness stats (Rajyotsava only)
   quickstatements_*.tsv  Per-award Wikidata QuickStatements batches (with S854 source URLs)
+scripts/
+  geocode_locations.py   WIP geocoding pipeline (Wikidata P19/P551 → district counts per award)
 ```
 
 ## Deploy (GitHub Pages)
