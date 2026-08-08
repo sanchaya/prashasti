@@ -1312,9 +1312,79 @@ select{ cursor: pointer; }
   .hero-search{ flex-direction: column; }
   .wp-preview-head{ flex-direction: column; align-items: flex-start; }
   #map-legend{ left: 0.6rem; bottom: 0.6rem; }
-  #karnataka-map{ height: 420px; }
   .home-grid{ padding-top: 1.4rem; }
   .award-head{ padding-top: 1.4rem; }
+}
+
+/* ===== Touch / tablet+mobile (everything below the desktop "atlas mode"
+   breakpoint at 1001px) — sized for fingers, not cursors, and hardened
+   against the horizontal-overflow and off-screen-dropdown bugs that a
+   cursor-first layout doesn't surface. ===== */
+@media (max-width: 1000px){
+  html, body{ overflow-x: hidden; max-width: 100%; }
+  img{ max-width: 100%; }
+
+  /* iOS Safari zooms the whole page in on focus if an input's font-size
+     is under 16px — bump these two up to just clear that threshold. */
+  input[type="search"], select{ font-size: 1rem; }
+
+  /* Minimum comfortable tap target (~44px) on every control a finger
+     has to hit, without touching the tighter desktop sizing. */
+  .award-nav-item,
+  .view-tab,
+  .lang-btn,
+  .btn-ghost,
+  .btn-primary,
+  input[type="search"],
+  select,
+  #clear-filters,
+  #load-more{
+    min-height: 44px;
+  }
+  .field-pill{ min-height: 40px; padding-top: 0.55em; padding-bottom: 0.55em; }
+  .award-nav-dropdown .award-nav-item{ min-height: 44px; }
+  .lang-switch{ min-height: 44px; }
+
+  /* The award-nav dropdown is positioned relative to its trigger pill
+     on desktop (left: 0, anchored under the button). On a narrow phone
+     a pill near the right edge of the row (e.g. the last group, "City")
+     pushes that dropdown off the right edge of the viewport. Detach it
+     from the trigger entirely and dock it as a centered sheet instead —
+     safe at any trigger position, any viewport width. */
+  .award-nav-group{ position: static; }
+  .award-nav-dropdown{
+    position: fixed;
+    left: 0.75rem;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    max-height: 70vh;
+  }
+
+  /* Tablet-range map height (phones get the 420px fixed value below,
+     720px query) — scale with viewport instead of a single fixed value
+     so an iPad-portrait-width browser window isn't stuck with a
+     desktop-sized 560px map inside a much shorter viewport. */
+  #karnataka-map{ height: min(55vh, 500px); }
+
+  .field-explorer{ -webkit-overflow-scrolling: touch; }
+  .recipient-list{ -webkit-overflow-scrolling: touch; }
+  .award-nav-dropdown{ -webkit-overflow-scrolling: touch; }
+
+  .r-name{ word-break: break-word; }
+}
+
+@media (max-width: 480px){
+  .stat-row{ gap: 0.7rem 1.2rem; }
+  .stat-num{ font-size: 1.3rem; }
+  .stat-label{ font-size: 0.72rem; max-width: 10ch; }
+  .award-head-search input[type="search"]{ padding: 0.7rem 1rem; }
+  #karnataka-map{ height: 340px; }
+  .topnav-inner{ flex-wrap: wrap; row-gap: 0.5rem; }
+  .topnav-right{ gap: 0.4rem; }
 }
 
 @media (prefers-reduced-motion: reduce){
