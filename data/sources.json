@@ -558,18 +558,6 @@
         "arjuna-award-karnataka"
       ]
     },
-    "dh_kempegowda_2014": {
-      "publisher": "Deccan Herald",
-      "language": "en",
-      "kind": "news",
-      "license": null,
-      "id": "dh_kempegowda_2014",
-      "title": "Kempegowda Award list swells to 136",
-      "url": "https://www.deccanherald.com/content/416209/kempegowda-award-list-swells-136.html",
-      "awards": [
-        "kempegowda-award"
-      ]
-    },
     "dh_kempegowda_2023": {
       "publisher": "Deccan Herald",
       "language": "en",
@@ -624,6 +612,17 @@
       "id": "dh_kempegowda_international_2022",
       "title": "First Kempegowda International Awards to SM Krishna, Narayana Murthy and Prakash Padukone",
       "url": "https://www.deccanherald.com/india/karnataka/first-kempegowda-international-awards-to-sm-krishna-narayana-murthy-and-prakash-padukone-1121281.html",
+      "awards": [
+        "kempegowda-award"
+      ]
+    },
+    "examboard_kempegowda_2018": {
+      "publisher": "ExamBoard",
+      "language": "en",
+      "kind": "news",
+      "id": "examboard_kempegowda_2018",
+      "title": "Nadaprabhu Kempegowda Award 2018",
+      "url": "https://www.examboard.in/2018/08/nadaprabhu-kempegowda-award.html",
       "awards": [
         "kempegowda-award"
       ]

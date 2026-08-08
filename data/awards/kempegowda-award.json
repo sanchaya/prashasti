@@ -1,18 +1,5 @@
 [
   {
-    "year": 2014,
-    "name": "G. Venkatasubbiah",
-    "field": "Literature",
-    "location": "Bengaluru",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/G._Venkatasubbiah",
-    "wikidata_qid": null,
-    "has_wikidata_statement": null,
-    "source": "Deccan Herald — \"Kempegowda Award list swells to 136\"",
-    "source_id": "dh_kempegowda_2014",
-    "source_url": "https://www.deccanherald.com/content/416209/kempegowda-award-list-swells-136.html",
-    "name_kn": "ಗ್ ವೆನ್ಕತಸುಬ್ಬಿಅಹ್"
-  },
-  {
     "year": 2023,
     "name": "Aditi Ashok",
     "field": "Sports",
@@ -521,5 +508,109 @@
     "source_id": "dh_kempegowda_international_2022",
     "source_url": "https://www.deccanherald.com/india/karnataka/first-kempegowda-international-awards-to-sm-krishna-narayana-murthy-and-prakash-padukone-1121281.html",
     "name_kn": "ಪ್ರಕಾಶ್ ಪದುಕೊನೆ"
+  },
+  {
+    "year": 2018,
+    "name": "Ramesh Aravind",
+    "field": "Film and Television",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "ExamBoard — \"Nadaprabhu Kempegowda Award 2018\"",
+    "source_id": "examboard_kempegowda_2018",
+    "source_url": "https://www.examboard.in/2018/08/nadaprabhu-kempegowda-award.html",
+    "name_kn": "ರಮೇಶ್ ಅರವಿನ್ದ್"
+  },
+  {
+    "year": 2018,
+    "name": "Sudeep",
+    "field": "Film and Television",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "ExamBoard — \"Nadaprabhu Kempegowda Award 2018\"",
+    "source_id": "examboard_kempegowda_2018",
+    "source_url": "https://www.examboard.in/2018/08/nadaprabhu-kempegowda-award.html",
+    "name_kn": "ಸುದೀಪ್"
+  },
+  {
+    "year": 2018,
+    "name": "Srujan Lokesh",
+    "field": "Film and Television",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "ExamBoard — \"Nadaprabhu Kempegowda Award 2018\"",
+    "source_id": "examboard_kempegowda_2018",
+    "source_url": "https://www.examboard.in/2018/08/nadaprabhu-kempegowda-award.html",
+    "name_kn": "ಸ್ರುಜನ್ ಲೊಕೆಶ್"
+  },
+  {
+    "year": 2018,
+    "name": "T. N. Seetharam",
+    "field": "Film and Television",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "ExamBoard — \"Nadaprabhu Kempegowda Award 2018\"",
+    "source_id": "examboard_kempegowda_2018",
+    "source_url": "https://www.examboard.in/2018/08/nadaprabhu-kempegowda-award.html",
+    "name_kn": "ತ್ ನ್ ಸೀತರಮ್"
+  },
+  {
+    "year": 2018,
+    "name": "B. Suresha",
+    "field": "Film and Television",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "ExamBoard — \"Nadaprabhu Kempegowda Award 2018\"",
+    "source_id": "examboard_kempegowda_2018",
+    "source_url": "https://www.examboard.in/2018/08/nadaprabhu-kempegowda-award.html",
+    "name_kn": "ಬ್ ಸುರೆಶ"
+  },
+  {
+    "year": 2018,
+    "name": "Anushri",
+    "field": "Film and Television",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "ExamBoard — \"Nadaprabhu Kempegowda Award 2018\"",
+    "source_id": "examboard_kempegowda_2018",
+    "source_url": "https://www.examboard.in/2018/08/nadaprabhu-kempegowda-award.html",
+    "name_kn": "ಅನುಶ್ರಿ"
+  },
+  {
+    "year": 2018,
+    "name": "Dr. Thomas Chandy",
+    "field": "Medicine",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "ExamBoard — \"Nadaprabhu Kempegowda Award 2018\"",
+    "source_id": "examboard_kempegowda_2018",
+    "source_url": "https://www.examboard.in/2018/08/nadaprabhu-kempegowda-award.html",
+    "name_kn": "ಡಾ ತೊಮಸ್ ಚನ್ದಿ"
+  },
+  {
+    "year": 2018,
+    "name": "Mahadevappa",
+    "field": "Miscellaneous",
+    "location": "Bengaluru",
+    "wikipedia_url": null,
+    "wikidata_qid": null,
+    "has_wikidata_statement": null,
+    "source": "ExamBoard — \"Nadaprabhu Kempegowda Award 2018\"",
+    "source_id": "examboard_kempegowda_2018",
+    "source_url": "https://www.examboard.in/2018/08/nadaprabhu-kempegowda-award.html",
+    "name_kn": "ಮಹಾದೇವಪ್ಪ"
   }
 ]
