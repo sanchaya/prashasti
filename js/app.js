@@ -102,6 +102,11 @@
 
   function awardLabel(a){ return Sanchi18n.getLang() === 'kn' ? a.name_kn : a.name_en; }
 
+  // Kannada display name: falls back to the English spelling if no
+  // transliteration is available. `name_kn` is machine-transliterated
+  // (not hand-verified) for recipients without a Kannada Wikipedia article.
+  function displayName(r){ return Sanchi18n.getLang() === 'kn' && r.name_kn ? r.name_kn : r.name; }
+
   function escapeHtml(s){
     return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -543,7 +548,7 @@
       if(state.year && String(r.year) !== state.year) return false;
       if(state.field && r.field !== state.field) return false;
       if(state.search){
-        const hay = (r.name + ' ' + (r.field||'') + ' ' + (r.location||'')).toLowerCase();
+        const hay = (r.name + ' ' + (r.name_kn||'') + ' ' + (r.field||'') + ' ' + (r.location||'')).toLowerCase();
         if(!hay.includes(state.search)) return false;
       }
       return true;
@@ -551,7 +556,7 @@
     state.filtered.sort((a,b) => b.year - a.year || a.name.localeCompare(b.name));
     renderList();
     if(state.location && window.SanchiMap){
-      window.SanchiMap.showPersonPins(state.filtered.map(r => ({ name: r.name, year: r.year, field: r.field })), state.location.key);
+      window.SanchiMap.showPersonPins(state.filtered.map(r => ({ name: displayName(r), year: r.year, field: r.field })), state.location.key);
     }
   }
 
@@ -598,7 +603,7 @@
     nameRow.className = 'r-name-row';
     const name = document.createElement('div');
     name.className = 'r-name';
-    name.textContent = r.name;
+    name.textContent = displayName(r);
     if(r.wikipedia_url){
       name.classList.add('r-name-link');
       name.setAttribute('role', 'button');
@@ -607,7 +612,7 @@
       const open = () => {
         toggleDetails(row, r);
         if(r.location && window.SanchiMap){
-          window.SanchiMap.highlightLocation(r.location, r.name);
+          window.SanchiMap.highlightLocation(r.location, displayName(r));
         }
       };
       name.addEventListener('click', open);
@@ -676,7 +681,7 @@
 
   function detailHtml(r, enSum, knSum, lang){
     const enName = enSum && enSum.title ? enSum.title : r.name;
-    const knName = knSum && knSum.title ? knSum.title : null;
+    const knName = (knSum && knSum.title) ? knSum.title : (r.name_kn || null);
     const thumbRaw = (knSum && knSum.thumbnail && knSum.thumbnail.source)
       || (enSum && enSum.thumbnail && enSum.thumbnail.source)
       || null;

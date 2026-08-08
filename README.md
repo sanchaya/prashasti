@@ -40,6 +40,7 @@ data/
   quickstatements_*.tsv  Per-award Wikidata QuickStatements batches (with S854 source URLs)
 scripts/
   geocode_locations.py   WIP geocoding pipeline (Wikidata P19/P551 → district counts per award)
+  kn_translit.py          Rule-based English→Kannada name transliteration (fills name_kn)
 ```
 
 ## Deploy (GitHub Pages)
