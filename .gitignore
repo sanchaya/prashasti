@@ -2,3 +2,4 @@
 *.log
 .gstack/
 __pycache__/
+kannada_names_review*.xlsx

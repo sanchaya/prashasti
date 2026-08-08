@@ -10,7 +10,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ಕುವೆಮ್ಪು"
+    "name_kn": "ಕುವೆಮ್ಪು",
+    "name_kn_verified": false
   },
   {
     "year": 1992,
@@ -23,7 +24,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ಡಾ ರಾಜಕುಮಾರ್"
+    "name_kn": "ಡಾ ರಾಜಕುಮಾರ್",
+    "name_kn_verified": false
   },
   {
     "year": 1999,
@@ -36,7 +38,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ಸ್ ನಿಜಲಿಂಗಪ್ಪ"
+    "name_kn": "ಸ್ ನಿಜಲಿಂಗಪ್ಪ",
+    "name_kn_verified": false
   },
   {
     "year": 2000,
@@ -49,7 +52,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ಕ್ ನ್ ರ್ ರಾವ್"
+    "name_kn": "ಕ್ ನ್ ರ್ ರಾವ್",
+    "name_kn_verified": false
   },
   {
     "year": 2001,
@@ -62,7 +66,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ದೇವಿ ಶೆಟ್ಟಿ"
+    "name_kn": "ದೇವಿ ಶೆಟ್ಟಿ",
+    "name_kn_verified": false
   },
   {
     "year": 2005,
@@ -75,7 +80,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ಭಿಮ್ಸೆನ್ ಜೋಶಿ"
+    "name_kn": "ಭಿಮ್ಸೆನ್ ಜೋಶಿ",
+    "name_kn_verified": false
   },
   {
     "year": 2007,
@@ -88,7 +94,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ಶಿವಕುಮರ ಸ್ವಾಮಿ"
+    "name_kn": "ಶಿವಕುಮರ ಸ್ವಾಮಿ",
+    "name_kn_verified": false
   },
   {
     "year": 2008,
@@ -101,7 +108,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ಜವರೆ ಗೌಡ"
+    "name_kn": "ಜವರೆ ಗೌಡ",
+    "name_kn_verified": false
   },
   {
     "year": 2009,
@@ -114,7 +122,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ವೀರೆನ್ದ್ರ ಹೆಗ್ಗದೆ"
+    "name_kn": "ವೀರೆನ್ದ್ರ ಹೆಗ್ಗದೆ",
+    "name_kn_verified": false
   },
   {
     "year": 2022,
@@ -127,7 +136,8 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ಪುನೀತ್ ರಾಜಕುಮಾರ್"
+    "name_kn": "ಪುನೀತ್ ರಾಜಕುಮಾರ್",
+    "name_kn_verified": false
   },
   {
     "year": 2025,
@@ -140,6 +150,7 @@
     "source": "en+kn Wikipedia, cross-checked",
     "source_id": "wiki_karnataka_ratna",
     "source_url": "https://en.wikipedia.org/wiki/Karnataka_Ratna",
-    "name_kn": "ಬ್ ಸರೋಜ ದೇವಿ"
+    "name_kn": "ಬ್ ಸರೋಜ ದೇವಿ",
+    "name_kn_verified": false
   }
 ]
