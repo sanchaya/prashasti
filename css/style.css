@@ -1213,7 +1213,7 @@ select{ cursor: pointer; }
 @media (min-width: 1001px){
   html, body{ height: 100%; }
   body{ display: flex; flex-direction: column; overflow: hidden; }
-  body.admin-mode{ overflow: auto; height: auto; }
+  body.admin-mode, body.sources-page{ overflow: auto; height: auto; }
   body.admin-mode main{ display: block; flex: none; overflow: visible; }
 
   .topnav{ flex: 0 0 auto; }
@@ -1239,6 +1239,7 @@ select{ cursor: pointer; }
   .stat-label{ font-size: 0.65rem; max-width: 11ch; }
 
   main{ flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+  body.sources-page main{ display: block; flex: none; overflow: visible; }
   .home-grid{
     flex: 1 1 auto;
     min-height: 0;
