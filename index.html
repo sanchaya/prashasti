@@ -7,6 +7,9 @@
 <meta name="description" content="A Sanchaya project: Karnataka state award recipients, searchable and mapped.">
 <link rel="icon" type="image/png" href="img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png">
+<link rel="apple-touch-icon" href="img/android-chrome-192x192.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2196f3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Kannada:wght@400;500;700&display=swap" rel="stylesheet">
@@ -487,5 +490,12 @@ full citations on the <a href="sources.html">Sources &amp; citations</a> page.</
 <script src="js/wikidraft.js"></script>
 <script src="js/representation.js"></script>
 <script src="js/app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+</script>
 </body>
 </html>

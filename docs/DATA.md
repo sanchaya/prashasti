@@ -214,3 +214,32 @@ To submit: log in to **your own** Wikidata account, open
 [quickstatements.toolforge.org](https://quickstatements.toolforge.org/), authorise it via
 Wikidata's own OAuth screen (your credentials never pass through this project), paste the batch
 under "Import commands (v1)", review the preview, and run it.
+
+## Offline / installable (PWA)
+
+The site is installable (Add to Home Screen / desktop install) and works offline once a page has
+been loaded at least once, via `manifest.json` + `sw.js` (a standard service worker, no build
+step or framework involved).
+
+Caching strategy, by asset type:
+
+- **App shell** (`index.html`, `sources.html`, `css/style.css`, the `js/*.js` files, icons):
+  precached on install, served cache-first with a background refresh on every subsequent
+  successful fetch, so the app boots instantly and still picks up updates when online.
+- **Data files** (`data/*.json`, `data/*.geojson` — all 41 award/district/source files as of this
+  writing): precached on install, then served network-first with a cache fallback, so an online
+  visitor always sees the latest data and an offline visitor still gets the last-synced copy.
+- **Cross-origin assets** (Leaflet's JS/CSS from unpkg.com, Google Fonts, and the CARTO map-tile
+  images) are cached opportunistically at runtime as the user browses, not precached in bulk.
+
+**Known limitation:** the interactive map's base imagery is loaded from CARTO's tile server
+(`js/map.js`), a third-party service — there is no practical way to precache an entire tile set
+for the whole state up front. This means the district *shapes* (from the precached GeoJSON) and
+all recipient data work fully offline, but the base-map background imagery will only be available
+offline for map areas/zoom levels the user has already viewed while online. Every other part of
+the app — search, filters, the field explorer, and district/browse views — is unaffected by this
+and works fully offline.
+
+`sw.js` bumps `CACHE_VERSION` to invalidate old caches; that constant should be incremented
+whenever the precached file list changes (a new award added, a data file renamed, etc.) so
+returning visitors aren't stuck on stale cached data.
